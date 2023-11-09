@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default " auto" }}">
+
+<head>
+    {{- partial "head.html" . }}
+
+    <!-- Axentix CSS minified version -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.2.0/dist/axentix.min.css">
+    <!-- Custom CSS -->
+    {{ $options := (dict "targetPath" "css/custom.css" "outputStyle" "compressed") }}
+    {{ $style:= resources.Get "custom.scss" | toCSS $options }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+    <!-- {{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }} -->
+</head>
+
+<body class="layout-sidenav-fixed layout-sidenav-both" id="top">
+
+    <!-- Theme Nav Bar -->
+    {{- partialCached "header.html" . .Page -}}
+
+    <main class="main container">
+
+        <!-- Custom Side Nav -->
+        <div id="example-sidenav" data-ax="sidenav" class="sidenav sidenav-fixed bd-r-solid bd-3 bd-grey bd-light-1">
+            <div class="d-flex my-auto fx-col">
+                <div class="sidenav-header">
+                    <img class="rounded-4 bd-solid bd-3 bd-grey bd-light-1" src="/images/logo.png"
+                        style="width: 70%; height: auto;" alt="Logo" />
+                    <div class="h1">KDN</div>
+                    <p>KALDEI’S DEVOPS NOTES</p>
+                </div>
+
+                <div class="grix xs6 center">
+                    <a class="pos-xs3" href="https://www.kaldei.xyz/" title="Main Website" target="_blank" rel="noopener">
+                        <span class="iconify-inline font-s4" data-icon="bxs:home"></span>
+                    </a>
+                    <a class="pos-xs4" href="https://github.com/Kaldei" title="GitHub Profile" target="_blank" rel="noopener">
+                        <span class="iconify-inline font-s4" data-icon="akar-icons:github-fill"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Axentix Scrollspy -->
+        <div id="scrollspy-sidenav" data-ax="sidenav" class="sidenav sidenav-right sidenav-fixed white">
+            <div class="scrollspy d-flex my-auto fx-col text-grey" id="scrollspy-auto"></div>
+        </div>
+
+
+        <!-- Content -->
+        {{- block "main" . }}{{ end }}
+
+    </main>
+
+    <!-- Theme Footer -->
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+
+    <!-- Axentix JS minified version -->
+    <script src="https://cdn.jsdelivr.net/npm/axentix@2.2.0/dist/axentix.min.js"></script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <!-- Scrollspy -->
+    <script>
+        let scrollSpy = new Axentix.ScrollSpy('#scrollspy-auto', {
+            auto: {
+                enabled: true,
+                classes: 'mt-1 font-w500 pl-2 bd-l-2',
+                selector: 'h1,h2',
+            },
+            classes: "active"
+        });
+    </script>
+
+    <script>
+        const links = document.querySelectorAll('.scrollspy a');
+        let clickedOne = null
+
+        // When there is no scroll set active class to the first element
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+            links.forEach(l => l.classList.remove('active'));
+            links[0].classList.add('active');
+        }
+
+        // Remove active class to clicked one when scroll
+        window.addEventListener('wheel', function () {
+            if (clickedOne && document.querySelectorAll('.active').length > 2) {
+                links[clickedOne].classList.remove('active');
+                clickedOne = null;
+            }
+        });
+
+        // Set active class when click
+        links.forEach((link, index) => {
+            link.addEventListener('click', function (event) {
+                setTimeout(function () {
+                    // Remove 'active' class from all links
+                    links.forEach(l => l.classList.remove('active'));
+
+                    // Add 'active' class to the clicked link
+                    link.classList.add('active');
+
+                    // Require to remove active class when scroll
+                    clickedOne = index;
+                }, 0.001); // Because race condition with scrollspy's code on last element 
+
+            });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>

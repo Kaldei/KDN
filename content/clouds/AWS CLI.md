@@ -1,0 +1,164 @@
+---
+title: AWS CLI
+summary: Universal Command Line Interface for AWS.
+description: Universal Command Line Interface for AWS.
+tag: aws
+---
+
+# Basis
+
+---
+
+### Command Structure
+
+
+ > 
+ > **<font color=red>aws</font> serviceName commands**
+ > General structure of a command.
+
+ > 
+ > **<font color=red>--region </font>us-east-1**</br>
+ > Set the region for this command (change from default).
+ > 
+ > **<font color=red>--no-sign-request</font>**</br>
+ > Access to public objects (no signing in).
+ > 
+ > **<font color=red>--profile</font> myProfile**</br>
+ > Set profile ot use for this command (change from default).
+
+---
+
+### Profile Configuration
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+
+Profile configuration are stored in two files:
+
+* `~/.aws/config` 
+
+````toml
+[default]
+region=us-east-1
+output=json
+````
+
+* `~/.aws/credentials`
+
+````toml
+[default]
+aws_access_key_id=[ACCESS_KEY_ID]
+aws_secret_access_key=[SECRET_ACCESS_KEY]
+````
+
+ > 
+ > **<font color=red>aws configure</font>**</br>
+ > Set config and credentials files (default profile).
+ > 
+ > **<font color=red>aws configure --profile</font> myProfileName**</br>
+ > Create or modify a profile.
+
+# IAM
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws sts get-access-key-info --access-key-id</font> \[AKIA_EXAMPLE\]**</br>
+ > Return Account ID of the access key.
+
+ > 
+ > **<font color=red>aws sts get-caller-identity --profile</font> myProfileName**</br>
+ > Return User ID, Account ID, and ARN of the selected profile.
+ > 
+ > ````json
+ > {
+ >    "UserId": "AIDATAAH6Q3WAYKDXJV5B",
+ >    "Account": "206175110892",
+ >    "Arn": "arn:aws:iam::206175110892:user/myUserName"
+ > }
+ > ````
+
+---
+
+### Roles
+
+
+ > 
+ > **<font color=red>aws sts assume-role --role-arn</font> \[MY_ARN\] <font color=red>--role-session-name</font> mySessionName**</br>
+ > Assume a role based on the ARN.
+
+# Cognito
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws cognito-identity get-id --identity-pool-id</font> \[MY_IDENTOTY_POOL_ID\]**</br>
+ > Return the Cognito ID for the specified identity pool ID.
+ > 
+ > ````json
+ > {
+ >    "IdentityId": "us-east-1:1b0bcc16-b32f-44c1-8f1e-14e8d4c5f7af"
+ > }
+ > ````
+
+# EC2
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws ec2 describe-instances --output text --profile</font> myProfileName**</br>
+ > Listing all EC2 instances running within a profile.
+
+# Lambda
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws lambda invoke --function-name</font> my-lambda**</br>
+ > Execute a Lambda.
+
+# S3
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws s3 mb s3://</font>myBucketURL**</br>
+ > Create a bucket (mb = make bucket).
+
+ > 
+ > **<font color=red>aws s3 ls</font>**</br>
+ > Return all buckets for the current profile.
+ > 
+ > **<font color=red>aws s3 ls s3://</font>myBucketURL**</br>
+ > Return bucket contents (can also be reached at `https://myBucketName.s3.amazonaws.com`).
+
+ > 
+ > **<font color=red>aws s3api put-bucket-policy s3://</font>myBucketURL myPolicyFile**</br>
+ > Add policy config file to the bucket.
+ > 
+ > **<font color=red>aws s3api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
+ > Sets the default file to be served when using the bucket as a static web server.
+
+ > 
+ > **<font color=red>aws s3 cp s3://</font>myBucketURL/myFile ./**</br>
+ > Copies a bucket file to my current local directory.
+ > 
+ > **<font color=red>aws s3 sync</font> myFile <font color=red>s3://</font>myBucketURL**</br>
+ > Synchronize a local file or directory to the buckets. 
+ > 
+ > **<font color=red>aws s3 sync s3://</font>myBucketURL/myFolder /myLocalFolder**</br>
+ > Synchronize bucket folder to local directory/
