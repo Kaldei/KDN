@@ -1,8 +1,9 @@
 ---
 title: AWS CLI
-summary: Universal Command Line Interface for AWS.
-description: Universal Command Line Interface for AWS.
-tag: aws
+summary: A note on the AWS CLI.
+description: A note on the AWS CLI.
+tags:
+  - aws
 ---
 
 # Basis

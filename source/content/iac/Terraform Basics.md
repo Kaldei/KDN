@@ -1,4 +1,7 @@
 ---
+title: Terraform
+summary: A note on the basics of Terraform.
+description: A note on the basics of Terraform.
 tag: terraform
 ---
 
@@ -8,20 +11,12 @@ tag: terraform
 
 ### Terraform Directory
 
----
-
-## tag: terraform
-
 * This directory is used to store the project's providers and modules.
 * It contains two subdirectories: `modules` and `providers`.
 
 ---
 
 ### Manage Providers Version
-
----
-
-## tag: terraform
 
 * **[.terraform.lock.hcl](https://developer.hashicorp.com/terraform/language/files/dependency-lock)** :
   
@@ -36,10 +31,6 @@ tag: terraform
 
 ### State
 
----
-
-## tag: terraform
-
 * **terraform.tfstate**
   * Stores the IDs and properties of the resources
   * Can contain credentials
@@ -50,20 +41,12 @@ tag: terraform
 
 ### CLI Config File
 
----
-
-## tag: terraform
-
 * Windows: `%APPDATA%\terraform.rc`
 * Others: `~/.terraformrc`
 
 ---
 
 ### Resources Files
-
----
-
-## tag: terraform
 
 * **main.tf**: Deploy resources using providers.
 
@@ -84,10 +67,6 @@ Terraform loads variables in the following order, with **later sources taking pr
 ---
 
 ### Variables
-
----
-
-## tag: terraform
 
 All attributes in a variable block are optional.
 
@@ -123,10 +102,6 @@ ressource "my_resource_type" "my_resource_name"{
 ---
 
 ### Variable Provisioning
-
----
-
-## tag: terraform
 
 There are 3 ways to provision variables
 
@@ -172,10 +147,6 @@ export TF_VAR_myVar=myValue
 
 ### Local Variables
 
----
-
-## tag: terraform
-
 Local variables are only accessible within the module they are declared.
 
 ````hcl
@@ -207,10 +178,6 @@ ressource "my_resource_type" "my_resource_name"{
 ---
 
 ### Terraform
-
----
-
-## tag: terraform
 
 The `terraform` block contains the settings including:
 
@@ -262,10 +229,6 @@ ressource "my_resource_type" "my_resource_name"{
 ---
 
 ### Backend
-
----
-
-## tag: terraform
 
 Note: When a change is made to the backend configuration, it is required to re-run `terraform init`.
 
@@ -344,10 +307,6 @@ terraform {
 
 ### Outputs
 
----
-
-## tag: terraform
-
 Outputs are used for showing information to the admin and passing information between modules.
 
 ````hcl
@@ -364,9 +323,6 @@ output "my_output" {
 
 ### For In Structure
 
----
-
-## tag: terraform
 
 ````hcl
 output "my_output" {
@@ -385,10 +341,6 @@ my_output = {
 ---
 
 ### Resource
-
----
-
-## tag: terraform
 
 Define the resource.
 The ID of the resource is `my_ressource_type.my_ressource_name`
@@ -425,50 +377,6 @@ ressource "my_ressource_type" "my_ressource_name" {}
 
 ---
 
+### Count
+
 The `count` meta-argument is used to create a defined number of instances of the resource or module.
-
-# Terraform Cloud
-
-VCS that can be added to Terraform cloud private registry:
-
-* GitHub
-* GitLab
-* Bitbucket
-* Azure DevOps
-
- > 
- > **<font color=red>terraform login</font>**</br>
- > Login to Terraform Cloud.
- > 
- > **<font color=red>terraform logout</font>**</br>
- > Logout form Terraform Cloud.
-
-Terraform Cloud Workspace specific features:
-
-* Access controls for state data.
-* Cost estimation and alerts.
-
-Terraform Cloud features:
-
-* Remote state storage
-* Web UI
-
-# Terraform Enterprise
-
-![Terragorm-Basis-Entreprise-OS.png](../../attachments/Terragorm-Basis-Entreprise-OS.png)
-
-Terraform Enterprise use Postgresql as a backend.
-
-# Policy as Code
-
-Policy as Code has the following benefits:
-
-* Sandboxing
-* Codification
-* Version Control
-* Testing
-* Automation
-
-# Plugins
-
-* Can only be written in Go.

@@ -1,8 +1,9 @@
 ---
 title: AWS Services
-summary: Notes about the differents servicies of AWS.
-description: Notes about the differents servicies of AWS.
-tag: aws
+summary: A note to briefly introduce AWS services.
+description: A note to briefly introduce AWS services.
+tags:
+  - aws
 ---
 
 # Security, Identity, & Compliance

@@ -1,5 +1,9 @@
 ---
-tag: terraform
+title: Terraform CLI
+summary: A note on the Terraform CLI.
+description: A note on the Terraform CLI.
+tags:
+  - terraform
 ---
 
 # Workflow
@@ -8,9 +12,6 @@ tag: terraform
 
 ### Initialize
 
----
-
-## tag: terraform
 
  > 
  > **<font color=red>terraform init</font>**</br>
@@ -32,15 +33,12 @@ tag: terraform
  > Show providers used in the current configuration. 
  > 
  > **<font color=red>terraform providers -schema</font>**</br>
- > Print detailed schemas for the providers. 
+ > Print detailed schemas for the providers.
 
 ---
 
 ### Validate and Format (optional)
 
----
-
-## tag: terraform
 
  > 
  > **<font color=red>terraform validate</font>**</br>
@@ -61,10 +59,6 @@ tag: terraform
 ---
 
 ### Plan
-
----
-
-## tag: terraform
 
 **Warning: Terraform plan files can contain sensitive data. Never commit a plan file to version control.**
 
@@ -87,9 +81,6 @@ Output Signification:
 
 ### Apply
 
----
-
-## tag: terraform
 
  > 
  > **<font color=red>terraform apply</font>**</br>
@@ -107,9 +98,6 @@ Output Signification:
 
 ### Destroy
 
----
-
-## tag: terraform
 
  > 
  > **<font color=red>terraform destroy</font>**</br>
