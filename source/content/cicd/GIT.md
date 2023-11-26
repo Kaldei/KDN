@@ -2,9 +2,9 @@
 title: GIT
 summary: A free and open source distributed version control system.
 description: A free and open source distributed version control system.
+tags:
+  - git
 ---
-
-**[https://git-scm.com/](https://git-scm.com/)**
 
 ## Resource
 

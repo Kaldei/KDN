@@ -50,11 +50,15 @@ menu:
       weight: 3
       identifier: IaC
       url: /iac/
-    - name: Search
+    - name: CI/CD
       weight: 4
+      identifier: CI/CD
+      url: /cicd/
+    - name: Search
+      weight: 5
       identifier: search
       url: /search/
     - name: About
-      weight: 5
+      weight: 6
       identifier: about
       url: /about/
