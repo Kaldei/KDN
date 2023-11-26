@@ -7,15 +7,13 @@
     <!-- Axentix CSS minified version -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.2.0/dist/axentix.min.css">
     <!-- Custom CSS -->
-    {{ $options := (dict "targetPath" "css/custom.css" "outputStyle" "compressed") }}
-    {{ $style:= resources.Get "custom.scss" | toCSS $options }}
+    {{ $options := (dict "targetPath" "assets/css/custom.css" ) }}
+    {{ $style:= resources.Get "custom.scss" | resources.ExecuteAsTemplate "custom.scss" . | toCSS $options |
+    resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-    <!-- {{ range .Site.Params.custom_css -}}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-    {{- end }} -->
 </head>
 
-<body class="layout-sidenav-fixed layout-sidenav-both" id="top">
+<body class=" layout-sidenav-fixed layout-sidenav-both" id="top">
 
     <!-- Theme Nav Bar -->
     {{- partialCached "header.html" . .Page -}}
@@ -23,21 +21,27 @@
     <main class="main container">
 
         <!-- Custom Side Nav -->
-        <div id="example-sidenav" data-ax="sidenav" class="sidenav sidenav-fixed bd-r-solid bd-3 bd-grey bd-light-1">
+        <div id="example-sidenav" data-ax="sidenav" class="sidenav sidenav-fixed bd-r-solid bd-2">
             <div class="d-flex my-auto fx-col">
                 <div class="sidenav-header">
-                    <img class="rounded-4 bd-solid bd-3 bd-grey bd-light-1" src="/images/logo.png"
-                        style="width: 70%; height: auto;" alt="Logo" />
-                    <div class="h1">KDN</div>
-                    <p>KALDEI’S DEVOPS NOTES</p>
+                    <img class="rounded-4 shadow-1" src="/images/logo.png" style="width: 65%; height: auto;"
+                        alt="Logo" />
+                    <div class="h1">{{ .Site.Params.acronym }}</div>
+                    <p>Kaldei's {{ .Site.Params.topic }} Notes</p>
                 </div>
 
-                <div class="grix xs6 center">
-                    <a class="pos-xs3" href="https://www.kaldei.xyz/" title="Main Website" target="_blank" rel="noopener">
+                <div class="grix xs5 center">
+                    <a class="pos-xs2" href="https://www.kaldei.xyz/" title="Main Website" target="_blank"
+                        rel="noopener">
                         <span class="iconify-inline font-s4" data-icon="bxs:home"></span>
                     </a>
-                    <a class="pos-xs4" href="https://github.com/Kaldei" title="GitHub Profile" target="_blank" rel="noopener">
+                    <a class="pos-xs3" href="https://github.com/Kaldei" title="GitHub Profile" target="_blank"
+                        rel="noopener">
                         <span class="iconify-inline font-s4" data-icon="akar-icons:github-fill"></span>
+                    </a>
+                    <a class="pos-xs4" href="https://www.root-me.org/Kaldei" title="RootMe Profile" target="_blank"
+                        rel="noopener">
+                        <span class="iconify-inline font-s4" data-icon="fa6-solid:skull"></span>
                     </a>
                 </div>
             </div>
