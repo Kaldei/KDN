@@ -1,8 +1,9 @@
 ---
-title: Terraform
+title: Terraform Basics
 summary: A note on the basics of Terraform.
 description: A note on the basics of Terraform.
-tag: terraform
+tags:
+  - terraform
 ---
 
 # Files
