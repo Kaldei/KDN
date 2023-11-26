@@ -54,6 +54,10 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws configure</font>**</br>
  > Set config and credentials files (default profile).
  > 
+ > **<font color=red>aws configure set aws_session_token</font> MY_AWS_SESSION_TOKEN**</br>
+ > Use a `AWS_SESSION_TOKEN` (after `aws configure`).
+
+ > 
  > **<font color=red>aws configure --profile</font> myProfileName**</br>
  > Create or modify a profile.
 
@@ -150,7 +154,7 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws s3api put-bucket-policy s3://</font>myBucketURL myPolicyFile**</br>
  > Add policy config file to the bucket.
  > 
- > **<font color=red>aws s3api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
+ > **<font color=red>aws s3 api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
  > Sets the default file to be served when using the bucket as a static web server.
 
  > 
@@ -162,3 +166,18 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > 
  > **<font color=red>aws s3 sync s3://</font>myBucketURL/myFolder /myLocalFolder**</br>
  > Synchronize bucket folder to local directory/
+
+# CloudWatch
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws logs describe-log-streams --log-group-name</font>  my-log-group**</br>
+ > Retrieve information about log streams in a specific log group.
+
+ > 
+ > **<font color=red>aws logs get-log-events --log-group-name</font> my-log-group <font color=red>--log-stream-name</font> some-log-stream**</br>
+ > Retrieve log events from a log stream in a specific log group.

@@ -33,7 +33,7 @@ tag: aws
 
 * **Lambda execution max duration is 15 min.**
 
-* **Lambda function can go up to 10 GB of memory (free tier only allow 512MB).**
+* \**Lambda function can go up to 10 GB of memory (free tier only allow 512MB).*
 
 * Lambda SnapStart for Java (only Java 11 and Java 17) can improve startup performance for latency-sensitive applications by up to 10x at no extra cost with no changes to your function code.
 
@@ -42,6 +42,7 @@ tag: aws
 ### SQS
 
 * SQS and SNS messages are limited to 256KB.
+* The type of queue (Standard or FIFO) must be chosen when the queue is created.
 
 # Application Integration
 
@@ -82,7 +83,7 @@ tag: aws
 
 * EKS distribution includes open-source K8S components only.
 
-# Networking and Content Delivery
+# Networking
 
 ---
 
@@ -108,6 +109,30 @@ tag: aws
 |Accelerate IP traffic distribution|Global Accelerator|
 |DynamoDB Table distribution for multiple region|DynamoDB Global Tables|
 |Implement some logic at CDN level (e. g. resize images)|Lambda@Edge|
+
+---
+
+### VPC
+
+* **The default NACL in tha default VPC allow all traffic in and out.**
+* **Security Groups deny all in and allow all out by default.**
+* Each subnet has a single Route Table. The VPC and all its subnets are always reachable via the default `local`route (it cannot be modified or removed).
+* VPC Peering is not transitive: a VPC cannot use the NAT Gateway of a peered VPC.
+* **A VPC cannot reference the security group of a peer VPC that's in a different Region.**
+* VPC Endpoint work with Kinesis.
+* VPC Endpoint always takes precedence (priority) over NAT Gateway or Internet Gateway.
+
+---
+
+### ELB
+
+* ELB can only balance traffic in one region
+
+---
+
+### CloudFront
+
+* To be able to use ACM with CloudFront, third party certificates must be imported in the US East (N. Virginia) region.
 
 # Analytics
 
@@ -210,12 +235,19 @@ Credit: [AWS Doc](https://aws.amazon.com/blogs/database/choose-the-right-amazon-
 |Like a NAS on the cloud for block storage|AWS Storage Gateway Volume Gateway (EBS)|
 |Store **a subset** of on premise data that is frequently accessed|AWS Storage Gateway Volume Cached Volume|
 |Store **entire** on premise data that is frequently accessed|AWS Storage Gateway Volume Stored Volume|
+|Volume SSD that go up to 16000 IOPS|GP2 or GP3 (GP3 is more cost-effective)|
+|||
+|Read the first 250 bytes of each objects in S3|Use Byte Range Fetch|
+|Increase transfer speed of S3 by transferring files through AWS Edge Location|S3 Transfer Acceleration|
+|||
 
 ### S3
 
 * **Upload object in a single operation: max 5 GB. BUT it is recommended use multipart upload when the object size is > 100MB.**
 
 * **Upload object in parts: max 5 TB.**
+
+* IAM roles cnnot be assigned to S3 buckets.
 
 * A `DELETE` API call on an object does not delete the actual object, but places a marker on it.
 
@@ -226,6 +258,8 @@ Credit: [AWS Doc](https://aws.amazon.com/blogs/database/choose-the-right-amazon-
   * `http://bucket-name.s3-website.Region.amazonaws.com`
   * `http://bucket-name.s3-website-Region.amazonaws.com`
 * Amazon S3 Standard stores data in a minimum of three Availability Zones.
+
+* SSE-S3 encryption is automatically enabled on new objects stored in S3.
 
 * **Glacier Flexible Retrieval:**
   
@@ -309,3 +343,23 @@ Credit: [AWS Doc](https://aws.amazon.com/blogs/database/choose-the-right-amazon-
 |Microservice and Serverless analyze|AWS X-Ray|
 |Auditing solution to check API calls (for compliance, governance, ..)|AWS CloudTrail|
 |Compliance reports for AWS resources|AWS Artifact|
+
+---
+
+### AWS Organizations
+
+* Service Control Policies (SCP) are similar to IAM permissions policies, but are a feature of AWS Organizations. They can be attached to Roots, OU, or Accounts in an Organization.
+* SCP does not affect users or roles in the management account.
+
+# Disaster Recovery
+
+---
+
+### Strategy / Requirement
+
+|Requirements|Strategy|
+|------------|--------|
+|RPO/RTO happens in real time|Multi Site (Active/Active)|
+|RPO/RTO happens in minutes|Warm Standby|
+|RPO/RTO happens in minutes, lower cost (RPO in seconds and RTO 5-20 min)|Pilot Light|
+|RPO/RTO happens in hours.|Backup and Restore|

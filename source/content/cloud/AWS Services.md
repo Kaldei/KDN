@@ -44,6 +44,14 @@ Secret Manager can store secrets and automatically rotate them.
 
 ---
 
+### Macie
+
+![Arch_Amazon-Macie_48.svg](../../attachments/Arch_Amazon-Macie_48.svg)
+
+Amazon Macie is a data security service that uses machine learning (ML) and pattern matching to discover and help protect your sensitive data.
+
+---
+
 ### AWS Certificate Manager (ACM)
 
 ![Arch_AWS-Certificate-Manager_48.svg](../../attachments/Arch_AWS-Certificate-Manager_48.svg)
@@ -96,10 +104,6 @@ CDN with over 160 points of presence. Creating a distribution takes around 10-15
 
 Only outgoing bandwidth is charged (and CloudFront's costs around 10-15% less than S3's).
 
-### Origin Access Identity
-
-By creating an OAI and assigning it to a CloudFront distribution, you ensures that the files stored in the S3 bucket are only accessible through CloudFront and not directly through the S3 bucket URL.
-
 ---
 
 ### Global Accelerator
@@ -131,7 +135,7 @@ ELB allows "Sitckiness" (Session Affinity): a user will end up using the same in
 
 ![AWS-Service-NACL_Security_Group.png](../../attachments/AWS-Service-NACL_Security_Group.png)
 
-## Network ACL
+#### Network ACL
 
 A NACL is bound to a Subnet. It only applies (evaluate a packet) when crossing a subnet.
 
@@ -143,7 +147,7 @@ A Security group is **Stateless** (check very packets that cross border).
 
 The `Defaut Network ACL` of an AWS allows all inbound and outbound traffic
 
-## Security Group
+#### Security Group
 
 A Security Group is bound to an ENI (Elastic Network Interface). It applies to check if packets can reach specific instances or not:
 
@@ -199,7 +203,7 @@ AWS Lambda is a serverless function.
 
 ![Arch_AWS-Elastic-Beanstalk_48.svg](../../attachments/Arch_AWS-Elastic-Beanstalk_48.svg)
 
-With given code and configuration settings Elastic Beanstalk deploys the resources necessary to perform the following tasks:
+With given code and configuration settings, Elastic Beanstalk deploys the resources necessary (EC@, QSG,ELB, RDS, ...) to perform the following tasks:
 
 * Adjust capacity
 * Load balancing
@@ -279,6 +283,14 @@ Amazon EBS Fast Snapshot Restore (FSR) enables you to create a volume from a sna
 ![Arch_Amazon-EFS_48.svg](../../attachments/Arch_Amazon-EFS_48.svg)
 
 EFS (Elastic File System) allows you to have multiple EC2 instances accessing data at the same time.
+
+---
+
+### AWS Backup
+
+![Arch_AWS-Backup_48.svg](../../attachments/Arch_AWS-Backup_48.svg)
+
+AWS Backup is a simple and cost-effective way to protect your data by backing up your Amazon EFS file systems. Amazon EFS is natively integrated with AWS Backup.
 
 ---
 
@@ -494,3 +506,15 @@ Trusted Advisor gives recommendation on our AWS resources:
 CloudFormation is a service to automate deployment of AWS resources. It is an IaC tool using JSON or YAML files.
 
 Note: In CloudFormation, all actions are resources (including actions to attach items to each other).
+
+ 
+
+---
+
+### Service Catalog
+
+![Arch_AWS-Service-Catalog_48.svg](../../attachments/Arch_AWS-Service-Catalog_48.svg)
+
+AWS Service Catalog allows you to create and manage catalogs of IT services that can be deployed within your organization. 
+
+With Service Catalog, you can define a standardized set of products (solutions and tools in this case) that customers can self-service provision. By creating Service Catalog products, you can control and enforce the deployment of approved and validated solutions and tools.

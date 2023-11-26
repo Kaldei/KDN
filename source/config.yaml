@@ -1,10 +1,27 @@
-baseURL: 'https://devops.kaldei.xyz/'
+title: KDN
+baseURL: "https://devops.kaldei.xyz/"
 canonifyURLs: true
 languageCode: en-us
-title: KDN
 theme: PaperMod
 paginate: 15
 
+params:
+  # Custom variables
+  acronym: KDN
+  topic: DevOps
+  color: "SpringGreen"
+
+  # Parameters
+  # env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  defaultTheme: auto # Color theme (auto, light or dark)
+  disableScrollToTop: true # Disable scroll to top button
+  mainSections: [] # Don't display posts list on Home Page
+  ShowCodeCopyButtons: true # Enable button in code block
+
+  assets:
+    favicon: images/favicon.png
+
+# Required for markdown coloration
 markup:
   goldmark:
     renderer:
@@ -12,22 +29,12 @@ markup:
     extensions:
       typographer: false
 
-params:
-  title: KDN
-  defaultTheme: auto # Color theme (auto, light or dark)
-  disableScrollToTop: true # Disable scroll to top button
-  mainSections: [] # Don't display posts list on Home Page
-  ShowCodeCopyButtons: true # Enable button in code block
-  assets:
-    favicon: images/favicon.png
-
-
 # Required for search bar
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 menu:
   main:
