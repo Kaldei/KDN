@@ -45,7 +45,7 @@ menu:
     - name: Clouds
       weight: 2
       identifier: Clouds
-      url: /clouds/
+      url: /cloud/
     - name: Search
       weight: 3
       identifier: search
