@@ -39,7 +39,7 @@ Profile configuration are stored in two files:
 
 ````toml
 [default]
-region=us-east-1
+region=eu-west-1
 output=json
 ````
 
@@ -52,15 +52,18 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 ````
 
  > 
- > **<font color=red>aws configure</font>**</br>
- > Set config and credentials files (default profile).
- > 
- > **<font color=red>aws configure set aws_session_token</font> MY_AWS_SESSION_TOKEN**</br>
- > Use a `AWS_SESSION_TOKEN` (after `aws configure`).
+ > **<font color=red>aws configure list-profiles</font>**</br>
+ > List created profiles.
 
  > 
  > **<font color=red>aws configure --profile</font> myProfileName**</br>
  > Create or modify a profile.
+ > 
+ > **<font color=red>aws configure set aws_session_token</font> MY_AWS_SESSION_TOKEN <font color=red>--profile</font> myProfileName**</br>
+ > Set a `AWS_SESSION_TOKEN` (after `aws configure`).
+ > 
+ > **<font color=red>aws configure list  --profile</font> myProfileName<font color=red></font>**</br>
+ > Show details credentials.
 
 # IAM
 

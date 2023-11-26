@@ -65,12 +65,15 @@ tags:
  > 
  > **<font color=red>terraform plan</font>**</br>
  > Show expected changes (Execution Plan).
-
  > 
  > **<font color=red>terraform plan -destroy</font>**</br>
  > Show expected deletions (Destruction Plan).
 
-Output Signification:
+ > 
+ > **<font color=red>terraform plan -out=</font>my_tfplan.zip**</br>
+ > Save plan to a zip archive.
+
+Plan output signification:
 
 * `+`: Create
 * `-`: Destroy
@@ -85,6 +88,9 @@ Output Signification:
  > 
  > **<font color=red>terraform apply</font>**</br>
  > Run Plan, then Apply changes.
+ > 
+ > **<font color=red>terraform apply</font> my_tfplan.zip**</br>
+ > Apply changes form Plan file (will not ask for approbation).
 
  > 
  > **<font color=red>terraform apply -replace=</font>my_resource**</br>

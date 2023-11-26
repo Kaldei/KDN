@@ -42,6 +42,7 @@ tag: aws
 ### SQS
 
 * SQS and SNS messages are limited to 256KB.
+* SQS can retain messages from 1 minute to 14 days.
 * The type of queue (Standard or FIFO) must be chosen when the queue is created.
 
 # Application Integration

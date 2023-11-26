@@ -55,15 +55,33 @@ tags:
 
 ---
 
-### Precedence
+### Local Variables
 
-Terraform loads variables in the following order, with **later sources taking precedence over earlier ones**:
+Local variables are only accessible within the module they are declared.
 
-* Environment variables
-* The `terraform.tfvars` file, if present.
-* The `terraform.tfvars.json` file, if present.
-* Any `*.auto.tfvars` or `*.auto.tfvars.json` files, processed in lexical order of their filenames.
-* Any `-var` and `-var-file` options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
+````hcl
+locals {
+	my_varaible_1 = "my_value_1"
+	my_varaible_2 = "my_value_2"
+	
+	my_varaible_3 = {
+		my_sub_varaible_1 = "my_value_3"
+		my_sub_varaible_2 = "my_value_4"
+	}
+}
+````
+
+Then in resources, use the following:
+
+````hcl
+ressource "my_resource_type" "my_resource_name"{
+	...
+	
+	my_parameter1 = local.my_varaible_1
+	my_parameter2 = local.my_varaible_1
+	my_parameter_list = local.my_varaible_3
+}
+````
 
 ---
 
@@ -146,33 +164,15 @@ export TF_VAR_myVar=myValue
 
 ---
 
-### Local Variables
+### Precedence
 
-Local variables are only accessible within the module they are declared.
+Terraform loads variables in the following order, with **later sources taking precedence over earlier ones**:
 
-````hcl
-locals {
-	my_varaible_1 = "my_value_1"
-	my_varaible_2 = "my_value_2"
-	
-	my_varaible_3 = {
-		my_sub_varaible_1 = "my_value_3"
-		my_sub_varaible_2 = "my_value_4"
-	}
-}
-````
-
-Then in resources, use the following:
-
-````hcl
-ressource "my_resource_type" "my_resource_name"{
-	...
-	
-	my_parameter1 = local.my_varaible_1
-	my_parameter2 = local.my_varaible_1
-	my_parameter_list = local.my_varaible_3
-}
-````
+* Environment variables
+* The `terraform.tfvars` file, if present.
+* The `terraform.tfvars.json` file, if present.
+* Any `*.auto.tfvars` or `*.auto.tfvars.json` files, processed in lexical order of their filenames.
+* Any `-var` and `-var-file` options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
 
 # Blocks
 
@@ -348,6 +348,29 @@ The ID of the resource is `my_ressource_type.my_ressource_name`
 
 ````hcl
 ressource "my_ressource_type" "my_ressource_name" {}
+````
+
+---
+
+### Module
+
+Define the module to use with its path in parent module.
+
+````hcl
+module "my_module" {
+  source = "./network_module"
+  
+  # Set value for a variable inside the module
+  module_variable = "My Value"
+}
+````
+
+Use module output in parent module.
+
+````hcl
+variable "my_child_value" {
+  value = module.my_module.my_module_output
+}
 ````
 
 # Functions
