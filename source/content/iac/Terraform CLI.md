@@ -153,7 +153,7 @@ Plan output signification:
  > **<font color=red>terraform state list</font>**</br>
  > List resources in current state.
  > 
- > **<font color=red>terraform state show myResource.myProperty</font>**</br>
+ > **<font color=red>terraform state show</font> myResource.myProperty**</br>
  > Display resource property.
 
 ---

@@ -185,3 +185,27 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > 
  > **<font color=red>aws logs get-log-events --log-group-name</font> my-log-group <font color=red>--log-stream-name</font> some-log-stream**</br>
  > Retrieve log events from a log stream in a specific log group.
+
+# SecurityHub
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws securityhub describe-standards</font>**</br>
+ > List available packs of controls (standards like CIS or NSIT) and wether they're enabled or not.
+ > 
+ > **<font color=red>aws securityhub get-enabled-standards</font>**</br>
+ > List enabled packs of controls.
+ > 
+ > **<font color=red>aws securityhub describe-standards-controls --standards-subscription-arn</font> arn:aws:securityhub:eu-west-1:446048454987:subscription/cis-aws-foundations-benchmark/v/1.2.0**</br>
+ > List control in a standard, and show whether they are enabled or not.
+
+ > 
+ > **<font color=red>aws securityhub list-security-control-definitions</font>**</br>
+ > List Security Controls IDs (and description ...).
+ > 
+ > **<font color=red>aws securityhub list-standards-control-associations --security-control-id</font> CloudTrail.1**</br>
+ > List Standards that cover the given Control (ControlId).
