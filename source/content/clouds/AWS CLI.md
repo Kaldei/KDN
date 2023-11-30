@@ -208,4 +208,7 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > List Security Controls IDs (and description ...).
  > 
  > **<font color=red>aws securityhub list-standards-control-associations --security-control-id</font> CloudTrail.1**</br>
- > List Standards that cover the given Control (ControlId).
+ > List Standards that cover the given Control (ControlId). **Note: this will only return Controls that belong in an enabled Standard**.
+ > 
+ > **<font color=red>aws securityhub batch-get-standards-control-associations --standards-control-association-ids \[{"SecurityControlId": "</font>ACM.1<font color=red>", "StandardsArn": "</font>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"<font color=red>},</font> ...<font color=red>\]</font>**</br>
+ > For a given Control return associated Standards Controls for the standard specified (with ARN).
