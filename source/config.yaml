@@ -57,7 +57,7 @@ menu:
     - name: Scripting
       weight: 5
       identifier: Scripting
-      url: /scriptingd/
+      url: /scripting/
     - name: Search
       weight: 6
       identifier: search
