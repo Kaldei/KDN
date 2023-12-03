@@ -54,11 +54,15 @@ menu:
       weight: 4
       identifier: CI/CD
       url: /cicd/
-    - name: Search
+    - name: Scripting
       weight: 5
+      identifier: Scripting
+      url: /scriptingd/
+    - name: Search
+      weight: 6
       identifier: search
       url: /search/
     - name: About
-      weight: 6
+      weight: 7
       identifier: about
       url: /about/
