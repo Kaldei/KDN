@@ -1,9 +1,8 @@
 ---
 title: Terraform Basics
-summary: A note on the basics of Terraform.
-description: A note on the basics of Terraform.
-tags:
-  - terraform
+summary: A note about the basics of Terraform (Files and Blocks).
+description: A note about the basics of Terraform (Files and Blocks).
+tags: terraform
 ---
 
 # Files
