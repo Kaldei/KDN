@@ -2,7 +2,8 @@
 title: AWS Cheat Sheet SAA-003
 summary: A cheat sheet to study the Solution Architect Associate certification.
 description: A cheat sheet to study the Solution Architect Associate certification.
-tag: aws
+tags:
+  - aws
 ---
 
 # Cost Management

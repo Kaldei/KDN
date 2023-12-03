@@ -2,7 +2,8 @@
 title: Terraform CLI
 summary: A note about the Terraform CLI.
 description: A note about the Terraform CLI.
-tags: terraform
+tags:
+  - terraform
 ---
 
 # Workflow

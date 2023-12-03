@@ -2,7 +2,8 @@
 title: Ansible Modules
 summary: A note about the Ansible Modules.
 description: A note about the Ansible Modules.
-tags: ansible
+tags:
+  - ansible
 ---
 
 # System

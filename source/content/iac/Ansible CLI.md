@@ -2,7 +2,8 @@
 title: Ansible CLI
 summary: A note about the Ansible CLI.
 description: A note about the Ansible CLI.
-tags: ansible
+tags:
+  - ansible
 ---
 
 # CLI

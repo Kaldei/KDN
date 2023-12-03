@@ -2,7 +2,8 @@
 title: Vagrant CLI
 summary: A note about the Vagrant CLI.
 description: A note about the Vagrant CLI.
-tags: vagrant
+tags:
+  - vagrant
 ---
 
 # Basis

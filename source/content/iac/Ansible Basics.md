@@ -2,7 +2,8 @@
 title: Ansible Basics
 summary: A note about the basics of Ansible (Files and Structures).
 description: A note about the basics of Ansible (Files and Structures).
-tags: ansible
+tags:
+  - ansible
 ---
 
 # Files
