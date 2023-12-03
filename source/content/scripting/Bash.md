@@ -340,7 +340,7 @@ done < myFile
  > **<font color=red>/</font>...<font color=red>/</font>**</br>
  > A regex is enclosed between two forward slashes.
  > 
- > **<font color=red>\</font>**</br>
+ > **<font color=red>\\</font>**</br>
  > Cancels the special effect of a special character.
  > 
  > **<font color=red>\|</font>**</br>
