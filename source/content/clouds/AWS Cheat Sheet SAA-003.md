@@ -34,7 +34,7 @@ tags:
 
 * **Lambda execution max duration is 15 min.**
 
-* \**Lambda function can go up to 10 GB of memory (free tier only allow 512MB).*
+* **Lambda function can go up to 10 GB of memory (free tier only allow 512MB).**
 
 * Lambda SnapStart for Java (only Java 11 and Java 17) can improve startup performance for latency-sensitive applications by up to 10x at no extra cost with no changes to your function code.
 
@@ -220,6 +220,24 @@ Credit: [AWS Doc](https://aws.amazon.com/blogs/database/choose-the-right-amazon-
 
 * Aurora is Highly Available: 2 copies of data are kept in each AZ with a minimum of 3 AZ.
 * Aurora Serverless v2 scales compute capacity automatically based on actual usage, **down to zero when not in use**.
+
+---
+
+### DynamoDB
+
+* DynamoDB is highly scalable.
+
+* There are 2 read types:
+  
+  * **Query (using Index):** I know what I'm looking for.
+  * **Scan:** Scan all the database to find what I'm looking for.
+* An Index is composed of 2 keys:
+  
+  * The **Partition Key** is used to group the data. Data with the same Partition Key is stored together (this allows to query a "partition" in 1 query).
+  * The **Sort Key** is optional, it determines the way data with the same Partition Key is stored.
+* For better performance, the keys have to be well architected in order to use Queries instead of Scanning the database.
+
+* AWS offers the ability to add a secondary Index (warning, paid by hour).
 
 # Storage
 

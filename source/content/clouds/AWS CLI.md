@@ -171,6 +171,24 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws s3 sync s3://</font>myBucketURL/myFolder /myLocalFolder**</br>
  > Synchronize bucket folder to local directory/
 
+# DynamoDB
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws dynamodb list-tables</font>**</br>
+ > List tables.
+
+ > 
+ > **<font color=red>aws dynamodb describe-table --table-name</font> my-table**</br>
+ > Return information about selected table.
+ > 
+ > **<font color=red>aws dynamodb scan --table-name</font> my-table**</br>
+ > Return items (and their attributes) stored in the selected table.
+
 # CloudWatch
 
 ---
