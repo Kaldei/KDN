@@ -1,5 +1,5 @@
 ---
-title: AWS Cheat Sheet SAA-003
+title: AWS Cheat Sheet SAA-C03
 summary: A cheat sheet to study the Solution Architect Associate certification.
 description: A cheat sheet to study the Solution Architect Associate certification.
 tags:
