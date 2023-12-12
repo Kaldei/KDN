@@ -1,7 +1,7 @@
 ---
 title: AWS CLI
-summary: A note on the AWS CLI.
-description: A note on the AWS CLI.
+summary: A note about the AWS CLI.
+description: A note about the AWS CLI.
 tags:
   - aws
 ---
