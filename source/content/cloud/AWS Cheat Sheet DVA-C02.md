@@ -204,7 +204,7 @@ tag: aws
 |Requirement|Service|
 |-----------|-------|
 |Not all data is delivered|IteratorAge (age of the last records processed by functions)|
-|Monitor EC2 memory usage|Use Unified CloudWatch Agent|
+|Monitor EC2 memory usage|Use Unified CloudWatch Agent (custom metric)|
 |||
 |Collect metrics for EC2 every 5 minutes|Basic Monitoring|
 |Collect metrics for EC2 every 1 minute|Detailed Monitoring|
