@@ -70,7 +70,7 @@ tags:
 |GraphQL serverless|AWS AppSync|
 |RESTful web services (not GraphQL)|API Gateway|
 |||
-|Send email|SES (Simple Email Service)|
+|Send marketing emails|SES (Simple Email Service)|
 |Migration from RabbitMQ|Amazon MQ|
 
 ---
@@ -119,6 +119,7 @@ tags:
 |Key-value NoSQL for web apps|Amazon DynamoDB|
 |||
 |Database connection issues (timeout, rejection)|RDS Proxy|
+|Handle write intensive traffic peak|RDS Proxy|
 |Read performance issues|Amazon ElastiCache|
 |Cache that support replication and archival|Amazon ElastiCache for Redis|
 |Cache that doesn't need advanced functionalities|Amazon ElastiCache for Memcached|
@@ -333,17 +334,19 @@ tags:
 |Read the first 250 bytes of each objects in S3|Use Byte Range Fetch|
 |Increase transfer speed of S3 by transferring files through AWS Edge Location|S3 Transfer Acceleration|
 
+---
+
 ### S3
 
 * **Upload object in a single operation: max 5 GB. BUT it is recommended use multipart upload when the object size is > 100MB.**
 
 * **Upload object in parts: max 5 TB.**
 
-* IAM roles cnnot be assigned to S3 buckets.
+* IAM roles cannot be assigned to S3 buckets.
 
 * A `DELETE` API call on an object does not delete the actual object, but places a marker on it.
 
-* Only the standard Amazon SQS queue is allowed as an Amazon S3 event notification destination.
+* **Only the standard Amazon SQS queue is allowed as an Amazon S3 event notification destination.**
 
 * S3 website URL:
   
