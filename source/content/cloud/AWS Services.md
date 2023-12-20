@@ -479,10 +479,8 @@ These metrics can be used to create Dashboards and Alarms.
 
 ![Arch_AWS-CloudTrail_48.svg](../../attachments/Arch_AWS-CloudTrail_48.svg)
 
-CloudTrail records API calls for your account (usefull for auditing). 
+CloudTrail records API calls for your account (useful for auditing). 
 The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, ...
-
-Warning: One instance of CloudTrail is free, but if you add other you will pay for it.
 
 ---
 

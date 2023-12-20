@@ -200,8 +200,8 @@ tags:
 
 ### AWS Organizations
 
+* **SCP does not affect users or roles in the management account.**
 * Service Control Policies (SCP) are similar to IAM permissions policies, but are a feature of AWS Organizations. They can be attached to Roots, OU, or Accounts in an Organization.
-* SCP does not affect users or roles in the management account.
 
 # Migration and Transfer
 
