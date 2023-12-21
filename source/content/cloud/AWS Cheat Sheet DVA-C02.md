@@ -2,7 +2,8 @@
 title: AWS Cheat Sheet DVA-C02
 summary: A cheat sheet to study the Developer Associate certification.
 description: A cheat sheet to study the Developer Administrator Associate certification.
-tag: aws
+tags:
+  - aws
 ---
 
 # DVA Specific
@@ -52,6 +53,8 @@ tag: aws
 |Consumers are polling the SQS Queue too often and are getting empty result|Enable Long Polling|
 |Some messages are not processed correctly|Add SQS Dead Letter Queue|
 |Multiple consumers need to receive same message form SQS|SNS with SQS Fan Out Pattern|
+
+---
 
 ### SNS
 

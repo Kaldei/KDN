@@ -122,7 +122,7 @@ tags:
 |Handle write intensive traffic peak|RDS Proxy|
 |Read performance issues|Amazon ElastiCache|
 |Cache that support replication and archival|Amazon ElastiCache for Redis|
-|Cache that doesn't need advanced functionalities|Amazon ElastiCache for Memcached|
+|Cache that doesn't need advanced features|Amazon ElastiCache for Memcached|
 
 ---
 
