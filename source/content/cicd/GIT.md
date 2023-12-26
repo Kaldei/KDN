@@ -94,7 +94,7 @@ tags:
  > Show local branches.
  > 
  > **<font color=red>git branch -r</font>**</br>
- > Show local branches.
+ > Show remote branches.
 
  > 
  > **<font color=red>git branch</font> myBranch**</br>
