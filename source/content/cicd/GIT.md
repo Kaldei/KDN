@@ -63,16 +63,6 @@ tags:
  > Stage all files (including untracked/new ones).
 
  > 
- > **<font color=red>git stash save</font> myStashName**</br>
- > Put changes in a side working directory for later use.
- > 
- > **<font color=red>git stash list</font>**</br>
- > List stashes.
- > 
- > **<font color=red>git stash apply</font> stashIndex**</br>
- > Add stashed code back into the code.
-
- > 
  > **<font color=red>git commit -S -m "</font>Commit Message<font color=red>"</font>**</br>
  > Create a commit (`-S` to sign the commit and `-m` to set the commit's message).
  > 
