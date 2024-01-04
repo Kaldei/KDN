@@ -158,7 +158,7 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws s3api put-bucket-policy s3://</font>myBucketURL myPolicyFile**</br>
  > Add policy config file to the bucket.
  > 
- > **<font color=red>aws s3 api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
+ > **<font color=red>aws s3api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
  > Sets the default file to be served when using the bucket as a static web server.
 
  > 
@@ -204,7 +204,7 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws logs get-log-events --log-group-name</font> my-log-group <font color=red>--log-stream-name</font> some-log-stream**</br>
  > Retrieve log events from a log stream in a specific log group.
 
-# SecurityHub
+# Security Hub
 
 ---
 
@@ -212,21 +212,44 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 
  > 
+ > **<font color=red>aws securityhub enable-security-hub --no-enable-default-standards --control-finding-generator SECURITY_CONTROL</font>**</br>
+ > Enable Security Hub with no Standards enabled by default, and findings are generated based on Controls (only one finding if the controls exist in multiple Standards).
+
+---
+
+### Standards
+
+
+ > 
  > **<font color=red>aws securityhub describe-standards</font>**</br>
- > List available packs of controls (standards like CIS or NSIT) and wether they're enabled or not.
+ > List available Standards (packs of controls like CIS or NSIT) and whether they're enabled or not.
  > 
  > **<font color=red>aws securityhub get-enabled-standards</font>**</br>
- > List enabled packs of controls.
+ > List enabled Standards.
+
  > 
- > **<font color=red>aws securityhub describe-standards-controls --standards-subscription-arn</font> arn:aws:securityhub:eu-west-1:446048454987:subscription/cis-aws-foundations-benchmark/v/1.2.0**</br>
+ > **<font color=red>aws securityhub batch-enable-standards --standards-subscription-requests '</font>{"arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"}<font color=red>'</font>**</br>
+ > Enable a Standard using it's ARN.
+
+ > 
+ > **<font color=red>aws securityhub describe-standards-controls --standards-subscription-arn</font> arn:aws:securityhub:eu-west-1:123456789123:subscription/cis-aws-foundations-benchmark/v/1.2.0**</br>
  > List control in a standard, and show whether they are enabled or not.
+
+---
+
+### Controls
+
 
  > 
  > **<font color=red>aws securityhub list-security-control-definitions</font>**</br>
  > List Security Controls IDs (and description ...).
  > 
+ > **<font color=red>aws securityhub list-security-control-definitions --standards-arn</font> "arn:aws:securityhub:us-east-1::standards/cis-aws-foundations-benchmark/v/1.4.0"**</br>
+ > List Security Controls IDs (and description ...) of the specified Standards.
+
+ > 
  > **<font color=red>aws securityhub list-standards-control-associations --security-control-id</font> CloudTrail.1**</br>
- > List Standards that cover the given Control (ControlId). **Note: this will only return Controls that belong in an enabled Standard**.
+ > List Standards that cover the given Control (ControlId). **This will only return Controls that belong in an enabled Standard**.
  > 
  > **<font color=red>aws securityhub batch-get-standards-control-associations --standards-control-association-ids \[{"SecurityControlId": "</font>ACM.1<font color=red>", "StandardsArn": "</font>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"<font color=red>},</font> ...<font color=red>\]</font>**</br>
- > For a given Control return associated Standards Controls for the standard specified (with ARN).
+ > For a given Control return associated Standards Controls (with ARNs) for the specified standard.

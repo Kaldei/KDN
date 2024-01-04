@@ -76,6 +76,24 @@ tags:
  > **<font color=red>git push</font>**</br>
  > Push commits to remote repository.
 
+## Stash
+
+
+ > 
+ > **<font color=red>git stash list</font>**</br>
+ > List stashes.
+
+ > 
+ > **<font color=red>git stash save</font> myStashName**</br>
+ > Put changes in a side working directory for later use.
+ > 
+ > **<font color=red>git stash apply</font> stashIndex**</br>
+ > Add stashed code back into the code.
+
+ > 
+ > **<font color=red>git stash drop</font> stashIndex**</br>
+ > Delete stash.
+
 ## Branch
 
 
