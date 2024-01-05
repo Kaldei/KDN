@@ -1,7 +1,7 @@
 ---
 title: AWS Cheat Sheet DVA-C02
 summary: A cheat sheet to study the Developer Associate certification.
-description: A cheat sheet to study the Developer Administrator Associate certification.
+description: A cheat sheet to study the Developer Associate certification.
 tags:
   - aws
 ---

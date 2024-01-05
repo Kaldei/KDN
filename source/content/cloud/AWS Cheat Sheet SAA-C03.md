@@ -181,8 +181,8 @@ tags:
 
 |Requirements|Service|
 |------------|-------|
-|Automated deployment in multi-account environments|Control Tower|
-|Share resource with other accounts joined to an organization|AWS Resource Access Manager|
+|Automated deployment in multi-Account environments|Control Tower|
+|Share resource with other Accounts within an Organization|AWS Resource Access Manager|
 |||
 |Input custom values to the template|CloudFormation Parameter|
 |Declare output value that can be imported into other stack|CloudFormation Outputs|
@@ -193,7 +193,7 @@ tags:
 |Capture user request and response, error traces|CloudWatch Execution Logging|
 |Capture info about IP traffic|VPC Flow Log|
 |Microservice and Serverless analyze|AWS X-Ray|
-|Auditing solution to check API calls (for compliance, governance, ..)|AWS CloudTrail|
+|Auditing solution to check API calls (for compliance, governance, ...)|AWS CloudTrail|
 |Compliance reports for AWS resources|AWS Artifact|
 
 ---
@@ -354,7 +354,7 @@ tags:
   * `http://bucket-name.s3-website-Region.amazonaws.com`
 * Amazon S3 Standard stores data in a minimum of three Availability Zones.
 
-* SSE-S3 encryption is automatically enabled on new objects stored in S3.
+* SSE-S3 encryption is automatically enabled on new objects stored in S3 (keys are managed by AWS).
 
 * **Glacier Flexible Retrieval:**
   
