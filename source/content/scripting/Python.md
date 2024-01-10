@@ -98,7 +98,7 @@ tags:
  > **myString<font color=red>.lower()</font>**</br>
  > Convert to lowercase.
 
-# Objects Oriented Programming
+# OOP
 
 ---
 

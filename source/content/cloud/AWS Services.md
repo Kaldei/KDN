@@ -188,8 +188,6 @@ Stacks available : Node.js, GitLab, LAMP, Nginx, Django, ...
 
 EC2 stands for Elastic Compute Cloud. It's the same as Lightsail, but with more options and features.
 
-Note: to give a name to an instance, add a Tag with the key `Name`.
-
 ---
 
 ### Lambda (Serverless Function)

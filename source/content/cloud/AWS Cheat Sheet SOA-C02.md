@@ -52,6 +52,15 @@ tags:
 |Getting `InsufficientInstanceCapacity` error when trying to launch an EC2 instance|AWS does not have enough on-demand capacity in the AZ|
 |Getting `InstanceLimitExceeded`  error when trying to launch an EC2 instance|Ask for a Quota increase|
 |Log Processes running on an EC2 instance|Install Unified Cloud Agent with `procstat` plugin|
+|||
+|Pack instances close together in an AZ to achieve the low-latency network for HPC|Cluster Placement Group|
+|Spread instances across logical partitions (using different underlying) for large distributed and replicated workloads (Hadoop, Cassandra, Kafka).|Partition Placement Group|
+|Strictly places instances across distinct underlying hardware to reduce correlated failures.|Spread Placement Group|
+
+* Move an EC2 instance in or out of a Placement Group:
+  * Stop the instance,
+  * Use CLI with `modify-instance-placement`,
+  * Start the instace.
 
 ---
 
@@ -162,12 +171,10 @@ tags:
 
 ### Route 53
 
-|Requirement|Service|
-|-----------|-------|
-|Route traffic based on the location of resources|Geoproximity Routing Policy|
-|Create an automated failover|Create a Primary Failover Routing Policy record with a Health Check and a Secondary Failover Routing Policy|
-
 * In order to use a Route 53 domain name with S3 Website Hosting, the bucket has to be the same as the record set in Route 53.
+* To set an automated failover, you need to create two Routing Policy:
+  * Create a Primary Failover Routing Policy record with a Health Check
+  * Create a Secondary Failover Routing Policy
 
 # Security Identity, and Compliance
 

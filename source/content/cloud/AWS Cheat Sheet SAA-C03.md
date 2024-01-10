@@ -81,6 +81,26 @@ tags:
 * SQS can retain messages from 1 minute to 14 days.
 * The type of queue (Standard or FIFO) must be chosen when the queue is created.
 
+# Compute
+
+---
+
+### EC2
+
+|Requirement|Service|
+|-----------|-------|
+|Get Instance AMI ID from Metadata|`http://169.254.169.254/latest/meta-data/ami-id`|
+|Get Instance Public IP from Metadata|`http://169.254.169.254/latest/meta-data/public-ip`|
+|||
+|Instance launch type for short workloads, reliable|On Demand Instances|
+|Instance launch type for short workloads that can be stopped at any time, cheaper|Spot Instances|
+|Instance launch type for long workloads (minimum 1 year)|Reserved Instances|
+|Instance launch type for long workloads (minimum 1 year) with flexible instances types|Convertible reserved Instances|
+|Instance launch type for use cases that require no other customers use the same hardware|Dedicated Instances|
+|Instance launch type for use cases that require an entire physical server (host affinity, licenses that operate at core, CPU socket level)|Dedicated Hosts|
+
+* **AMI IDs are Region specific.**
+
 # Containers
 
 ---
@@ -89,19 +109,22 @@ tags:
 
 |Requirement|Service|
 |-----------|-------|
-|Running K8s on premise but use AWS-managed service for managing multiple clusters of nodes|EKS Anywhere|
+|Running K8s on premise but use AWS-managed service for managing multiple clusters of nodes|EKS Anywhere Installer|
+|Connect an EKS Anywhere Cluster to AWS|EKS Connector|
 
 ---
 
 ### ECS
 
-* ECS Anywhere requires the installation of AWS System Manager (this allows the agent to register itself).
+* ECS Anywhere requires the installation of two agents (these agents register themselves):
+  * ECS Agent,
+  * SSM Agent.
 
 ---
 
 ### EKS
 
-* EKS distribution includes open-source K8S components only.
+* Amazon EKS distribution includes open-source K8S components and few more tools on top of it.
 
 # Database
 
@@ -268,7 +291,7 @@ tags:
 
 ### CloudFront
 
-* To be able to use ACM with CloudFront, third party certificates must be imported in the US East (N. Virginia) region.
+* To be able to use an ACM Certificate with CloudFront, the certificate must be requested or imported (third party) in `us-eaast-1` Region.
 
 # Security Identity, and Compliance
 
@@ -308,9 +331,7 @@ tags:
 ### Lambda
 
 * **Lambda execution max duration is 15 min.**
-
-* **Lambda function can go up to 10 GB of memory (free tier only allow 512MB).**
-
+  reserved c
 * Lambda SnapStart for Java (only Java 11 and Java 17) can improve startup performance for latency-sensitive applications by up to 10x at no extra cost with no changes to your function code.
 
 # Storage
