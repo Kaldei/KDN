@@ -60,19 +60,20 @@ dynamodb_client = boto3.client('dynamodb')
 response = dynamodb_client.query(
   TableName = "tableName",
 
-  # Name Filter
-  # ExpressionAttributeName= {
-  #   '#category': 'category'
-  # },
-  
-  # Value
-  ExpressionAttributeValues={
-  ':categoryToQuery': {'S': 'myCategory'}
+  # Use when atribute is a reserved word, contains dot or begins with number
+  ExpressionAttributeName = {
+    '#myAttribute': 'myAttributeName'
   },
-  
-  KeyConditionExpression='category = :categoryToQuery',
-  
-  # Select = 'ATTRIBUTE'
+  # Attribute to recieve when reading (kind of SELECT column)
+  ProjectionExpression = "#myAttribute"
+
+
+  # Same as ExpressionAttributeName but for values in used in comparaison
+  ExpressionAttributeValues = {
+  ':myNumberMax': 12
+  },
+  # Condition for the query (kind of WHERE condition)
+  KeyConditionExpression = Key('#myAttribute').gt(':myNumberMax')
 )
 
 # All Items

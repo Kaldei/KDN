@@ -144,8 +144,8 @@ tags:
 |Database connection issues (timeout, rejection)|RDS Proxy|
 |Handle write intensive traffic peak|RDS Proxy|
 |Read performance issues|Amazon ElastiCache|
-|Cache that support replication and archival|Amazon ElastiCache for Redis|
-|Cache that doesn't need advanced features|Amazon ElastiCache for Memcached|
+|Cache that support replication, HA, multi AZ failover, archival|Amazon ElastiCache for Redis|
+|Cache for multi node partitioning (sharding)|Amazon ElastiCache for Memcached|
 
 ---
 
@@ -241,6 +241,8 @@ tags:
 |Data transfer device and data processing, storage up to 8TB|AWS Snowcone|
 |Data transfer device and data processing, storage up to 14TB|AWS Snowcone SSD|
 |Data transfer device and data processing, storage up to 80TB|AWS Snowball Edge|
+
+* **DataSync is the only option that can transfer metadata and file permissions of files.**
 
 # Networking
 
@@ -342,22 +344,42 @@ tags:
 
 |Requirement|Service|
 |-----------|-------|
-|POSIX file System|Amazon EFS (Elastic File System)|
-|Samba, Windows|Amazon FSx for Windows File Server|
-|High-performance compute on Linux|Amazon FSx for Lustre|
+|Physical drive attached to an instance|Local Instance Store|
+|Network drive that can be attached to only one instance|Amazon EBS (Elastic Block Storage)|
+|||
+|POSIX file system|Amazon EFS (Elastic File System)|
+|High Performance Computing (HPC) Linux file system|Amazon FSx for Lustre|
+|High Performance Windows file system (compatible with SMB, NTFS, AD, ...)|Amazon FSx for Windows File Server|
+|High Performance ONTAP file system (compatible NFS, SMB, iSCSI)|Amazon FSx for NEtApp ONTAP|
 |||
 |Like a NAS on the cloud where NFS or SMB can be used seamlessly|AWS Storage Gateway File Gateway (S3)|
 |Like a NAS on the cloud for block storage|AWS Storage Gateway Volume Gateway (EBS)|
 |Store **a subset** of on premise data that is frequently accessed|AWS Storage Gateway Volume Cached Volume|
 |Store **entire** on premise data that is frequently accessed|AWS Storage Gateway Volume Stored Volume|
-|Volume SSD that go up to 16000 IOPS|GP2 or GP3 (GP3 is more cost-effective)|
+
+---
+
+### EBS
+
+|Requirement|Service|
+|-----------|-------|
+|General purpose SSD volume that go up to 16000 IOPS|EBS GP2 or GP3 (GP3 is more cost-effective)|
+|High performance SSD volume|EBS IO1 or IO2|
+|Low Cost HDD volume for throughput intensive workloads|EBS ST1|
+|Low Cost HDD volume for less frequently accessed workloads|EBS SC1|
+|EBS volumes types that can be used as boot volumes|GP2, GP3, IO1, IO2|
 |||
-|Read the first 250 bytes of each objects in S3|Use Byte Range Fetch|
-|Increase transfer speed of S3 by transferring files through AWS Edge Location|S3 Transfer Acceleration|
+|Create a fully initialized at creation volume from snapshot (eliminates latency of I/O when accessing a block for the first time)|EBS Fast Snapshot Restore (FSR)|
+|Attach an EBS volume to multiple instance in the same AZ|EBS Multi Attach (only IO1 and IO2)|
 
 ---
 
 ### S3
+
+|Requirement|Service|
+|-----------|-------|
+|Read the first 250 bytes of each objects in S3|Use Byte Range Fetch|
+|Increase transfer speed of S3 by transferring files through AWS Edge Location|S3 Transfer Acceleration|
 
 * **Upload object in a single operation: max 5 GB. BUT it is recommended use multipart upload when the object size is > 100MB.**
 

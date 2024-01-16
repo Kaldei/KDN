@@ -263,17 +263,11 @@ It's an **object** storage: when there is a change to the object, the entire fil
 
 ![Arch_Amazon-Elastic-Block-Store_48.svg](../../attachments/Arch_Amazon-Elastic-Block-Store_48.svg)
 
-#### Basis
-
 Amazon Elastic Block Store is a service that provides block-level storage volumes that you can use with Amazon EC2 instances. If you stop or terminate an Amazon EC2 instance, all the data on the attached EBS volume remains available.
 
 **Block storage** breaks files in small blocks: when a change is made to the file, only modified blocks are re-uploaded.
 
 Multi Attach EBS max to 16 instances.
-
-#### EBS FSR
-
-Amazon EBS Fast Snapshot Restore (FSR) enables you to create a volume from a snapshot that is fully initialized at creation. This eliminates the latency of I/O operations on a block when it is accessed for the first time.
 
 ---
 

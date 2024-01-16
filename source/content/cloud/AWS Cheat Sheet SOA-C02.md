@@ -211,7 +211,7 @@ tags:
 
 |Requirement|Service|
 |-----------|-------|
-|Get insights on the optimal numbers of days to move S3 objects to different storage tiers|S3 Analytics|
+|Get insights on the optimal numbers of days to move S3 objects to different storage tiers|S3 Analytics (Storage Class Analysis)|
 |Create reports on the replication and encryption status on objects in S3|S3 Inventory|
 |When multiple applications are using a bucket so it became complex to manage the bucket policy|S3 Access Points|
 
