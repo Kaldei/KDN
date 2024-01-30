@@ -26,7 +26,10 @@ tags:
 |RPO/RTO happens in real time|Multi Site (Active/Active)|
 |RPO/RTO happens in minutes|Warm Standby|
 |RPO/RTO happens in minutes, lower cost (RPO in seconds and RTO 5-20 min)|Pilot Light|
-|RPO/RTO happens in hours.|Backup and Restore|
+|RPO/RTO happens in hours|Backup and Restore|
+
+* RPO means Recovery Point Objective, it represents the data loss.
+* RTO means Recovery Time Objective, it represents the downtime.
 
 # Analytics
 
@@ -183,19 +186,6 @@ tags:
 
 * AWS offers the ability to add a secondary Index (warning, paid by hour).
 
-# Machine Learning
-
----
-
-### Service / Requirement
-
-|Requirement|Service|
-|-----------|-------|
-|Service that turns text into lifelike speech|Amazon Polly|
-|Natural Language Processing (NLP), to uncover valuable insight and connections|Amazon Comprehend|
-|Extract text from printed text, handwriting, scanned documents|Amazon Textract|
-|Identify objects, people, text, scene and activities image and videos|Amazon Rekognition|
-
 # Management & Governance
 
 ---
@@ -238,9 +228,10 @@ tags:
 |Migrate data (specify data source and an AWS managed service as a destination)|AWS DataSync|
 |SFTP, FTPS or FTP and no changes to the customer’s application|AWS Transfer Family|
 |||
-|Data transfer device and data processing, storage up to 8TB|AWS Snowcone|
+|Data transfer device and data processing, storage up to 8TB|AWS Snowcone HDD|
 |Data transfer device and data processing, storage up to 14TB|AWS Snowcone SSD|
 |Data transfer device and data processing, storage up to 80TB|AWS Snowball Edge|
+|Data transfer device and data processing, storage up to 100PB|AWS Snowmobile|
 
 * **DataSync is the only option that can transfer metadata and file permissions of files.**
 
@@ -333,7 +324,6 @@ tags:
 ### Lambda
 
 * **Lambda execution max duration is 15 min.**
-  reserved c
 * Lambda SnapStart for Java (only Java 11 and Java 17) can improve startup performance for latency-sensitive applications by up to 10x at no extra cost with no changes to your function code.
 
 # Storage
@@ -352,10 +342,14 @@ tags:
 |High Performance Windows file system (compatible with SMB, NTFS, AD, ...)|Amazon FSx for Windows File Server|
 |High Performance ONTAP file system (compatible NFS, SMB, iSCSI)|Amazon FSx for NEtApp ONTAP|
 |||
-|Like a NAS on the cloud where NFS or SMB can be used seamlessly|AWS Storage Gateway File Gateway (S3)|
-|Like a NAS on the cloud for block storage|AWS Storage Gateway Volume Gateway (EBS)|
-|Store **a subset** of on premise data that is frequently accessed|AWS Storage Gateway Volume Cached Volume|
-|Store **entire** on premise data that is frequently accessed|AWS Storage Gateway Volume Stored Volume|
+|On premise VM that serve as a bridge to seamlessly access data stored on AWS (act kind like a NAS)|AWS Storage Gateway|
+|Access data stored on S3 form on premise like an NFS or SMB compatible file share|S3 File Gateway|
+|Access data stored on FSx form on premise like a Windows compatible file share (SMB, NTFS, AD)|FSx File Gateway|
+|Access data stored on S3 backed by EBS snapshots from on premise a block storage (iSCI)|Volume Gateway|
+|Volume Gateway where **a subset** of data (frequently accessed) is stored on premise|Volume Gateway Cached Volume|
+|Volume Gateway where **the entire** data is stored on premise with a scheduled backup to S3|Volume Gateway Stored Volume|
+
+* Storage Gateway also exists as a hardware appliance
 
 ---
 
