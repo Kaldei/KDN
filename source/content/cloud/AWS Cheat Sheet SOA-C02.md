@@ -151,6 +151,7 @@ tags:
 |One time patch a fleet of EC2 instances|SSM Run Command|
 |Automatically patch a fleet of EC2 instances|SSM Patch Manager|
 |||
+|Policy that needs to be assigned to an EC2 instance to connect via SSM|AmazonSSMManagedInstanceCore|
 |Instance is not able to get SSM Parameters even with the right IAM permissions|Install the SSM agent on the instance|
 
 # Networking and Content Delivery
