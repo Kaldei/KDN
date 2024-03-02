@@ -1,4 +1,7 @@
 ---
+title: Docker CLI
+summary: A note about the Docker CLI.
+description: A note about the Docker CLI.
 tags:
   - docker
 ---
