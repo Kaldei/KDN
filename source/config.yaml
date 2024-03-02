@@ -50,19 +50,23 @@ menu:
       weight: 3
       identifier: IaC
       url: /iac/
-    - name: CI/CD
+    - name: Containers
       weight: 4
+      identifier: Containers
+      url: /containers/
+    - name: CI/CD
+      weight: 5
       identifier: CI/CD
       url: /cicd/
     - name: Scripting
-      weight: 5
+      weight: 6
       identifier: Scripting
       url: /scripting/
     - name: Search
-      weight: 6
+      weight: 7
       identifier: search
       url: /search/
     - name: About
-      weight: 7
+      weight: 8
       identifier: about
       url: /about/
