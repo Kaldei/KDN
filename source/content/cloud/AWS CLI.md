@@ -65,6 +65,12 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws configure list  --profile</font> myProfileName<font color=red></font>**</br>
  > Show details credentials.
 
+---
+
+### Query
+
+aws glue get-jobs --query 'Jobs\[? WorkerType==`Standard`\].{a_JobName:Name,b_WorkerType:WorkerType,c_MaxCapacity:MaxCapacity,d_MaxConcurrentRuns:ExecutionProperty.MaxConcurrentRuns}' --out table
+
 # IAM
 
 ---
