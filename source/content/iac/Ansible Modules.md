@@ -122,7 +122,6 @@ handlers:
 
 ### Docker
 
-\#docker 
 
 ````yaml
 - name: Pull Docker Image

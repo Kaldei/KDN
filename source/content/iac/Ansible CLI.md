@@ -14,13 +14,6 @@ tags:
 
 
  > 
- > **<font color=red>ansible-inventory -i</font> myHostsFile <font color=red>--list</font>**</br>
- > List hosts in the inventory.
- > 
- > **<font color=red>ansible-inventory -i</font> myHostsFile <font color=red>--list --yaml --output</font> myHostsFile.yml**</br>
- > Convert inventory file format form INI to YAML.
-
- > 
  > **<font color=red>ansible all -m ping</font>**</br>
  > Check if all hosts (specified in the inventory file) are reachable.
  > 
@@ -30,6 +23,23 @@ tags:
  > 
  > **<font color=red>ansible-playbook</font> myPlaybook.yml**</br>
  > Execute a playbook.
+
+---
+
+### Inventory
+
+
+ > 
+ > **<font color=red>ansible-inventory -i</font> myHostsFile <font color=red>--list</font>**</br>
+ > List hosts in the inventory.
+ > 
+ > **<font color=red>ansible-inventory -i</font> myHostsFile <font color=red>--list --yaml --output</font> myHostsFile.yml**</br>
+ > Convert inventory file format form INI to YAML.
+
+---
+
+### Vault
+
 
  > 
  > **<font color=red>ansible-vault create</font> secret.yml**</br>
