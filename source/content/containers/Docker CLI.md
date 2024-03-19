@@ -78,7 +78,7 @@ tags:
  > **<font color=red>docker image history</font> myImage**</br>
  > Show image layers.
  > 
- > **<font color=red>docker image history</font> myImage <font color=red>--no-trunc --format json | tac | jq -r '.CreatedBy</font>'**</br>
+ > **<font color=red>docker image history</font> myImage <font color=red>--no-trunc --format json | tac | jq -r '.CreatedBy'</font>**</br>
  > Show image layers commands.
 
 ---

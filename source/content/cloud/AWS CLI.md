@@ -69,7 +69,17 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 ### Query
 
-aws glue get-jobs --query 'Jobs\[? WorkerType==`Standard`\].{a_JobName:Name,b_WorkerType:WorkerType,c_MaxCapacity:MaxCapacity,d_MaxConcurrentRuns:ExecutionProperty.MaxConcurrentRuns}' --out table
+
+ > 
+ > **<font color=red>--query '</font>Jobs<font color=red>\[?</font> WorkerType<font color=red>==\`</font>Standard<font color=red>\`\]'</font>**</br>
+ > Filter results based on a condition.
+
+ > 
+ > **<font color=red>--query '</font>Jobs<font color=red>\[\].\[</font>Name<font color=red>,</font>WorkerType<font color=red>\]'</font>**</br>
+ > Only returning selected properties.
+ > 
+ > **<font color=red>--query '</font>Jobs<font color=red>\[\].{</font>JobName<font color=red>:</font>Name<font color=red>,</font>WorkerType<font color=red>:</font>WorkerType<font color=red>}' --out table</font>**</br>
+ > Only return selected properties as a table and with custom names for columns.
 
 # IAM
 
