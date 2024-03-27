@@ -45,7 +45,7 @@ tags:
  > Check for syntax errors in configuration files.
 
  > 
- > **<font color=red>terraform init -backend=false</font>**</br>
+ > **<font color=red>terraform init -backend=false</font>**
  > **<font color=red>terraform validate</font>**</br>
  > Validate the configuration withour accessing the backend.
 
@@ -60,7 +60,6 @@ tags:
 
 ### Plan
 
-**Warning: Terraform plan files can contain sensitive data. Never commit a plan file to version control.**
 
  > 
  > **<font color=red>terraform plan</font>**</br>
@@ -148,6 +147,11 @@ Plan output signification:
 
 ### Browse State
 
+**Warning: State files can contain sensitive data. Never commit a State file to version control system.**
+
+ > 
+ > **<font color=red>terraform state pull</font>**</br>
+ > Return the full state.
 
  > 
  > **<font color=red>terraform state list</font>**</br>
@@ -158,38 +162,26 @@ Plan output signification:
 
 ---
 
-### Update State
+### Modify State
 
 
  > 
  > **<font color=red>terraform state mv</font>  my_old_resource my_new_resource**</br>
  > Rename a resource.
-
+ > 
+ > **<font color=red>terraform state remove</font> myResourceType.myResourceName**</br>
+ > Remove resource from state (the resource will not be destroyed, just not managed by Terraform anymore).
  > 
  > **<font color=red>terraform state push</font>  my_state.json**</br>
- > Overwrite remote state with a local state file (this should be avoided).
-
----
-
-### Import
-
-
- > 
- > **<font color=red>terraform refresh</font>**</br>
- > Update state to match actual remote resources. Deprecated because it is unsafe. It is an alias for `terraform apply -refresh-only -auto-approve`.
+ > Overwrite remote state with a local state file (this should be avoided if possible).
 
  > 
  > **<font color=red>terraform import</font> myResourceType.myResourceName cloudResourceID**</br>
  > Import a resource (add it to the state). The resource has to be defines in a tf file.
 
----
-
-### Remove
-
-
  > 
- > **<font color=red>terraform state remove</font> myResourceType.myResourceName**</br>
- > Remove resource from state (the resource still exists on the target).
+ > **<font color=red>terraform refresh</font>**</br>
+ > Update state to match actual remote resources. Deprecated because it is unsafe. It is an alias for `terraform apply -refresh-only -auto-approve`.
 
 ---
 
