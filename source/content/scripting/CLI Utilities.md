@@ -137,7 +137,7 @@ tags:
  > **<font color=red>diff</font> myFile1 myFile2**</br>
  > Return differences between the two files.
 
-# JSON Manipulation
+# Json Manipulation
 
 ---
 
