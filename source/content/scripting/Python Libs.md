@@ -47,6 +47,15 @@ df = df[['my_column_name_3', 'my_column_name_1', 'my_column_name_4']]
 
 ---
 
+### Rename Columns
+
+
+````python
+df = df.rename(columns={'column_name_1': 'my_column_name_1'})
+````
+
+---
+
 ### Drop Columns
 
 
@@ -56,7 +65,7 @@ df = df.drop(columns=['my_column_name_3', 'my_column_name_4'])
 
 ---
 
-### Sort
+### Sort Values
 
 
 ````python
