@@ -1,7 +1,7 @@
 ---
-title: CLI Utilities
-summary: Usefull CLI utilities for scripting.
-description: Usefull CLI utilities for scripting.
+title: CLI Tools
+summary: Useful CLI tools and utilities for scripting.
+description: Useful CLI tools and utilities for scripting.
 tags:
   - cli_utils
 ---

@@ -54,7 +54,7 @@ tags:
 
 
  > 
- > **<font color=red>-u</font>**</br>
+ > **<font color=red>-i</font>**</br>
  > Specify inventory file to use.
 
  > 
