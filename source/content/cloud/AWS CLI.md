@@ -141,6 +141,17 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws ec2 describe-instances --output text --profile</font> myProfileName**</br>
  > Listing all EC2 instances running within a profile.
 
+# EKS
+
+---
+
+### Basis
+
+
+ > 
+ > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
+ > Update `~/.kube/config` file to be able to connect to the cluster.
+
 # Lambda
 
 ---
