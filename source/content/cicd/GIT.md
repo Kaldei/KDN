@@ -48,9 +48,6 @@ tags:
  > 
  > **<font color=red>git clone</font> \[REPO_URL\]**</br>
  > Clone remote repository to local machine.
- > 
- > **<font color=red>git add submodule</font> \[REPO_URL\]**</br>
- > Add a submodule (a repo in a repo). Use `--recurse-submodule` to include submodule when using git commands.
 
  > 
  > **<font color=red>git status</font>**</br>
@@ -141,6 +138,22 @@ tags:
  > Delete stash.
 
 ## Submodule
+
+
+ > 
+ > **<font color=red>git submodule status</font>**</br>
+ > Show if any submodules are configured in the current repo. A submodule is a repo in a repo.
+
+ > 
+ > **<font color=red>git add submodule</font> \[SUBMODULE_REPO_URL\]**</br>
+ > Add a submodule . Use `--recurse-submodule` to include submodule when using git commands.
+ > 
+ > **<font color=red>git submodule update --init --remote --rebase</font>**</br>
+ > Update submodule version (use the last commit of the submodule).
+
+ > 
+ > **<font color=red>git clone --recurse-submodule</font>**</br>
+ > Clone repo and it's submodules.
 
 ## LFS
 
