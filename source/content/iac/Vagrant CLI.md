@@ -81,6 +81,8 @@ https://developer.hashicorp.com/vagrant/docs/providers/vmware/configuration
 For it to work, it is required to install Vagrant VMware Utility:
 https://developer.hashicorp.com/vagrant/docs/providers/vmware/vagrant-vmware-utility
 
+---
+
 ### VMware ESXi
 
 https://github.com/josenk/vagrant-vmware-esxi
