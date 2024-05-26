@@ -6,16 +6,22 @@ tags:
   - git
 ---
 
-## Resource
+# Resources
 
 * [https://ohshitgit.com/en](https://ohshitgit.com/en)
 * [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
 
-## HEAD
+# Basis
+
+---
+
+### HEAD
 
 `HEAD` is the location in the commit tree. It's a "pointer" to a commit. It is possible to move it with `git checkout`.
 
-## Config
+---
+
+### Config
 
 
  > 
@@ -39,7 +45,9 @@ tags:
  > **<font color=red>git config --global http.sslBackend schannel</font>**</br>
  > Switch SSL Backend from OpenSSL (default) to Schannel (Windows built-in). This is useful in an organization with enterprise-managed certificates.
 
-## Basis
+---
+
+### Workflow
 
 
  > 
@@ -73,7 +81,11 @@ tags:
  > **<font color=red>git push</font>**</br>
  > Push commits to remote repository.
 
-## Branch
+# Branching
+
+---
+
+### Branch
 
 
  > 
@@ -91,7 +103,9 @@ tags:
  > **<font color=red>git merge</font> myBranch**</br>
  > Merge myBranch to current branch.
 
-## Checkout
+---
+
+### Checkout
 
 
  > 
@@ -119,7 +133,11 @@ tags:
  > **<font color=red>git checkout</font> HEAD^2**</br>
  > Moves HEAD 1 commit back from current HEAD in the 2nd parent of a merge.
 
-## Stash
+# Git Tools
+
+---
+
+### Stash
 
 
  > 
@@ -137,7 +155,9 @@ tags:
  > **<font color=red>git stash drop</font> stashIndex**</br>
  > Delete stash.
 
-## Submodule
+---
+
+### Submodule
 
 
  > 
@@ -155,7 +175,9 @@ tags:
  > **<font color=red>git clone --recurse-submodule</font>**</br>
  > Clone repo and it's submodules.
 
-## LFS
+---
+
+### LFS
 
 
  > 
@@ -176,7 +198,11 @@ tags:
  > **<font color=red>git add .gitattributes</font>**</br>
  > Add LFS config.
 
-## History
+# Commit History
+
+---
+
+### Log
 
 
  > 
@@ -202,7 +228,9 @@ tags:
  > **<font color=red>git reflog</font>**</br>
  > Show local history with IDs.
 
-## Rewrite History
+---
+
+### History Rewrite
 
 
  > 
@@ -239,7 +267,9 @@ tags:
  > **<font color=red>git rebase --abort</font>**</br>
  > Abort the rebase (useful in case of issues).
 
-## Advanced Rewrite History
+---
+
+### Advanced History Rewrite
 
 #### Change Commits Author Name
 
