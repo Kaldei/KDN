@@ -194,6 +194,10 @@ Plan output signification:
 
 # Environment Variables
 
+---
+
+### Log
+
 
  > 
  > **<font color=red>export TF_LOG=trace</font>**</br>
@@ -202,10 +206,20 @@ Plan output signification:
  > **<font color=red>export TF_LOG=off</font>**</br>
  > Disable detailed logs.
 
- > 
- > **<font color=red>export TF_CLI_CONFIG_FILE="</font>$HOME/.terraformrc-custom<font color=red>"</font>**</br>
- > Set the location of the CLI config file.
+---
+
+### Input
+
 
  > 
  > **<font color=red>export TF_INPUT=0</font>**</br>
  > Disable prompts for variables that haven't had their values specified (same as `-input=false`).
+
+---
+
+### Config
+
+
+ > 
+ > **<font color=red>export TF_CLI_CONFIG_FILE="</font>$HOME/.terraformrc-custom<font color=red>"</font>**</br>
+ > Set the location of the CLI config file.

