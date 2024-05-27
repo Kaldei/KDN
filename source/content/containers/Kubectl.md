@@ -172,6 +172,9 @@ tags:
 
 
  > 
+ > **<font color=red>kubectl delete pod</font> my-pod <font color=red></font>**</br>
+ > Delete Pod.
+ > 
  > **<font color=red>kubectl delete pod</font> my-pod  <font color=red>--now</font>**</br>
  > Delete Pod now.
  > 
