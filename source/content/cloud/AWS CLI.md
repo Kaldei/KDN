@@ -145,7 +145,7 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 ---
 
-### Basis
+### Kubeconfig
 
 
  > 

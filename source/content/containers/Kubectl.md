@@ -18,6 +18,22 @@ tags:
  > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**</br>
  > Export Kubeconfig path.
 
+ > 
+ > **<font color=red>kubectl config current-context</font>**</br>
+ > Display current kubeconfig.
+ > 
+ > **<font color=red>kubectl config unset current-context</font>**</br>
+ > Unset current kubeconfig.
+
+---
+
+### AWS EKS
+
+
+ > 
+ > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
+ > Update `~/.kube/config` file to be able to connect to the cluster.
+
 # Nodes
 
 ---
