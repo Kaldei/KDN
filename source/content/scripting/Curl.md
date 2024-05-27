@@ -2,6 +2,8 @@
 title: CURL
 summary: A command line tool and library for transferring data with URL syntax.
 description: A command line tool and library for transferring data with URL syntax.
+tags:
+  - system
 ---
 
 **[https://github.com/curl/curl](https://github.com/curl/curl)**
@@ -50,7 +52,7 @@ description: A command line tool and library for transferring data with URL synt
  > **<font color=red>-H '</font>myHeader: myValue<font color=red>'</font>**</br>
  > Set Header.
 
-# Exemples
+# Examples
 
 ---
 
