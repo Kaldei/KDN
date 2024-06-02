@@ -10,29 +10,6 @@ tags:
 
 ---
 
-### Monitoring
-
-
- > 
- > **<font color=red>docker ps</font>**</br>
- > Shows containers running.
- > 
- > **<font color=red>docker ps -a</font>**</br>
- > Shows all containers.
- > 
- > **<font color=red>docker stats</font>**</br>
- > Stats about running containers.
-
- > 
- > **<font color=red>docker volume ls</font>**</br>
- > Show volumes.
-
- > 
- > **<font color=red>docker system df</font>**</br>
- > Show used host disk space (images, containers, volumes and build cache).
-
----
-
 ### Context
 
 
@@ -46,6 +23,25 @@ tags:
  > 
  > **<font color=red>docker context create</font> myRemoteContext <font color=red>--docker "host=</font>ssh://my.remote.docker.ip<font color=red>"</font>**</br>
  > Create a remote context (connect via ssh to execute Docker commands).
+
+---
+
+### Monitoring
+
+
+ > 
+ > **<font color=red>docker ps</font>**</br>
+ > Show running containers.
+ > 
+ > **<font color=red>docker ps -a</font>**</br>
+ > Show all containers.
+ > 
+ > **<font color=red>docker stats</font>**</br>
+ > Stats about running containers.
+
+ > 
+ > **<font color=red>docker volume ls</font>**</br>
+ > Show volumes.
 
 # Images
 
