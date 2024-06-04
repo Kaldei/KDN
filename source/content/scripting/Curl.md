@@ -28,18 +28,27 @@ tags:
  > **<font color=red>-s</font>**</br>
  > Silent (do not print curl info).
  > 
- > **<font color=red>-k</font>**</br>
- > Ignore HTTPS Errors.
- > 
  > **<font color=red>-i</font>**</br>
  > Show response Headers.
+
  > 
  > **<font color=red>-o</font> myFile**</br>
  > Save response in a file.
 
  > 
+ > **<font color=red>-k</font>**</br>
+ > Ignore HTTPS Errors.
+ > 
+ > **<font color=red>--tls-max</font> 1.2**</br>
+ > Set the maximum TLS version.
+
+ > 
  > **<font color=red>-u</font> admin<font color=red>:</font>admin**</br>
  > Provide Credentials.
+
+ > 
+ > **<font color=red>-H '</font>myHeader: myValue<font color=red>'</font>**</br>
+ > Set Header.
 
  > 
  > **<font color=red>-X</font> POST**</br>
@@ -47,10 +56,6 @@ tags:
  > 
  > **<font color=red>-d</font>**</br>
  > POST data.
-
- > 
- > **<font color=red>-H '</font>myHeader: myValue<font color=red>'</font>**</br>
- > Set Header.
 
 # Examples
 
