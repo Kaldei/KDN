@@ -96,6 +96,19 @@ tags:
 
 ---
 
+### Update
+
+
+ > 
+ > **<font color=red>kubctl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
+ > Change the image used in a Deployment.
+
+ > 
+ > \*\*<font color=red>kubctl rollout status deployment/</font>my-deployment \*\*</br>
+ > Show rollout status.
+
+---
+
 ### Delete
 
 
