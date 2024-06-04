@@ -168,6 +168,19 @@ tags:
 
 ---
 
+### Logs
+
+
+ > 
+ > **<font color=red>kubectl logs</font> my-pod <font color=red>-c</font> my-container**</br>
+ > Show logs of the specified container (in case there is only one container `-c` is not required).
+
+ > 
+ > **<font color=red>kubectl logs  -f</font> my-pod**</br>
+ > Show and follows logs.
+
+---
+
 ### Delete
 
 
