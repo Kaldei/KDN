@@ -142,6 +142,15 @@ tags:
 
 ### Port Forwarding
 
+
+ > 
+ > **<font color=red>kubectl proxy</font>**</br>
+ > Create a proxy between localhost and the Kubernetes API server.
+
+ > 
+ > **<font color=red>kubectl port-forward</font> my-pod \[HOST_PORT\]:\[POD_PORT\]**</br>
+ > Create a port forward to the specified pod.
+
 # Pods
 
 ---
