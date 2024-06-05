@@ -32,8 +32,8 @@ tags:
  > Show response Headers.
 
  > 
- > **<font color=red>-o</font> myFile**</br>
- > Save response in a file.
+ > **<font color=red>-L</font>**</br>
+ > Follow redirections.
 
  > 
  > **<font color=red>-k</font>**</br>
@@ -56,6 +56,10 @@ tags:
  > 
  > **<font color=red>-d</font>**</br>
  > POST data.
+
+ > 
+ > **<font color=red>-o</font> myFile**</br>
+ > Save response in a file.
 
 # Examples
 
