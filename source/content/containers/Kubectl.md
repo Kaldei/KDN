@@ -198,8 +198,17 @@ tags:
 
 
  > 
+ > **<font color=red>kubectl exec -it</font> my-pod <font color=red>-c</font> my-container <font color=red>--</font> /bin/bash**</br>
+ > Exec a command in a container (when there is only one container `-c` is not required).
+
+---
+
+### Logs
+
+
+ > 
  > **<font color=red>kubectl logs</font> my-pod <font color=red>-c</font> my-container**</br>
- > Show logs of the specified container (in case there is only one container `-c` is not required).
+ > Show logs of the specified container (when there is only one container `-c` is not required).
 
  > 
  > **<font color=red>kubectl logs  -f</font> my-pod**</br>
