@@ -25,6 +25,10 @@ tags:
  > **<font color=red>kubectl config unset current-context</font>**</br>
  > Unset current kubeconfig.
 
+ > 
+ > **<font color=red>kubectl -context</font> my-context-name -n <font color=red>my-namespace</font> get pods**</br>
+ > Set context and namespace in a command.
+
 ---
 
 ### AWS EKS
