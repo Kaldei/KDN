@@ -180,6 +180,10 @@ tags:
  > **<font color=red>kubectl get pod</font> my-pod**</br>
  > Get info about one specific pod.
 
+ > 
+ > **<font color=red>kubectl top pods</font>**</br>
+ > Show metrics about pods (requires Metrics Server to be installed on the cluster).
+
 ---
 
 ### Run
