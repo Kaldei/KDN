@@ -52,6 +52,15 @@ tags:
  > **<font color=red>kubectl describes nodes</font> myNode**</br>
  > Return information about the node.
 
+---
+
+### Metrics
+
+
+ > 
+ > **<font color=red>kubectl top nodes</font>**</br>
+ > Show nodes metrics (`metrics-server` has to be installed on the cluster).
+
 # Namespaces
 
 ---
@@ -198,7 +207,7 @@ tags:
 
 ---
 
-### Logs
+### Exec
 
 
  > 
@@ -217,6 +226,15 @@ tags:
  > 
  > **<font color=red>kubectl logs  -f</font> my-pod**</br>
  > Show and follows logs.
+
+---
+
+### Metrics
+
+
+ > 
+ > **<font color=red>kubectl top pods</font>**</br>
+ > Show pods metrics (`metrics-server` has to be installed on the cluster).
 
 ---
 
