@@ -117,7 +117,7 @@ tags:
  > Change the image used in a Deployment.
 
  > 
- > \*\*<font color=red>kubctl rollout status deployment/</font>my-deployment \*\*</br>
+ > **<font color=red>kubctl rollout status deployment/</font>my-deployment**</br>
  > Show rollout status.
 
 ---
@@ -253,3 +253,19 @@ tags:
  > 
  > **<font color=red>kubectl delete pods --all</font>**</br>
  > Delete all Pods.
+
+# Misc
+
+---
+
+### 
+
+
+ > 
+ > **<font color=red>kubectl get pods --all-namespaces -o jsonpath="{.items\[*\].spec.containers\[*\].image}" | \ </font>**</br> 
+ > **<font color=red>tr -s '*:space:*' '\n' | \</font>**</br>
+  
+ > **<font color=red>sort | \</font>**</br>
+  
+ > **<font color=red>uniq -c</font>**</br>
+ > Retrieve all images used by pods in the cluster.
