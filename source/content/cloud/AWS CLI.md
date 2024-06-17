@@ -152,6 +152,10 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
  > Update `~/.kube/config` file to be able to connect to the cluster.
 
+---
+
+### Addons
+
 # Lambda
 
 ---
