@@ -199,6 +199,14 @@ terraform {
 }
 ````
 
+#### Versions Constraints
+
+````hcl
+version = "= 3.0.0" # Fix the version
+version = ">= 3.0.0" # Set a minimum version
+versiom = "~> 3.0.0" # Allows for minor upgrades
+````
+
 ---
 
 ### Provider
