@@ -84,7 +84,7 @@ tags:
  > **<font color=red>kubectl create namespace</font> myNameSpace**</br>
  > Create a namespace.
 
-# Deployments
+# Deployment
 
 ---
 
@@ -128,6 +128,17 @@ tags:
  > 
  > **<font color=red>kubctl delete -f</font> myDeployment.yml**</br>
  > Delete deployment.
+
+# ReplicaSet
+
+---
+
+### Scale
+
+
+ > 
+ > **<font color=red>kubctl scale</font> rs/my-replica-set <font color=red>--replicas=</font>3**</br>
+ > Change the number of replicas.
 
 # Ingress
 
@@ -262,10 +273,8 @@ tags:
 
 
  > 
- > **<font color=red>kubectl get pods --all-namespaces -o jsonpath="{.items\[*\].spec.containers\[*\].image}" | \ </font>**</br> 
- > **<font color=red>tr -s '*:space:*' '\n' | \</font>**</br>
-  
- > **<font color=red>sort | \</font>**</br>
-  
- > **<font color=red>uniq -c</font>**</br>
+ > **<font color=red>kubectl get pods --all-namespaces -o jsonpath="{.items\[*\].spec.containers\[*\].image}" | \ </font>**
+ > **<font color=red>tr -s '*:space:*' '\n' | \ </font>**  
+ > **<font color=red>sort | \ </font>**
+ > **<font color=red>uniq -c </font>**</br>
  > Retrieve all images used by pods in the cluster.
