@@ -129,17 +129,6 @@ tags:
  > **<font color=red>kubctl delete -f</font> myDeployment.yml**</br>
  > Delete deployment.
 
-# ReplicaSet
-
----
-
-### Scale
-
-
- > 
- > **<font color=red>kubctl scale</font> rs/my-replica-set <font color=red>--replicas=</font>3**</br>
- > Change the number of replicas.
-
 # Ingress
 
 ---
@@ -206,18 +195,6 @@ tags:
 
 ---
 
-### Run
-
-
- > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>httpd:alpine <font color=red>--port=</font>8080**</br>
- > Start Apache Pod.
- > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--rm -it --image=</font>httpd <font color=red>-- bash</font>**</br>
- > Start Apache Pod with interactive Bash (killed when exited).
-
----
-
 ### Exec
 
 
@@ -265,11 +242,52 @@ tags:
  > **<font color=red>kubectl delete pods --all</font>**</br>
  > Delete all Pods.
 
+# Imperative Commands
+
+---
+
+### Run
+
+
+ > 
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>httpd:alpine <font color=red>--port=</font>8080**</br>
+ > Start Apache Pod.
+ > 
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--rm -it --image=</font>httpd <font color=red>-- bash</font>**</br>
+ > Start Apache Pod with interactive Bash (killed when exited).
+
+---
+
+### Create
+
+
+ > 
+ > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
+ > Create a deployment iwth 4 replicas.
+
+---
+
+### Scale
+
+
+ > 
+ > **<font color=red>kubctl scale</font> rs/my-replica-set <font color=red>--replicas=</font>3**</br>
+ > Change the number of replicas.
+
+---
+
+### Expose
+
+
+ > 
+ > **<font color=red>kubectl expose</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>80 <font color=red>--name</font> my-service**</br>
+ > Create a serivce to expose a pod.
+
 # Misc
 
 ---
 
-### 
+### Get All Images
 
 
  > 
