@@ -263,7 +263,7 @@ tags:
 
  > 
  > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
- > Create a deployment iwth 4 replicas.
+ > Create a deployment with 4 replicas.
 
 ---
 
