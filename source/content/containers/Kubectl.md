@@ -38,7 +38,7 @@ tags:
  > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
  > Update `~/.kube/config` file to be able to connect to the cluster.
 
-# Nodes
+# Node
 
 ---
 
@@ -61,7 +61,7 @@ tags:
  > **<font color=red>kubectl top nodes</font>**</br>
  > Show nodes metrics (`metrics-server` has to be installed on the cluster).
 
-# Namespaces
+# Namespace
 
 ---
 
@@ -84,7 +84,7 @@ tags:
  > **<font color=red>kubectl create namespace</font> myNameSpace**</br>
  > Create a namespace.
 
-# Deployments
+# Deployment
 
 ---
 
@@ -97,7 +97,16 @@ tags:
 
 ---
 
-### Apply
+### Create (imperative)
+
+
+ > 
+ > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
+ > Create a deployment with 4 replicas.
+
+---
+
+### Apply (from file)
 
 
  > 
@@ -140,7 +149,7 @@ tags:
  > **<font color=red>kubectl get ingress</font>**</br>
  > Show ingress.
 
-# Services
+# Service
 
 ---
 
@@ -150,6 +159,18 @@ tags:
  > 
  > **<font color=red>kubectl get services</font>**</br>
  > Return active services.
+
+---
+
+### Expose (imperative)
+
+
+ > 
+ > **<font color=red>kubectl expose</font> my-pod <font color=red>--type=</font>ClusterIP <font color=red>--port=</font>80 <font color=red>--name</font> my-service**</br>
+ > Create a service of type ClusterIP.
+ > 
+ > **<font color=red>kubectl expose</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>80 <font color=red>--name</font> my-service**</br>
+ > Create a service of type NodePort.
 
 ---
 
@@ -164,7 +185,7 @@ tags:
  > **<font color=red>kubectl port-forward</font> my-pod \[HOST_PORT\]:\[POD_PORT\]**</br>
  > Create a port forward to the specified pod.
 
-# Pods
+# Pod
 
 ---
 
@@ -192,6 +213,18 @@ tags:
  > 
  > **<font color=red>kubectl top pods</font>**</br>
  > Show metrics about pods (requires Metrics Server to be installed on the cluster).
+
+---
+
+### Run (imperative)
+
+
+ > 
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>httpd:alpine <font color=red>--port=</font>8080**</br>
+ > Start Apache Pod.
+ > 
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--rm -it --image=</font>httpd <font color=red>-- bash</font>**</br>
+ > Start Apache Pod with interactive Bash (killed when exited).
 
 ---
 
@@ -241,38 +274,6 @@ tags:
  > 
  > **<font color=red>kubectl delete pods --all</font>**</br>
  > Delete all Pods.
-
-# Imperative
-
----
-
-### Run
-
-
- > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>httpd:alpine <font color=red>--port=</font>8080**</br>
- > Start Apache Pod.
- > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--rm -it --image=</font>httpd <font color=red>-- bash</font>**</br>
- > Start Apache Pod with interactive Bash (killed when exited).
-
----
-
-### Create
-
-
- > 
- > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
- > Create a deployment with 4 replicas.
-
----
-
-### Service
-
-
- > 
- > **<font color=red>kubectl expose</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>80 <font color=red>--name</font> my-service**</br>
- > Create a serivce to expose a pod.
 
 # Misc
 
