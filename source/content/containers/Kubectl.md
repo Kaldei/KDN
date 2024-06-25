@@ -178,10 +178,6 @@ tags:
 
 
  > 
- > **<font color=red>kubectl proxy</font>**</br>
- > Create a proxy between localhost and the Kubernetes API server.
-
- > 
  > **<font color=red>kubectl port-forward</font> my-pod \[HOST_PORT\]:\[POD_PORT\]**</br>
  > Create a port forward to the specified pod.
 
@@ -279,7 +275,7 @@ tags:
 
 ---
 
-### 
+### Get all Images
 
 
  > 
@@ -288,3 +284,12 @@ tags:
  > **<font color=red>sort | \ </font>**
  > **<font color=red>uniq -c </font>**</br>
  > Retrieve all images used by pods in the cluster.
+
+---
+
+### Expose Kube-apiserver
+
+
+ > 
+ > **<font color=red>kubectl proxy</font>**</br>
+ > Expose Kube-apiserver to localhost.
