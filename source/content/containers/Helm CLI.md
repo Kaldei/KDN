@@ -16,24 +16,29 @@ tags:
 
 
  > 
- > **<font color=red>helm search repo</font> my-keyword**</br>
- > Find repositories based on a keyword.
+ > **<font color=red>helm repo list</font>**</br>
+ > Show available chart repos.
+
  > 
- > **<font color=red>helm repo add</font> my-repo-name https://my-repo-address**</br>
+ > **<font color=red>helm repo add</font> stable https://charts.helm.sh/stable**</br>
+ > Add standard stable repo.
+ > 
+ > **<font color=red>helm repo add</font> my-repo-name https://my-repo-address/**</br>
  > Add source repo to local.
+
+ > 
+ > **<font color=red>helm repo update</font>**</br>
+ > Grab latest charts in the repos.
+
+ > 
+ > **<font color=red>helm search repo</font> my-keyword**</br>
+ > Find charts in repositories based on a keyword.
 
 ---
 
 ### Local Repo
 
 
- > 
- > **<font color=red>helm repo update</font>**</br>
- > Grab latest list of available chart repos.
-
- > 
- > **<font color=red>helm repo list</font>**</br>
- > Show local configured chart repos.
 
 # Chart
 
@@ -94,6 +99,18 @@ tags:
  > 
  > **<font color=red>--version</font> 1.2.3**</br>
  > Install specific version.
+ > 
+ > **<font color=red>--create-namespace</font>**</br>
+ > Create namespace if do not exist.
+
+---
+
+### Upgrade
+
+
+ > 
+ > **<font color=red>helm upgrade</font> my-release-name my-chart <font color=red>-n</font> my-namespace**</br>
+ > Upgrade helm release.
 
 ---
 

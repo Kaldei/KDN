@@ -142,6 +142,10 @@ do
 done < myFile
 ````
 
+ > 
+ > **<font color=red>while read</font> line<font color=red>; do</font> echo $line<font color=red>; done \<</font> myFile.txt**</br>
+ > One liner version of while loop to read file.
+
 # Redirections
 
 ---

@@ -133,6 +133,18 @@ tags:
  > **<font color=red>git checkout</font> HEAD^2**</br>
  > Moves HEAD 1 commit back from current HEAD in the 2nd parent of a merge.
 
+---
+
+### Remote Branch
+
+
+ > 
+ > **<font color=red>git remote add</font> origin <font color=red>git@github.com:</font>myUser<font color=red>/</font>myRepo<font color=red>.git</font>**</br>
+ > Add remote branch via ssh (origin is a name, it can be anything).
+ > 
+ > **<font color=red>git branch</font> myBranch <font color=red>--set-upstream-to=</font>origin<font color=red>/</font>myBranch**</br>
+ > Set upstream for a branch.
+
 # Git Tools
 
 ---
@@ -183,20 +195,26 @@ tags:
  > 
  > **<font color=red>git lfs install</font>**</br>
  > Initiate LFS for the repo.
-
- > 
- > **<font color=red>git lfs ls-files</font>**</br>
- > Show currently tracked files.
- > 
- > **<font color=red>git lfs status</font>**</br>
- > Show staged files.
-
  > 
  > **<font color=red>git lfs track "</font>\*.png<font color=red>"</font>**</br>
  > Update LFS config to track all new PNG files added to the repo.
  > 
  > **<font color=red>git add .gitattributes</font>**</br>
  > Add LFS config.
+
+ > 
+ > **<font color=red>git lfs status</font>**</br>
+ > Show staged files.
+
+ > 
+ > **<font color=red>git lfs ls-files</font>**</br>
+ > Show LFS files on current branch.
+ > 
+ > **<font color=red>git lfs ls-files -s</font>**</br>
+ > Show LFS files and size on current branch.
+ > 
+ > **<font color=red>git lfs ls-files -a</font>**</br>
+ > Show LFS files on the full history (after a file is uploaded on LFS it will [still exist]((https://docs.github.com/en/repositories/working-with-files/managing-large-files/removing-files-from-git-large-file-storage)) on the remote storage even if its reference is removed in the HEAD.
 
 # Commit History
 
@@ -288,6 +306,7 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
                 GIT_AUTHOR_EMAIL="myEmail@email.com";
                 GIT_COMMITTER_NAME="myNewName";
                 GIT_COMMITTER_EMAIL="myEmail@email.com";
+                GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE;
                 git commit-tree "$@";
         else
                 git commit-tree "$@";
@@ -295,7 +314,7 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
 ````
 
  > 
- > Change author and committer names for each commit authored by a specific name.
+ > Change author and committer names for each commit authored by a specific name (keep original commit date).
 
  > 
  > **<font color=red>git push --all origin --force</font>**</br>
@@ -321,7 +340,7 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
 ````
 
  > 
- > Sign each commits authored by a specific name.
+ > Sign each commits authored by a specific user.
 
  > 
  > **<font color=red>git push --all origin --force</font>**</br>
