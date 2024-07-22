@@ -6,6 +6,43 @@ tags:
   - Python
 ---
 
+# Virtual Env
+
+---
+
+### Create Venv
+
+
+ > 
+ > **<font color=red>python -m venv</font> myVenv/**</br>
+ > Create Venv.
+
+---
+
+### Windows
+
+
+ > 
+ > **myVenv<font color=red>/scripts/activate</font>**</br>	
+ > Activate Venv.
+
+ > 
+ > **<font color=red>deactivate</font>**</br>
+ > Deactivate Venv.
+
+---
+
+### Linux
+
+
+ > 
+ > **<font color=red>source</font> myVenv<font color=red>/bin/activate</font>**</br>
+ > Activate Venv.
+
+ > 
+ > **<font color=red>deactivate</font>**</br>
+ > Deactivate Venv.
+
 # String Manipulation
 
 ---
@@ -98,6 +135,56 @@ tags:
  > **myString<font color=red>.lower()</font>**</br>
  > Convert to lowercase.
 
+# Files
+
+---
+
+### Read File
+
+
+````py
+with open("myFile.txt", "r") as file:
+  # Get entire file content
+  file_data = file.read()
+
+  # Get all lines at once
+  lines = file.read().splitlines()
+
+  # Get lines one by one
+  line1 = file.readline()
+  line2 = file.readline()
+````
+
+This syntax handles automatically closing the file if anything goes wrong inside the `with` block.
+
+---
+
+### Write File
+
+
+````py
+with open('myFile.txt', 'w', encoding="utf-8") as file:
+  file.write('This is a line\n')
+````
+
+This syntax handles automatically closing the file if anything goes wrong inside the `with` block.
+
+---
+
+### Read File (Old Way)
+
+
+````py
+from typing import TextIO
+
+file: textIO = open('myFile.txt')
+try:
+	content: str = file.read()
+	print(content)
+finally:
+	file.close()
+````
+
 # OOP
 
 ---
@@ -108,4 +195,21 @@ tags:
 ````py
 if __name__ == '__main__':
 	print("Hello")
+````
+
+---
+
+### Class
+
+
+````py
+class Player:
+    # Constructor
+    def __init__(self):
+        self.health = 100
+        self.maxHealth = 100
+        self.attack = 10
+
+# Init new object with the class
+myPlayer = Player()
 ````
