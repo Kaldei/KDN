@@ -207,9 +207,41 @@ class Player:
     # Constructor
     def __init__(self):
         self.health = 100
-        self.maxHealth = 100
+        self.max_health = 100
         self.attack = 10
+````
 
+````py
 # Init new object with the class
 myPlayer = Player()
+````
+
+---
+
+### @staticmethod
+
+Adding the `@staticmethod` annotation allows creating a method that don't require anything from the object (`self`). This method could be defined outside the class but if its only relevant to this class, it can be nice to keep the code inside this class.
+
+````py
+class Player:
+    # Constructor
+    def __init__(self):
+        self.health = 100
+        self.max_health = 100
+        self.attack = 10
+
+	# Non static method
+	def increase_max_health(self):
+		self.max_health += 10
+
+	# Static method
+	@staticmethod
+	def say_hello():
+		print("Hello")
+````
+
+Also, `@staticmethod` allows calling the method even if no object were instantiated.
+
+````py
+Player.say_hello()
 ````
