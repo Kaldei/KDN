@@ -1,5 +1,5 @@
 ---
-title: Bash
+title: Shell Bash
 summary: A note about Bash.
 description: A note about Bash.
 tags:
