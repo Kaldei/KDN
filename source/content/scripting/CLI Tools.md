@@ -104,11 +104,16 @@ tags:
 
 
  > 
- > **<font color=red>sort</font>**</br>
+ > **<font color=red>sort</font> myFile.txt**</br>
  > Sort the contents of a file.
+
  > 
- > **<font color=red>sort -d</font>**</br>
- > Alphabetical sorting.
+ > **<font color=red>sort -d</font> myFile.txt**</br>
+ > Sort using only blanks and alphanumeric chars (dictionary order).
+
+ > 
+ > **<font color=red>sort -k 2</font> myFile.txt**</br>
+ > Sort on the second column in the file (separated by space).
 
 # File Manipulation Utilities
 
