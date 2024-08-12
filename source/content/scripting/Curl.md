@@ -8,6 +8,12 @@ tags:
 
 **[https://github.com/curl/curl](https://github.com/curl/curl)**
 
+# Resources
+
+---
+
+* [HTTP Codes Mind Map - Ignitetechnologies](https://github.com/Ignitetechnologies/Mindmap/blob/main/HTTP%20Status%20Code/HTTP%20Status%20Codes%20UHD.png)
+
 # Basis
 
 ---
