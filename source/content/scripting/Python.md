@@ -86,6 +86,7 @@ tags:
  > 
  > **<font color=red>split("</font>,<font color=red>")</font>**</br>
  > Split a string based on a delimiter.
+
  > 
  > **myString<font color=red>.strip(\[</font>chars<font color=red>\])</font>**</br>
  > Remove all "chars" at the beginning and the end of the string.
