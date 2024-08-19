@@ -94,7 +94,7 @@ File used to define little units of tasks (`myTask.yml`), that can be imported i
     upgrade: yes
 
 
--name: Install Package
+- name: Install Package
   package:
     name: neofetch
     state: latest
