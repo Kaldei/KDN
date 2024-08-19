@@ -6,6 +6,19 @@ tags:
   - Python
 ---
 
+# Basis
+
+---
+
+### Main
+
+This code means that the code is inside the condition will only run if this file is the one that was run (it is not the case if the file is imported).
+
+````py
+if __name__ == '__main__':
+	print("Hello")
+````
+
 # Virtual Env
 
 ---
@@ -43,7 +56,25 @@ tags:
  > **<font color=red>deactivate</font>**</br>
  > Deactivate Venv.
 
-# Dat
+# Data Types
+
+---
+
+### Tuples
+
+Tuples are like lists, but can’t be changed (immutable).
+
+````py
+# Declare an empty typle
+empty_tuple = ()
+````
+
+````
+# Declare a tuple
+players = "player1", "player2"
+````
+
+Note: A tuple is not defined by parenthesis, it is defined by commas (except for declaring an empty tuple).
 
 # String Manipulation
 
@@ -192,31 +223,51 @@ finally:
 
 ---
 
-### Main
-
-
-````py
-if __name__ == '__main__':
-	print("Hello")
-````
-
----
-
 ### Class
 
 
 ````py
 class Player:
     # Constructor
-    def __init__(self):
-        self.health = 100
-        self.max_health = 100
-        self.attack = 10
+    def __init__(self) -> None:
+        self.health: int = 100
+        self.max_health: int = 100
 ````
 
 ````py
 # Init new object with the class
-myPlayer = Player()
+myPlayer: Player = Player()
+````
+
+---
+
+### Attributes (Class and Instance)
+
+
+````py
+class Player:
+	# Class Attribute
+	max_mana: int = 100
+	
+    # Constructor
+    def __init__(self) -> None:
+        # Instance Attribute
+        self.health: int = 100
+````
+
+````py
+myPlayer1: Player = Player()
+myPlayer2: Player = Player()
+
+# Implicitly create an Instance Attribute
+myPlayer1.max_mana = 200
+print(myPlayer1.max_mana) # 200
+print(myPlayer2.max_mana) # 100
+
+# Change the Class Attribute value
+Player.max_mana = 300
+print(myPlayer1.max_mana) # 300
+print(myPlayer2.max_mana) # 300
 ````
 
 ---
@@ -228,18 +279,17 @@ Adding the `@staticmethod` annotation allows creating a method that don't requir
 ````py
 class Player:
     # Constructor
-    def __init__(self):
-        self.health = 100
-        self.max_health = 100
-        self.attack = 10
+    def __init__(self) -> None:
+        self.health: int = 100
+        self.max_health: int = 100
 
 	# Non static method
-	def increase_max_health(self):
+	def increase_max_health(self) -> None:
 		self.max_health += 10
 
 	# Static method
 	@staticmethod
-	def say_hello():
+	def say_hello() -> None:
 		print("Hello")
 ````
 
