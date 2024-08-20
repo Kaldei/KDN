@@ -94,14 +94,23 @@ tags:
  > Install helm release.
 
  > 
+ > **<font color=red>--version</font> 1.2.3**</br>
+ > Install specific version.
+
+ > 
  > **<font color=red>--debug</font>**</br>
  > Install helm release with debug logs.
  > 
- > **<font color=red>--version</font> 1.2.3**</br>
- > Install specific version.
+ > **<font color=red>--wait</font>**</br>
+ > Wait that resources to be in ready state to mark the relesase as successful.
+
  > 
  > **<font color=red>--create-namespace</font>**</br>
  > Create namespace if do not exist.
+
+ > 
+ > **<font color=red>--generate-name</font>**</br>
+ > Generate a name for the deployment (don't specify my-release-name).
 
 ---
 
