@@ -57,10 +57,10 @@ This is useful because Committer and Author info can be different when modifying
 
 ````bash
 git filter-branch --force --tag-name-filter cat --commit-filter '
-                GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME;
-                GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL;
-                GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE;
-                git commit-tree "$@";' -- --all
+	GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME;
+	GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL;
+	GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE;
+	git commit-tree "$@";' -- --all
 ````
 
 ---
@@ -70,17 +70,17 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
 
 ````bash
 git filter-branch --force --tag-name-filter cat --commit-filter '
-        if [ "$GIT_AUTHOR_NAME" = "myOldName" ];
-        then
-                GIT_AUTHOR_NAME="myNewName";
-                GIT_AUTHOR_EMAIL="myEmail@email.com";
-                GIT_COMMITTER_NAME="myNewName";
-                GIT_COMMITTER_EMAIL="myEmail@email.com";
-                GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE;
-                git commit-tree "$@";
-        else
-                git commit-tree "$@";
-        fi' -- --all
+	if [ "$GIT_AUTHOR_NAME" = "myOldName" ];
+	then
+		GIT_AUTHOR_NAME="myNewName";
+		GIT_AUTHOR_EMAIL="myEmail@email.com";
+		GIT_COMMITTER_NAME="myNewName";
+		GIT_COMMITTER_EMAIL="myEmail@email.com";
+		GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE;
+		git commit-tree "$@";
+	else
+		git commit-tree "$@";
+	fi' -- --all
 ````
 
 ---
@@ -90,12 +90,12 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
 
 ````bash
 git filter-branch --force --tag-name-filter cat --commit-filter '
-        if [ "$GIT_AUTHOR_NAME" = "myName" ];
-        then
-                git commit-tree -S "$@";
-        else
-                git commit-tree "$@";
-        fi' -- --all
+	if [ "$GIT_AUTHOR_NAME" = "myName" ];
+	then
+		git commit-tree -S "$@";
+	else
+		git commit-tree "$@";
+	fi' -- --all
 ````
 
 ---
@@ -105,9 +105,10 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
 
 ````bash
 git filter-branch --force --commit-filter '
-if [ "$(date -d "$(git show -s --format=%ci $GIT_COMMIT)" +%s)" -gt "$(date -d"90 days ago" +%s)" ]; then
-  git commit-tree "$@";
-else
-  skip_commit "$@";
-fi' -- --all
+	if [ "$(date -d "$(git show -s --format=%ci $GIT_COMMIT)" +%s)" -gt "$(date -d"90 days ago" +%s)" ];
+	then
+	  git commit-tree "$@";
+	else
+	  skip_commit "$@";
+	fi' -- --all
 ````
