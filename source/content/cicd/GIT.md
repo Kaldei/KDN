@@ -205,7 +205,7 @@ tags:
 
  > 
  > **<font color=red>git lfs install</font>**</br>
- > **<font color=red>git lfs track "</font>\*.png<font color=red>"</font>**</br>
+ > **<font color=red>git lfs track</font> "\*.png"**</br>
  > **<font color=red>git add .gitattributes</font>**</br>
  > Add LFS to the repo (will track all new PNG files added to the repo).
 
@@ -288,64 +288,3 @@ tags:
  > 
  > **<font color=red>git rebase --abort</font>**</br>
  > Abort the rebase (useful in case of issues).
-
----
-
-### Advanced History Rewrite
-
-#### Change Commits Author Name
-
-````sh
-git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
-````
-
- > 
- > Checkout all branches locally.
-
-````sh
-git filter-branch --force --tag-name-filter cat --commit-filter '
-        if [ "$GIT_AUTHOR_NAME" = "myOldName" ];
-        then
-                GIT_AUTHOR_NAME="myNewName";
-                GIT_AUTHOR_EMAIL="myEmail@email.com";
-                GIT_COMMITTER_NAME="myNewName";
-                GIT_COMMITTER_EMAIL="myEmail@email.com";
-                GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE;
-                git commit-tree "$@";
-        else
-                git commit-tree "$@";
-        fi' -- --all
-````
-
- > 
- > Change author and committer names for each commit authored by a specific name (keep original commit date).
-
- > 
- > **<font color=red>git push --all origin --force</font>**</br>
- > Push changes (all branches) to origin. Force is required because it rewrites history.
-
-#### Sign Old Commits of a Specific Author
-
-````sh
-git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
-````
-
- > 
- > Checkout all branches locally.
-
-````sh
-git filter-branch --force --tag-name-filter cat --commit-filter '
-        if [ "$GIT_AUTHOR_NAME" = "myName" ];
-        then
-                git commit-tree -S "$@";
-        else
-                git commit-tree "$@";
-        fi' -- --all
-````
-
- > 
- > Sign each commits authored by a specific user.
-
- > 
- > **<font color=red>git push --all origin --force</font>**</br>
- > Push changes (all branches) to origin. Force is required because it rewrite history.
