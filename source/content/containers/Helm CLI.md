@@ -34,12 +34,6 @@ tags:
  > **<font color=red>helm search repo</font> my-keyword**</br>
  > Find charts in repositories based on a keyword.
 
----
-
-### Local Repo
-
-
-
 # Chart
 
 ---
