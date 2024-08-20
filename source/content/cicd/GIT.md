@@ -193,28 +193,32 @@ tags:
 
 
  > 
+ > **<font color=red>git count-objects -vH</font>**</br>
+ > Show size of the repo. Not directly related to LFS but cans be usefull.
+
+ > 
+ > **<font color=red>git lfs ls-files -s</font>**</br>
+ > Show LFS files and their size on current branch.
+ > 
+ > **<font color=red>git lfs ls-files -a</font>**</br>
+ > Show LFS files on the full history (after a file is uploaded on LFS it will [still exist](https://docs.github.com/en/repositories/working-with-files/managing-large-files/removing-files-from-git-large-file-storage) on the remote storage even if its reference is removed in the HEAD.
+
+ > 
  > **<font color=red>git lfs install</font>**</br>
- > Initiate LFS for the repo.
- > 
  > **<font color=red>git lfs track "</font>\*.png<font color=red>"</font>**</br>
- > Update LFS config to track all new PNG files added to the repo.
- > 
  > **<font color=red>git add .gitattributes</font>**</br>
- > Add LFS config.
+ > Add LFS to the repo (will track all new PNG files added to the repo).
 
  > 
  > **<font color=red>git lfs status</font>**</br>
  > Show staged files.
 
  > 
- > **<font color=red>git lfs ls-files</font>**</br>
- > Show LFS files on current branch.
- > 
- > **<font color=red>git lfs ls-files -s</font>**</br>
- > Show LFS files and size on current branch.
- > 
- > **<font color=red>git lfs ls-files -a</font>**</br>
- > Show LFS files on the full history (after a file is uploaded on LFS it will [still exist]((https://docs.github.com/en/repositories/working-with-files/managing-large-files/removing-files-from-git-large-file-storage)) on the remote storage even if its reference is removed in the HEAD.
+ > **<font color=red>git lfs untrack</font> "\*.png"**</br>
+ > **<font color=red>git add --renormalize .</font>**</br>
+ > **<font color=red>git commit -m </font>'Restore file that were previously in LFS'**</br>
+ > **<font color=red>git push</font>**</br>
+ > Revert files from being on LFS. Do not remove `.gitattributes`, it is required to run `git add --renormalize`.
 
 # Commit History
 
@@ -291,14 +295,14 @@ tags:
 
 #### Change Commits Author Name
 
-````bash
+````sh
 git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 ````
 
  > 
  > Checkout all branches locally.
 
-````bash
+````sh
 git filter-branch --force --tag-name-filter cat --commit-filter '
         if [ "$GIT_AUTHOR_NAME" = "myOldName" ];
         then
@@ -322,14 +326,14 @@ git filter-branch --force --tag-name-filter cat --commit-filter '
 
 #### Sign Old Commits of a Specific Author
 
-````bash
+````sh
 git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 ````
 
  > 
  > Checkout all branches locally.
 
-````bash
+````sh
 git filter-branch --force --tag-name-filter cat --commit-filter '
         if [ "$GIT_AUTHOR_NAME" = "myName" ];
         then
