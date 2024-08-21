@@ -23,6 +23,10 @@ A few important differences can be found at [https://fishshell.com/docs/current
  > **<font color=red>fish_config</font>**</br>
  > Open web interface to config fish.
 
+ > 
+ > **<font color=red>fish_add_path</font> /my/path/to/add**</br>
+ > Add new path to PATH.
+
 ---
 
 ### Alias
