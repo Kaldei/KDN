@@ -53,9 +53,6 @@ tags:
  > 
  > **<font color=red>git init</font>**</br>
  > Create git repository (local).
- > 
- > **<font color=red>git clone</font> \[REPO_URL\]**</br>
- > Clone remote repository to local machine.
 
  > 
  > **<font color=red>git status</font>**</br>
@@ -76,10 +73,6 @@ tags:
  > 
  > **<font color=red>git tag</font> myTag**</br>
  > Create a tag.
-
- > 
- > **<font color=red>git push</font>**</br>
- > Push commits to remote repository.
 
 # Branching
 
@@ -132,6 +125,28 @@ tags:
  > 
  > **<font color=red>git checkout</font> HEAD^2**</br>
  > Moves HEAD 1 commit back from current HEAD in the 2nd parent of a merge.
+
+# Remote
+
+---
+
+### Remote Workflow
+
+
+ > 
+ > **<font color=red>git clone</font> \[REPO_URL\]**</br>
+ > Clone remote repo to local machine.
+
+ > 
+ > **<font color=red>git push</font>**</br>
+ > Push commits to remote repo.
+
+ > 
+ > **<font color=red>git fetch</font>**</br>
+ > Get last changes from the remote repo.
+ > 
+ > **<font color=red>git pull</font>**</br>
+ > Get last changes from the remote repo and merge them with local.
 
 ---
 
