@@ -7,9 +7,7 @@ tags:
   - container
 ---
 
-# Config
-
----
+# Basis
 
 ### Kubeconfig
 
@@ -31,12 +29,21 @@ tags:
 
 ---
 
-### AWS EKS
+### AWS EKS Kubeconfig
 
 
  > 
  > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
  > Update `~/.kube/config` file to be able to connect to the cluster.
+
+---
+
+### Flags
+
+
+ > 
+ > **<font color=red>--no-headers</font>**</br>
+ > Do not output headers
 
 # Node
 
@@ -271,7 +278,31 @@ tags:
  > **<font color=red>kubectl delete pods --all</font>**</br>
  > Delete all Pods.
 
+# Labels
+
+---
+
+### Selector
+
+
+ > 
+ > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue**</br>
+ > Get pods based on label value.
+
+ > 
+ > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue<font color=red>,</font>myLablel2<font color=red>=</font>myValue2**</br>
+ > Get pods based on multiple labels values.
+
 # Misc
+
+---
+
+### Get all Objects
+
+
+ > 
+ > **<font color=red>kubectl get all</font>**</br>
+ > Get info about objects.
 
 ---
 
