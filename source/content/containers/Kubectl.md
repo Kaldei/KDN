@@ -59,15 +59,6 @@ tags:
  > **<font color=red>kubectl describes nodes</font> myNode**</br>
  > Return information about the node.
 
----
-
-### Metrics
-
-
- > 
- > **<font color=red>kubectl top nodes</font>**</br>
- > Show nodes metrics (`metrics-server` has to be installed on the cluster).
-
 # Namespace
 
 ---
@@ -292,6 +283,21 @@ tags:
  > 
  > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue<font color=red>,</font>myLablel2<font color=red>=</font>myValue2**</br>
  > Get pods based on multiple labels values.
+
+# Monitoring
+
+---
+
+### Metrics Server
+
+**Note:** For the Metrics API to be available, `metrics-server` has to be installed on the cluster.
+
+ > 
+ > **<font color=red>kubectl top nodes</font>**</br>
+ > Show nodes metrics.
+ > 
+ > **<font color=red>kubectl top pods</font>**</br>
+ > Show pods metrics.
 
 # Misc
 
