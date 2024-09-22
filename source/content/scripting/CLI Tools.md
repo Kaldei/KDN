@@ -18,15 +18,27 @@ tags:
  > Return lines containing myString.
 
  > 
+ > **<font color=red>grep -e</font> myString1 <font color=red>-e</font> myString2**</br>
+ > Match multiple patterns.
+
+ > 
  > **<font color=red>grep -E</font>**</br>
  > Use a Regex.
 
  > 
  > **<font color=red>grep -i</font>**</br>
  > Return lines that correspond to the string but is not case-sensitive.
+
+ > 
+ > **<font color=red>grep -A</font> 12**</br>
+ > Return 12 lines after the match.
  > 
  > **<font color=red>grep -B</font> 12**</br>
- > Return the 12 lines preceding the match.
+ > Return 12 lines before the match.
+ > 
+ > **<font color=red>grep -C</font> 12**</br>
+ > Return 12 lines before and after the match.
+
  > 
  > **<font color=red>grep -x</font>**</br>
  > Return lines that correspond exactly to the string.
