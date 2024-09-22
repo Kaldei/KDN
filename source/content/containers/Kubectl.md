@@ -214,10 +214,17 @@ tags:
 
 
  > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>httpd:alpine <font color=red>--port=</font>8080**</br>
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--</font> /bin/bash**</br>
+ > Run a pod that overrides the `CMD` of the container. 
+ > 
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--command --</font> /bin/bash --myArg**</br>
+ > Run a pod that overrides the `ENTRYPOINT` and the `CMD` of the container. 
+
+ > 
+ > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>8080**</br>
  > Start Apache Pod.
  > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--rm -it --image=</font>httpd <font color=red>-- bash</font>**</br>
+ > **<font color=red>kubectl run</font> webserver <font color=red>--rm -it --image=</font>httpd <font color=red>-- bash</font>**</br>
  > Start Apache Pod with interactive Bash (killed when exited).
 
 ---
