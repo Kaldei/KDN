@@ -59,6 +59,28 @@ tags:
  > **<font color=red>kubectl describes nodes</font> myNode**</br>
  > Return information about the node.
 
+---
+
+### Unschdule
+
+
+ > 
+ > **<font color=red>kubectl cordon</font> myNode**</br>
+ > Mark the node as unschedulable (node status will be `Ready,SchedulingDisabled`).
+ > 
+ > **<font color=red>kubectl uncordon</font> myNode**</br>
+ > Mark the node as schedulable (node status will be `Ready`).
+
+ > 
+ > **<font color=red>kubectl drain</font> myNode**</br>
+ > Mark the node as unschedulable and empty it from its pods.
+ > 
+ > **<font color=red>kubectl drain</font> myNode <font color=red>--ignore-daemonsets</font>**</br>
+ > Allows to drain node even if there are DaemonSets (DaemonSet can create Pods that ignore unschedulable taints).
+ > 
+ > **<font color=red>kubectl drain</font> myNode <font color=red>--force</font>**</br>
+ > Allows to drain node even if there are Pods that are not declared in the controller (pods not in Job, DaemonSet, ReplicationSet, ...). Warning: pods that are not in the controller will lost.
+
 # Namespace
 
 ---
