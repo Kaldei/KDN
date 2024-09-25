@@ -15,6 +15,9 @@ tags:
  > 
  > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**</br>
  > Export Kubeconfig path.
+ > 
+ > **<font color=red>kubectl config view</font>**</br>
+ > Show configured clusters.
 
  > 
  > **<font color=red>kubectl config current-context</font>**</br>
