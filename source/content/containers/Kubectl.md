@@ -81,6 +81,19 @@ tags:
  > **<font color=red>kubectl drain</font> myNode <font color=red>--force</font>**</br>
  > Allows to drain node even if there are Pods that are not declared in the controller (pods not in Job, DaemonSet, ReplicationSet, ...). Warning: pods that are not in the controller will lost.
 
+---
+
+### Taint
+
+
+ > 
+ > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect**</br>
+ > Add a Taint to a Node (effect can be `NoExecute`, `NoSchedule`,  `PreferNoSchedule`...)
+
+ > 
+ > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect<font color=red>-</font>**</br>
+ > Remove Taint from a Node.
+
 # Namespace
 
 ---
