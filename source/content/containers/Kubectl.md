@@ -46,7 +46,11 @@ tags:
 
  > 
  > **<font color=red>--no-headers</font>**</br>
- > Do not output headers
+ > Do not output headers.
+
+ > 
+ > **<font color=red>--as</font> myUser**</br>
+ > Execute command as another user.
 
 # Node
 
