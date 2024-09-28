@@ -21,10 +21,10 @@ tags:
 
  > 
  > **<font color=red>kubectl config current-context</font>**</br>
- > Display current kubeconfig.
+ > Display current context.
  > 
  > **<font color=red>kubectl config unset current-context</font>**</br>
- > Unset current kubeconfig.
+ > Unset current context.
 
  > 
  > **<font color=red>kubectl -context</font> my-context-name -n <font color=red>my-namespace</font> get pods**</br>
