@@ -17,7 +17,7 @@ tags:
  > **<font color=red>terraform init</font>**</br>
  > Initialize working directory (configure the backend, install providers and modules, and create lock file).
  > 
- > **<font color=red>terraform init -backend-config=myBackendVars.tfvars</font>**</br>
+ > **<font color=red>terraform init -backend-config=</font>myBackendVars.tfvars**</br>
  > Initialize with a backend var file.
 
  > 
@@ -47,7 +47,7 @@ tags:
  > 
  > **<font color=red>terraform init -backend=false</font>**
  > **<font color=red>terraform validate</font>**</br>
- > Validate the configuration withour accessing the backend.
+ > Validate the configuration without accessing the backend.
 
  > 
  > **<font color=red>terraform fmt</font>**</br>
