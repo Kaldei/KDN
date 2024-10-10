@@ -186,6 +186,10 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > Return bucket contents (can also be reached at `https://myBucketName.s3.amazonaws.com`).
 
  > 
+ > **<font color=red>aws s3 ls s3://</font>myBucketURL/myPrefix <font color=red>--recursive --summarize | grep "Total Objects:"</font>**</br>
+ > Return the total number of objects in a prefix
+
+ > 
  > **<font color=red>aws s3api put-bucket-policy s3://</font>myBucketURL myPolicyFile**</br>
  > Add policy config file to the bucket.
  > 
