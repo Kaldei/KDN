@@ -190,13 +190,6 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > Return the total number of objects in a prefix
 
  > 
- > **<font color=red>aws s3api put-bucket-policy s3://</font>myBucketURL myPolicyFile**</br>
- > Add policy config file to the bucket.
- > 
- > **<font color=red>aws s3api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
- > Sets the default file to be served when using the bucket as a static web server.
-
- > 
  > **<font color=red>aws s3 cp s3://</font>myBucketURL/myFile ./**</br>
  > Copies a bucket file to my current local directory.
  > 
@@ -205,6 +198,18 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > 
  > **<font color=red>aws s3 sync s3://</font>myBucketURL/myFolder /myLocalFolder**</br>
  > Synchronize bucket folder to local directory/
+
+---
+
+### S3API
+
+
+ > 
+ > **<font color=red>aws s3api put-bucket-policy s3://</font>myBucketURL myPolicyFile**</br>
+ > Add policy config file to the bucket.
+ > 
+ > **<font color=red>aws s3api put-bucket-website s3://</font>myBucketURL myIndexFile**</br>
+ > Sets the default file to be served when using the bucket as a static web server.
 
 # DynamoDB
 
