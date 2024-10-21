@@ -342,7 +342,7 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
- > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>8080**</br>
+ > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>80**</br>
  > Start Apache Pod.
 
  > 
