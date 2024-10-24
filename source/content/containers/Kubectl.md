@@ -303,7 +303,7 @@ metadata:
 
  > 
  > **<font color=red>kubctl delete -f</font> myDeployment.yml**</br>
- > Delete deployment.
+ > Delete deployment from file.
 
 # Pods
 
@@ -502,7 +502,7 @@ spec:
 
 
  > 
- > **<font color=red>kubectl create clusterrole</font> storage-admin <font color=red>--verb=</font>* <font color=red>--resource=</font>storageclasses <font color=red>--resource=</font>persistentvolumes*\*</br>
+ > **<font color=red>kubectl create clusterrole</font> storage-admin <font color=red>--verb=</font>\* <font color=red>--resource=</font>storageclasses <font color=red>--resource=</font>persistentvolumes**</br>
  > Create a Cluster Role  (can do anything on Persistant Volumes).
 
  > 
