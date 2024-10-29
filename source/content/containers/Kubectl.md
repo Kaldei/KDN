@@ -104,7 +104,7 @@ tags:
 
 
  > 
- > **<font color=red>kubectl describes</font> nodesmyNode**</br>
+ > **<font color=red>kubectl describes</font> nodes myNode**</br>
  > Return information about the resource.
 
 ---
