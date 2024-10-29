@@ -71,11 +71,11 @@ tags:
 
 
  > 
- > **<font color=red>kubctl apply -f</font> myDeployment.yml**</br>
- > Create or update a Deployment from a YAML file.
+ > **<font color=red>kubectl apply -f</font> myResoyrce.yml**</br>
+ > Create or update a resource from a YAML file.
  > 
- > **<font color=red>kubctl apply -f</font> /myDeploymentsFolder**</br>
- > Create or update multiple Deployments form YAML files in a folder (requires `---` at the beginning of files).
+ > **<font color=red>kubectl apply -f</font> /myResourcesFolder**</br>
+ > Create or update multiple resources from YAML files in a folder (requires `---` at the beginning of files).
 
 ---
 
@@ -127,7 +127,7 @@ tags:
 
 
  > 
- > **<font color=red>kubctl delete -f</font> myDeployment.yml**</br>
+ > **<font color=red>kubectl delete -f</font> myDeployment.yml**</br>
  > Delete deployment from file.
 
 ---
@@ -309,11 +309,11 @@ metadata:
  > Change the number of replicas for the Deployment.
 
  > 
- > **<font color=red>kubctl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
+ > **<font color=red>kubectl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
  > Change the image used in a Deployment.
 
  > 
- > **<font color=red>kubctl rollout status deployment/</font>my-deployment**</br>
+ > **<font color=red>kubectl rollout status deployment/</font>my-deployment**</br>
  > Show rollout status.
 
 # Pods
