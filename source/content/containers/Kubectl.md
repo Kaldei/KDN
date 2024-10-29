@@ -7,7 +7,20 @@ tags:
   - container
 ---
 
-# Basis
+# Config
+
+---
+
+### CLI Setup
+
+
+ > 
+ > **<font color=red>alias k=kubectl</font>**</br>
+ > Create alias for kubectl.
+
+ > 
+ > **<font color=red>source \<(kubectl completion bash)</font>**</br>
+ > Enable kubectl completion.
 
 ---
 
@@ -15,28 +28,31 @@ tags:
 
 
  > 
+ > **<font color=red>kubectl cluster-info --kubeconfig</font> /path/to/kubeconfig.yml**</br>
+ > Show info about the specifed Kubeconfig file.
+
+ > 
  > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**</br>
- > Export Kubeconfig path.
+ > Set the Kubeconfig file to use.
  > 
  > **<font color=red>kubectl config view</font>**</br>
- > Show configured clusters.
- > 
- > **<font color=red>kubectl config view --minify | grep namespace:</font>**</br>
- > Show current namespace.
+ > Show configured clusters in the current Kubeconfig file.
+
+---
+
+### Context
+
 
  > 
- > **<font color=red>kubectl config current-context</font>**</br>
- > Display current context.
- > 
- > **<font color=red>kubectl config set-context --current --namespace</font> myNameSpace**</br>
- > Switch namespace.
- > 
- > **<font color=red>kubectl config unset current-context</font>**</br>
- > Unset current context.
+ > **<font color=red>kubectl cluster-info --kubeconfig</font> /path/to/kubeconfig.yml**</br>
+ > Show info about the specifed Kubeconfig file.
 
  > 
- > **<font color=red>kubectl -context</font> my-context-name <font color=red>-n</font> my-namespace get pods**</br>
- > Set context and namespace in a command.
+ > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**</br>
+ > Set the Kubeconfig file to use.
+ > 
+ > **<font color=red>kubectl config view</font>**</br>
+ > Show configured clusters in the current Kubeconfig file.
 
 ---
 
@@ -46,6 +62,94 @@ tags:
  > 
  > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
  > Update `~/.kube/config` file to be able to connect to the cluster.
+
+# Basis
+
+---
+
+### Apply
+
+
+ > 
+ > **<font color=red>kubctl apply -f</font> myDeployment.yml**</br>
+ > Create or update a Deployment from a YAML file.
+ > 
+ > **<font color=red>kubctl apply -f</font> /myDeploymentsFolder**</br>
+ > Create or update multiple Deployments form YAML files in a folder (requires `---` at the beginning of files).
+
+---
+
+### Get
+
+
+ > 
+ > **<font color=red>kubectl get nodes</font>**</br>
+ > List nodes.
+ > 
+ > **<font color=red>kubectl get services</font>**</br>
+ > Return active services.
+ > 
+ > **<font color=red>kubectl get ingress</font>**</br>
+ > Show ingress.
+ > 
+ > **<font color=red>kubectl get deployments</font>**</br>
+ > Show deployments.
+ > 
+ > **<font color=red>kubectl get pods</font>**</br>
+ > Show Pods.
+
+---
+
+### Describe
+
+
+ > 
+ > **<font color=red>kubectl describes</font> nodesmyNode**</br>
+ > Return information about the resource.
+
+---
+
+### Delete
+
+
+ > 
+ > **<font color=red>kubectl delete pod</font> my-pod <font color=red></font>**</br>
+ > Delete Pod.
+ > 
+ > **<font color=red>kubectl delete pod</font> my-pod  <font color=red>--now</font>**</br>
+ > Delete Pod now.
+ > 
+ > **<font color=red>kubectl delete pod</font> my-pod <font color=red>--force</font>**</br>
+ > Force delete the Pod.
+ > 
+ > **<font color=red>kubectl delete pods --all</font>**</br>
+ > Delete all Pods.
+
+
+ > 
+ > **<font color=red>kubctl delete -f</font> myDeployment.yml**</br>
+ > Delete deployment from file.
+
+---
+
+### Ouput
+
+
+ > 
+ > **<font color=red>kubectl</font> get pods <font color=red>-o wide</font>**</br>
+ > Ouput more info (e.g. for Pods, outputs Node and IP).
+
+ > 
+ > **<font color=red>kubectl</font> get deployment <font color=red>-o custom-columns=</font>DEPLOYMENT<font color=red>:</font>.metadata.name<font color=red>,</font>CONTAINER_IMAGE<font color=red>:</font>.spec.template.spec.containers\[\].image<font color=red>,</font>READY_REPLICAS<font color=red>:</font>.status.readyReplicas <font color=red>--sort-by=</font>.metadata.name**</br>
+ > Custom column output.
+
+ > 
+ > **<font color=red>kubectl</font> get pods my-pod <font color=red>-o yaml</font>**</br>
+ > Ouput yaml configuration.
+
+ > 
+ > **<font color=red>kubectl</font> get nodes <font color=red>-o jsonpath='{</font>.items\[\*\].status.nodeInfo.osImage<font color=red>}'</font>**</br>
+ > Jsonpath output.
 
 ---
 
@@ -104,18 +208,6 @@ tags:
 
 ---
 
-### Get
-
-
- > 
- > **<font color=red>kubectl get nodes</font>**</br>
- > List nodes.
- > 
- > **<font color=red>kubectl describes nodes</font> myNode**</br>
- > Return information about the node.
-
----
-
 ### Unschedule
 
 
@@ -150,53 +242,7 @@ tags:
  > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect<font color=red>-</font>**</br>
  > Remove Taint from a Node.
 
-# Namespaces
-
----
-
-### Create
-
-
- > 
- > **<font color=red>kubectl create namespace</font> myNameSpace**</br>
- > Create a namespace.
-
----
-
-### Select
-
-
- > 
- > \*\*<font color=red>kubectl --all namespaces</font> get pods \*\*</br>
- > Get pods from all namespaces.
- > 
- > \*\*<font color=red>kubectl -n</font> my-namespace get pods \*\*</br>
- > Get pods from a spcific namespace.
-
-# Networking
-
----
-
-### IP Ranges Configurations
-
-
- > 
- > **<font color=red>kubectl logs -n kube-system</font> weave-net<font color=red> | grep ipalloc-range</font>**</br> 
- > Find Pods IP range configuration.
- > 
- > **<font color=red>cat /etc/kubernetes/manifests/kube-apiserver.yaml  | grep "--service-cluster-ip-range="</font>**</br>
- > Find Services IP range configuration.
-
 # Services
-
----
-
-### Get
-
-
- > 
- > **<font color=red>kubectl get services</font>**</br>
- > Return active services.
 
 ---
 
@@ -212,7 +258,7 @@ tags:
 
 ---
 
-### Port Forwarding
+### Port Forwarding (imperative)
 
 
  > 
@@ -223,16 +269,7 @@ tags:
 
 ---
 
-### Get
-
-
- > 
- > **<font color=red>kubectl get ingress</font>**</br>
- > Show ingress.
-
----
-
-### Create (Imperative)
+### Create
 
 
  > 
@@ -255,16 +292,7 @@ metadata:
 
 ---
 
-### Get
-
-
- > 
- > **<font color=red>kubectl get deployments</font>**</br>
- > Show deployments.
-
----
-
-### Create (imperative)
+### Create
 
 
  > 
@@ -273,20 +301,12 @@ metadata:
 
 ---
 
-### Apply (from file)
+### Update (imperative)
 
 
  > 
- > **<font color=red>kubctl apply -f</font> myDeployment.yml**</br>
- > Apply Deployment from a YAML file.
- > 
- > **<font color=red>kubctl apply -f</font> /myDeploymentsFolder**</br>
- > Apply multiple Deployments form YAML files in a folder (requires `---` at the beginning of files).
-
----
-
-### Update
-
+ > **<font color=red>kubectl scale deployment</font> my-deployment <font color=red>--replicas</font> 4**</br>
+ > Change the number of replicas for the Deployment.
 
  > 
  > **<font color=red>kubctl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
@@ -296,35 +316,7 @@ metadata:
  > **<font color=red>kubctl rollout status deployment/</font>my-deployment**</br>
  > Show rollout status.
 
----
-
-### Delete
-
-
- > 
- > **<font color=red>kubctl delete -f</font> myDeployment.yml**</br>
- > Delete deployment from file.
-
 # Pods
-
----
-
-### Get
-
-
- > 
- > **<font color=red>kubectl get pods</font>**</br>
- > Get info about Pods.
- > 
- > **<font color=red>kubectl get pods -o wide</font>**</br>
- > Get more info about Pods (Node and IP).
-
- > 
- > **<font color=red>kubectl get pod</font> my-pod**</br>
- > Get info about one specific Pod.
- > 
- > **<font color=red>kubctl get pod</font> my-pod <font color=red>-o yaml ></font> my-pod.yml**</br>
- > Get YAML of deployed resource.
 
 ---
 
@@ -361,7 +353,7 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
- > **<font color=red>kubectl exec -it</font> my-pod <font color=red>-c</font> my-container <font color=red>--</font> /bin/bash**</br>
+ > **<font color=red>kubectl exec</font> my-pod <font color=red>-c</font> my-container <font color=red>-it --</font> /bin/bash**</br>
  > Exec a command in a container (when there is only one container `-c` is not required).
 
 ---
@@ -386,36 +378,18 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
  > **<font color=red>kubectl edit pod </font>myPod**</br>
  > Edit pod configuration
 
-The only specifications that can be edited are the following: 
+The only specifications that can be edited without `--force` are the following: 
 
 * `spec.containers[*].image`
 * `spec.initContainers[*].image`
 * `spec.activeDeadlineSeconds`
 * `spec.tolerations`
 
----
-
-### Delete
-
-
- > 
- > **<font color=red>kubectl delete pod</font> my-pod <font color=red></font>**</br>
- > Delete Pod.
- > 
- > **<font color=red>kubectl delete pod</font> my-pod  <font color=red>--now</font>**</br>
- > Delete Pod now.
- > 
- > **<font color=red>kubectl delete pod</font> my-pod <font color=red>--force</font>**</br>
- > Force delete the Pod.
- > 
- > **<font color=red>kubectl delete pods --all</font>**</br>
- > Delete all Pods.
-
 # Secrets
 
 ---
 
-### Create (imperative)
+### Create
 
 
  > 
@@ -509,6 +483,41 @@ spec:
  > **<font color=red>kubectl create clusterrolebinding</font> myUser-storage-admin <font color=red>--clusterrole=</font>storage-admin <font color=red>--user=</font>myUser**</br>
  > Create a Binding between a Role and a User.
 
+# Troubleshooting
+
+---
+
+### Broken Scheduler
+
+If the scheduler isn't working, check the configuration of `/etc/kubernetes/manifests/kube-scheduler.yaml`.
+
+---
+
+### Broken Worker Node
+
+If a Worker Node isn't working, try `systemctl status kubelet.service` 
+
+* If the service don't start check:
+  
+  * `journalctl -u kubelet.service`
+  * `/var/lib/kubelet/config.yaml`
+* If Connection refused to control node check the Kubeconfig file:
+  
+  * Is the port right? `server: https://controlplane:6443`
+
+---
+
+### Troubleshoot Containers
+
+
+ > 
+ > **<font color=red>crictl ps -a</font>**</br>
+ > See Containers that are CRI-compatible.
+
+ > 
+ > **<font color=red>crictl logs </font>containerID**</br>
+ > See Logs for a container.
+
 # Misc
 
 ---
@@ -541,6 +550,16 @@ spec:
  > **<font color=red>kubectl api-resources | grep</font> storage**</br>
  > Find the API name of a resource using keyword.
 
+### Get Cluster IP Ranges Config
+
+
+ > 
+ > **<font color=red>kubectl logs -n kube-system</font> weave-net<font color=red> | grep ipalloc-range</font>**</br> 
+ > Find Pods IP range configuration.
+ > 
+ > **<font color=red>cat /etc/kubernetes/manifests/kube-apiserver.yaml  | grep "--service-cluster-ip-range="</font>**</br>
+ > Find Services IP range configuration.
+
 ---
 
 ### Expose Kube-apiserver
@@ -549,16 +568,3 @@ spec:
  > 
  > **<font color=red>kubectl proxy</font>**</br>
  > Expose Kube-apiserver to localhost.
-
----
-
-### Troubleshoot Containers
-
-
- > 
- > **<font color=red>crictl ps -a</font>**</br>
- > See Containers that are CRI-compatible.
-
- > 
- > **<font color=red>crictl logs </font>containerID**</br>
- > See Logs for a container.
