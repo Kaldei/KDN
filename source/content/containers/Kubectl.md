@@ -102,6 +102,12 @@ tags:
 
 ### Describe
 
+<font color=red></font>---
+tags:
+
+* kubernetes
+
+---
 
  > 
  > **<font color=red>kubectl describes</font> nodes myNode**</br>
