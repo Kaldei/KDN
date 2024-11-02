@@ -44,15 +44,25 @@ tags:
 
 
  > 
- > **<font color=red>kubectl cluster-info --kubeconfig</font> /path/to/kubeconfig.yml**</br>
- > Show info about the specifed Kubeconfig file.
+ > **<font color=red>kubectl config current-context</font>**</br>
+ > Show current context.
+ > 
+ > **<font color=red>kubectl config unset current-context</font>**</br>
+ > Unset current context.
 
  > 
- > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**</br>
- > Set the Kubeconfig file to use.
+ > **<font color=red>kubectl config view --minify | grep namespace:</font>**</br>
+ > Show current namespace.
  > 
- > **<font color=red>kubectl config view</font>**</br>
- > Show configured clusters in the current Kubeconfig file.
+ > **<font color=red>kubectl config set-context --current --namespace</font> myNameSpace**</br>
+ > Switch namespace.
+
+ > 
+ > **<font color=red>kubectl -context</font> my-context-name get pods**</br>
+ > Specify context in a command.
+ > 
+ > **<font color=red>kubectl -n</font> my-namespace get pods**</br>
+ > Specify namespace in a command.
 
 ---
 
@@ -264,7 +274,7 @@ tags:
 
 ---
 
-### Port Forwarding (imperative)
+### Port Forward (imperative)
 
 
  > 
@@ -403,7 +413,7 @@ The only specifications that can be edited without `--force` are the following:
  > Create a `generic` Secret.
 
  > 
- > **<font color=red>kubectl create secret docker-registry</font> my-private-reg-creds <font color=red>--docker-server=</font>myprivateregistry.com:5000 <font color=red>--docker-username=</font>dock_user<font color=red> --docker-password=</font>dock_password --docker-email=dock_user@myprivateregistry.com**</br> 
+ > **<font color=red>kubectl create secret docker-registry</font> my-private-reg-creds <font color=red>--docker-server=</font>myprivateregistry.com:5000 <font color=red>--docker-username=</font>dock_user<font color=red> --docker-password=</font>dock_password <font color=red>--docker-email=</font>dock_user@myprivateregistry.com**</br> 
  > Create a `docker-registry` Secret.
 
 Example of the usage of a `docker-registry` Secret:
@@ -462,6 +472,26 @@ spec:
  > Output certificate content.
 
 # RBAC
+
+---
+
+### Service Accounts
+
+
+ > 
+ > **<font color=red>kubectl create serviceaccount</font> my-service-account**</br>
+ > Create a Serivce Account.
+
+````yml
+# Specify Service Account for a resource
+spec:
+    spec:
+      serviceAccountName: dashboard-sa
+````
+
+ > 
+ > **<font color=red>kubectl create token</font> my-service-account**</br>
+ > Create a Service Account token (JWT).
 
 ---
 
