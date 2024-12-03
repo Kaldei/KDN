@@ -67,11 +67,11 @@ tags:
 
 
  > 
- > **<font color=red>vault kv put -mount=</font>my-secret-engine hello mySecret=world**</br>
+ > **<font color=red>vault kv put -mount=</font>my-path hello mySecret=world**</br>
  > Create a secret (or replace pre-existing) at path `hello` with value `world`.
 
  > 
- > **<font color=red>vault kv put -mount=</font>my-secret-engine myCredentials username=myUsername password=myPassword**</br>
+ > **<font color=red>vault kv put -mount=</font>my-path myCredentials username=myUsername password=myPassword**</br>
  > Create a new secret composed of credentials.
 
 ---
@@ -80,17 +80,17 @@ tags:
 
 
  > 
- > **<font color=red>vault kv get -mount=</font>my-secret-engine hello**</br>
+ > **<font color=red>vault kv get -mount=</font>my-path hello**</br>
  > Read a secret.
  > 
- > **<font color=red>vault kv get -mount=</font>my-secret-engine <font color=red>-format=json</font> hello <font color=red>\| jq -r .data</font>**</br>
+ > **<font color=red>vault kv get -mount=</font>my-path <font color=red>-format=json</font> hello <font color=red>\| jq -r .data</font>**</br>
  > Read a secret and output in JSON.
 
  > 
- > **<font color=red>vault kv get -mount=</font>my-secret-engine <font color=red>-field=</font>foo hello**</br>
+ > **<font color=red>vault kv get -mount=</font>my-path <font color=red>-field=</font>foo hello**</br>
  > Read one field.
  > 
- > **<font color=red>vault kv get -mount=</font>my-secret-engine <font color=red>-format=json</font> hello <font color=red>\| jq -r .data.data.</font>foo**</br>
+ > **<font color=red>vault kv get -mount=</font>my-path <font color=red>-format=json</font> hello <font color=red>\| jq -r .data.data.</font>foo**</br>
  > Read one field and output in JSON.
 
 ---
@@ -99,9 +99,9 @@ tags:
 
 
  > 
- > **<font color=red>vault kv delete -mount=</font>my-secret-engine hello**</br>
- > Delete a secret.
+ > **<font color=red>vault kv delete -mount=</font>my-path hello**</br>
+ > Mark the secret as deleted (the secret is still readable when specifying the version explicitly).
 
  > 
- > **<font color=red>vault kv undelete -mount=</font>my-secret-engine <font color=red>-versions=</font>2 hello**</br>
+ > **<font color=red>vault kv undelete -mount=</font>my-path <font color=red>-versions=</font>2 hello**</br>
  > Recover password. Only works if `destroyed` parameter is set to `false` (means that it is possible to recover deleted data if the deletion was unintentional).
