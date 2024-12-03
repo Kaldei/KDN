@@ -110,7 +110,7 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 
  > 
- > **<font color=red>aws sts assume-role --role-arn</font> \[MY_ARN\] <font color=red>--role-session-name</font> mySessionName**</br>
+ > **<font color=red>aws sts assume-role --role-arn</font> \[MY_ROLE_ARN\] <font color=red>--role-session-name</font> mySessionName**</br>
  > Assume a role based on the ARN.
 
 # Cognito
