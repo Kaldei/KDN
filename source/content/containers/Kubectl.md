@@ -566,7 +566,7 @@ If a Worker Node isn't working, try `systemctl status kubelet.service`
 
  > 
  > **<font color=red>kubectl get pods --all-namespaces -o jsonpath="{.items\[*\].spec.containers\[*\].image}" | \ </font>**
- > **<font color=red>tr -s '*:space:*' '\n' | \ </font>**  
+ > **<font color=red>tr -s '\[\[:space:\]\]' '\n' | \ </font>**  
  > **<font color=red>sort | \ </font>**
  > **<font color=red>uniq -c </font>**</br>
  > Retrieve all images used by pods in the cluster.

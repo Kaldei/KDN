@@ -56,14 +56,15 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > List created profiles.
 
  > 
+ > **<font color=red>aws configure list  --profile</font> myProfileName<font color=red></font>**</br>
+ > Show details for the specified profile. 
+
+ > 
  > **<font color=red>aws configure --profile</font> myProfileName**</br>
  > Create or modify a profile.
  > 
  > **<font color=red>aws configure set aws_session_token</font> MY_AWS_SESSION_TOKEN <font color=red>--profile</font> myProfileName**</br>
  > Set a `AWS_SESSION_TOKEN` (after `aws configure`).
- > 
- > **<font color=red>aws configure list  --profile</font> myProfileName<font color=red></font>**</br>
- > Show details credentials.
 
 ---
 
@@ -89,11 +90,11 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 
  > 
- > **<font color=red>aws sts get-access-key-info --access-key-id</font> \[AKIA_EXAMPLE\]**</br>
+ > **<font color=red>aws sts get-access-key-info --access-key-id</font> \[MY_ACCESS_KEY_ID\]**</br>
  > Return Account ID of the access key.
 
  > 
- > **<font color=red>aws sts get-caller-identity --profile</font> myProfileName**</br>
+ > **<font color=red>aws sts get-caller-identity</font>**</br>
  > Return User ID, Account ID, and ARN of the selected profile.
  > 
  > ````json
@@ -111,7 +112,13 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
  > 
  > **<font color=red>aws sts assume-role --role-arn</font> \[MY_ROLE_ARN\] <font color=red>--role-session-name</font> mySessionName**</br>
- > Assume a role based on the ARN.
+ > Return temporary credentials for the role.
+
+ > 
+ > **<font color=red>export AWS_ACCESS_KEY_ID=</font>"\[OUTPUT_FROM_ASSUME_ROLE_COMMAND\]"**
+ > **<font color=red>export AWS_SECRET_ACCESS_KEY=</font>"\[OUTPUT_FROM_ASSUME_ROLE_COMMAND\]"**
+ > **<font color=red>export AWS_SESSION_TOKEN=</font>"\[OUTPUT_FROM_ASSUME_ROLE_COMMAND\]"**</br>
+ > Use credentials of the assumed role.
 
 # Cognito
 
@@ -156,6 +163,11 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 ### Addons
 
+
+ > 
+ > **<font color=red>aws eks describe-addon-versions --addon-name</font> aws-ebs-csi-driver  <font color=red>--region</font> myRegion**</br>
+ > Show latest version of the addon (region is mandatory).
+
 # Lambda
 
 ---
@@ -171,33 +183,41 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
 
 ---
 
-### Basis
+### Create Bucket
 
 
  > 
  > **<font color=red>aws s3 mb s3://</font>myBucketURL**</br>
  > Create a bucket (mb = make bucket).
 
- > 
- > **<font color=red>aws s3 ls</font>**</br>
- > Return all buckets for the current profile.
- > 
- > **<font color=red>aws s3 ls s3://</font>myBucketURL**</br>
- > Return bucket contents (can also be reached at `https://myBucketName.s3.amazonaws.com`).
+---
 
- > 
- > **<font color=red>aws s3 ls s3://</font>myBucketURL/myPrefix <font color=red>--recursive --summarize | grep "Total Objects:"</font>**</br>
- > Return the total number of objects in a prefix
+### Copy
+
 
  > 
  > **<font color=red>aws s3 cp s3://</font>myBucketURL/myFile ./**</br>
  > Copies a bucket file to my current local directory.
+
  > 
  > **<font color=red>aws s3 sync</font> myFile <font color=red>s3://</font>myBucketURL**</br>
  > Synchronize a local file or directory to the buckets. 
  > 
  > **<font color=red>aws s3 sync s3://</font>myBucketURL/myFolder /myLocalFolder**</br>
- > Synchronize bucket folder to local directory/
+ > Synchronize bucket folder to local directory.
+
+---
+
+### Delete
+
+
+ > 
+ > **<font color=red>aws s3 rm s3://</font>myBucketURL/myPrefix/myFile**</br>
+ > Remove a file.
+
+ > 
+ > **<font color=red>aws s3 rm --recursive s3://</font>myBucketURL/myPrefix/**</br>
+ > Remove all file from the given profile.
 
 ---
 
