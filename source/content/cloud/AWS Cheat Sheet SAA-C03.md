@@ -379,8 +379,6 @@ tags:
 
 * **Upload object in parts: max 5 TB.**
 
-* IAM roles cannot be assigned to S3 buckets.
-
 * A `DELETE` API call on an object does not delete the actual object, but places a marker on it.
 
 * **Only the standard Amazon SQS queue is allowed as an Amazon S3 event notification destination.**
