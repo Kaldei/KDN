@@ -44,25 +44,29 @@ tags:
 
 
  > 
- > **<font color=red>kubectl config current-context</font>**</br>
- > Show current context.
- > 
- > **<font color=red>kubectl config unset current-context</font>**</br>
- > Unset current context.
-
- > 
- > **<font color=red>kubectl config view --minify | grep namespace:</font>**</br>
- > Show current namespace.
- > 
- > **<font color=red>kubectl config set-context --current --namespace</font> myNameSpace**</br>
- > Switch namespace.
-
- > 
  > **<font color=red>kubectl -context</font> my-context-name get pods**</br>
  > Specify context in a command.
  > 
  > **<font color=red>kubectl -n</font> my-namespace get pods**</br>
  > Specify namespace in a command.
+
+ > 
+ > **<font color=red>kubectl config use-context </font> myContext**</br>
+ > Switch to the specify context.
+
+ > 
+ > **<font color=red>kubectl config current-context</font>**</br>
+ > Show current context.
+ > 
+ > **<font color=red>kubectl config view --minify | grep namespace:</font>**</br>
+ > Show current namespace (other method).
+
+ > 
+ > **<font color=red>kubectl config set-context --current --namespace</font> myNameSpace**</br>
+ > Set namespace for current context.
+ > 
+ > **<font color=red>kubectl config unset current-context</font>**</br>
+ > Unset current context.
 
 ---
 
