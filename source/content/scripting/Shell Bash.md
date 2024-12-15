@@ -32,7 +32,7 @@ tags:
  > **myArray<font color=red>=()</font>**</br>
  > Create an empty array.
  > 
- > **myArray<font color=red>=(</font>12 12<font color=red>)</font>**</br>
+ > **myArray<font color=red>=(</font> 12 12 <font color=red>)</font>**</br>
  > Create an array with values (note the space between values).
 
  > 
@@ -125,6 +125,15 @@ done
 ````bash
 for i in {1..100}
 do
+	...
+done
+````
+
+````bash
+directories=( myDir1 myDir2 myDir3)
+
+for directory in "${directories[@]}"; do
+	mkdir -p $directory
 	...
 done
 ````
