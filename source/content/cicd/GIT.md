@@ -70,9 +70,6 @@ tags:
  > 
  > **<font color=red>git commit --amend</font>**</br>
  > Modify last commit (only works if commit was not pushed).
- > 
- > **<font color=red>git tag</font> myTag**</br>
- > Create a tag.
 
 # Branching
 
@@ -125,6 +122,20 @@ tags:
  > 
  > **<font color=red>git checkout</font> HEAD^2**</br>
  > Moves HEAD 1 commit back from current HEAD in the 2nd parent of a merge.
+
+---
+
+### Tag
+
+
+ > 
+ > **<font color=red>git tag</font> myTag**</br>
+ > Create a tag.
+
+ > 
+ > **<font color=red>git tag -d</font> myTag**</br>
+ > **<font color=red>git push --delete</font> origin myTag**</br>
+ > Delete a tag.
 
 # Remote
 
