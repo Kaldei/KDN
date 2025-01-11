@@ -229,19 +229,30 @@ finally:
 ````py
 class Player:
     # Constructor
-    def __init__(self) -> None:
+    def __init__(self, name:str) -> None:
+		self.name: str = name
         self.health: int = 100
         self.max_health: int = 100
+        
+	# Method
+	def increase_max_health(self) -> None:
+		self.max_health += 10
 ````
 
 ````py
-# Init new object with the class
-myPlayer: Player = Player()
+# Init new instance of the class (a new object)
+myPlayer: Player = Player(name: 'myPlayerName')
+
+# Use a method
+myPlayer.increase_max_health()
+
+# Access an attribute
+print(myPlayer.max_health) # Will print 110
 ````
 
 ---
 
-### Attributes (Class and Instance)
+### Class Attributes vs Instance Attributes
 
 
 ````py
@@ -261,13 +272,13 @@ myPlayer2: Player = Player()
 
 # Implicitly create an Instance Attribute
 myPlayer1.max_mana = 200
-print(myPlayer1.max_mana) # 200
-print(myPlayer2.max_mana) # 100
+print(myPlayer1.max_mana) # Will print 200
+print(myPlayer2.max_mana) # Will print 100
 
 # Change the Class Attribute value
 Player.max_mana = 300
-print(myPlayer1.max_mana) # 300
-print(myPlayer2.max_mana) # 300
+print(myPlayer1.max_mana) # Will print 300
+print(myPlayer2.max_mana) # Will print 300
 ````
 
 ---
