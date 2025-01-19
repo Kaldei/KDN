@@ -137,3 +137,21 @@ paginator = securityhub.get_paginator('list_security_control_definitions')
 
 controlsIds = paginator.paginate().search("SecurityControlDefinitions[].SecurityControlId")
 ````
+
+# Alternative to  boto3 (aws-requests-auth)
+
+---
+
+### Example
+
+
+````python
+import requests
+from aws_requests_auth.aws_auth import AWSRequestsAuth
+
+auth = AWSRequestsAuth(aws_access_key='MY_ACCESS_KEY', aws_secret_access_key='MY_SECRET_KEY', aws_host='MY_AWS_API_HOST', aws_region='us-east-1', aws_service='execute-api')
+
+response = requests.get('https://dqf7ti8g66.execute-api.us-east-1.amazonaws.com/api/', auth=auth)
+
+print(response.content)
+````

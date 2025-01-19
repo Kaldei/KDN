@@ -6,6 +6,39 @@ tags:
   - aws
 ---
 
+# AWS
+
+---
+
+### Shared Responsibility Model
+
+![AWS-Basis-Shared_Responsibility_Model.png](../../attachments/AWS-Basis-Shared_Responsibility_Model.png)
+Credit: AWS Skill Builder
+
+---
+
+### Region, Availability Zones, Local Zones, Edge Locations
+
+**Regions** are independent groups of datacenters physically distant from one another. This allows fault tolerance against failures caused by natural disasters.
+
+**Availability Zones** are datacenters physically separated but linked with a high-performance network within a Region. Each Region is composed of at least 2 Availability Zones. This allows fault tolerance against outages caused failures that may be caused by power or network failures.
+
+**Local Zones** are "extensions of region", they are datacenter closer to you, to reduce the latency. They are like an additional Availability Zone. It is useful when very low latency is required. 
+
+**Edge Locations** are local places for the user to access data. They are datacenters specifically built for content delivery (websites). They store data temporarily (cache).
+
+---
+
+### ARN
+
+An Amazon ARN is the way AWS generate a unique identifier for all resources in the AWS Cloud. It consists of multiple strings separated by colons.
+
+The format is:
+
+````
+arn:aws:<service>:<region>:<account_id>:<resource_type>/<resource_name>
+````
+
 # Security, Identity, & Compliance
 
 ![Arch-Category_Security-Identity-Compliance_64.svg](../../attachments/Arch-Category_Security-Identity-Compliance_64.svg)

@@ -137,6 +137,41 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > }
  > ````
 
+# Secret Manager
+
+---
+
+### List
+
+<font color=red></font>
+
+ > 
+ > **<font color=red>aws secretsmanager list-secrets --query "SecretList\[\].{Name:Name}" --out table</font>**</br>
+ > List Secrets Names
+
+---
+
+### Get
+
+
+ > 
+ > **<font color=red>aws secretsmanager get-secret-value --secret-id "</font>myNewValue<font color=red>"</font>**</br>
+ > Get a secret value (`--secret-id` can be the secret name or the arn).
+
+---
+
+### Update
+
+
+ > 
+ > **<font color=red>aws secretsmanager update-secret --secret-id "</font>my/secret/name<font color=red>" --secret-string "</font>myNewValue<font color=red>"</font>**</br>
+ > Update secret value.
+
+ > 
+ > **<font color=red>aws secretsmanager update-secret --secret-id "</font>my/secret/name<font color=red>" --secret-string</font>
+ > file://myFile**</br>
+ > Update a secret value using a file.
+
 # EC2
 
 ---

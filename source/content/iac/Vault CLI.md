@@ -39,7 +39,7 @@ tags:
  > **<font color=red>vault login</font>**</br>
  > Login to the server.
 
-# Secret Engine
+# Secret Engines
 
 ---
 
