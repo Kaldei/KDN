@@ -125,6 +125,10 @@ tags:
  > 
  > **<font color=red>vault auth enable userpass</font>**</br>
  > Enable UserPass Auth Method.
+
+ > 
+ > **<font color=red>vault list auth/userpass/users/</font>**</br>
+ > List created users
  > 
  > **<font color=red>vault write auth/userpass/users/</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
  > Create a password for user "my_user".
