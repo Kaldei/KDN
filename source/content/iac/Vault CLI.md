@@ -39,6 +39,28 @@ tags:
  > **<font color=red>vault login</font>**</br>
  > Login to the server.
 
+# Authentication Methods
+
+---
+
+### UserPass
+
+
+ > 
+ > **<font color=red>vault auth enable userpass</font>**</br>
+ > Enable UserPass Auth Method.
+
+ > 
+ > **<font color=red>vault list auth/userpass/users/</font>**</br>
+ > List created users
+ > 
+ > **<font color=red>vault write auth/userpass/users/</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
+ > Create a password for user "my_user".
+
+ > 
+ > **<font color=red>vault login -method=userpass username=</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
+ > Login to Vault using UserPass Auth Method.
+
 # Secret Engines
 
 ---
@@ -59,7 +81,7 @@ tags:
  > **<font color=red>vault secrets enable -path=</font>my_secret_engine_path <font color=red>kv</font>**</br>
  > Create a new Key Value (KV) secrets engine.
 
-# Secret Management
+# KV Secret Engine
 
 ---
 
@@ -114,25 +136,3 @@ tags:
  > 
  > **<font color=red>vault kv destroy -mount=</font>my_secret_engine_path <font color=red>-versions=</font>1  my_secret**</br>
  > Permanently delete version of a secret.
-
-# Authentication Methods
-
----
-
-### UserPass
-
-
- > 
- > **<font color=red>vault auth enable userpass</font>**</br>
- > Enable UserPass Auth Method.
-
- > 
- > **<font color=red>vault list auth/userpass/users/</font>**</br>
- > List created users
- > 
- > **<font color=red>vault write auth/userpass/users/</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
- > Create a password for user "my_user".
-
- > 
- > **<font color=red>vault login -method=userpass username=</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
- > Login to Vault using UserPass Auth Method.
