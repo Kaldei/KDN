@@ -98,7 +98,7 @@ tags:
 
 ---
 
-### Read
+### Get
 
 
  > 
@@ -130,7 +130,7 @@ tags:
 
 ---
 
-### Destroy
+### Destroy (v2)
 
 
  > 
