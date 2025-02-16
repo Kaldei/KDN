@@ -6,19 +6,6 @@ tags:
   - Python
 ---
 
-# Basis
-
----
-
-### Main
-
-This code means that the code is inside the condition will only run if this file is the one that was run (it is not the case if the file is imported).
-
-````py
-if __name__ == '__main__':
-	print("Hello")
-````
-
 # Virtual Env
 
 ---
@@ -223,6 +210,17 @@ finally:
 
 ---
 
+### Main
+
+This condition will be evaluated to `True` if this file is the one that was run. This is not the case is the file is imported thus the condition is will be evaluated to `False`. 
+
+````py
+if __name__ == '__main__':
+	print("Hello")
+````
+
+---
+
 ### Class
 
 
@@ -308,4 +306,45 @@ Also, `@staticmethod` allows calling the method even if no object were instantia
 
 ````py
 Player.say_hello()
+````
+
+---
+
+### Dunder Methods
+
+
+````py
+class Player:
+    # Constructor
+    def __init__(self) -> None:
+        self.health: int = 100
+        self.max_health: int = 100
+   
+	# Dunder Methods
+	__add__(self, other):
+		...
+
+	__mul__(self, other):
+		...
+
+	# __str__ should return something user friendly
+	# If __str__ is not defined is will fallback to __repr__
+	__str__(self) -> str:
+		...
+
+	# __repr__ should return something usefull for developpers
+	# Default is memory address
+	__repr__(self) -> str:
+		...
+
+````
+
+````py
+myPlayer1: Player = Player()
+myPlayer2: Player = Player()
+
+print(myPlayer1 + myPlayer2) # Will use dunder method __add__
+print(myPlayer1 * myPlayer2) # Will use dunder method __mul__
+print(myPlayer1) # Will use dunder method __str__
+print(repr(myPlayer1)) # Will use dunder method __str__
 ````
