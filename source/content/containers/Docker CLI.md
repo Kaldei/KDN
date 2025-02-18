@@ -174,3 +174,17 @@ tags:
  > 
  > **<font color=red>docker cp</font> myContainer<font color=red>:</font>/path/to/source myFile.txt**</br>
  > Copy a file form the container to the host.
+
+# Tips
+
+---
+
+### Access Container File System
+
+ > 
+ > **CONTAINER_PID=$(<font color=red>docker inspect -f '{{.State.Pid}}'</font> myContainer)**</br>
+ > Get container's PID.
+
+ > 
+ > **<font color=red>nsenter --target</font> $CONTAINER_PID <font color=red>--mount ls</font> /**</br>
+ > Run ls in the container's file system.
