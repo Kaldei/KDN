@@ -463,6 +463,16 @@ Here some examples of workind DNS names to access Pods in a Cluster:
 
 ---
 
+### CNI
+
+By default, Kubernetes does not provide any networking functionality.
+It is required to install a CNI (Container Network Interface) plugin.
+
+Some plugins like `kindnet` and `flannel` don't support network policies.
+Others like `Cilium` and `Calico` support network policies.
+
+---
+
 ### Network Policies
 
 
