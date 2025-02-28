@@ -114,25 +114,6 @@ tags:
  > **<font color=red>docker run</font> myImage myCommand**</br>
  > Run a command in new container.
 
- > 
- > **<font color=red>-d</font>**</br>
- > Detached Mode (run in background).
- > 
- > **<font color=red>-it</font>**</br>
- > Keep stdin open (to use it like a shell).
- > 
- > **<font color=red>--rm</font>**</br>
- > Remove the container when it is stopped.
- > 
- > **<font color=red>-p</font> 1212<font color=red>:</font>1212**</br>
- > Map ports (host:container).
- > 
- > **<font color=red>-v</font> /myHostFolder<font color=red>:</font>/myContainerFolder**</br>
- > Map a folder between the host and the container.
- > 
- > **<font color=red>--name</font> myContainer**</br>
- > Give a name to the container.
-
 ---
 
 ### Manage
@@ -175,11 +156,65 @@ tags:
  > **<font color=red>docker cp</font> myContainer<font color=red>:</font>/path/to/source myFile.txt**</br>
  > Copy a file form the container to the host.
 
+---
+
+### Flags
+
+
+ > 
+ > **<font color=red>--name</font> myContainer**</br>
+ > Give a name to the container.
+
+ > 
+ > **<font color=red>-d</font>**</br>
+ > Detached Mode (run in background).
+ > 
+ > **<font color=red>-it</font>**</br>
+ > Keep stdin open (to use it like a shell).
+ > 
+ > **<font color=red>--rm</font>**</br>
+ > Remove the container when it is stopped.
+
+ > 
+ > **<font color=red>-p</font> 1212<font color=red>:</font>1212**</br>
+ > Map ports (host:container).
+ > 
+ > **<font color=red>-v</font> /myHostFolder<font color=red>:</font>/myContainerFolder**</br>
+ > Map a folder between the host and the container.
+
+ > 
+ > **<font color=red>--read-only</font>**</br>
+ > Makes the container's root file system read-only.
+ > 
+ > **<font color=red>--security-opt=no-new-privileges</font>**</br>
+ > Prevents processes inside the container from gaining new privileges during execution (security measure against privilege escalation).
+
+ > 
+ > **<font color=red>--cap-drop=ALL</font>**</br>
+ > Start the container without capabilities.
+ > 
+ > **<font color=red>--cap-add=SYS_NICE</font>**</br>
+ > Capability for scheduling (required for GPU scheduling?).
+
+ > 
+ > **<font color=red>--cpus=</font>2**</br>
+ > Set CPU limit.
+ > 
+ > **<font color=red>--gpu</font> all**</br>
+ > Set GPU limits (syntax allows for more detailed control than CPU).
+ > 
+ > **<font color=red>--memory=</font>4g**</br>
+ > Set RAM limit.
+ > 
+ > **<font color=red>--memory-swap=</font>4g**</br>
+ > Set Swap limit.
+
 # Tips
 
 ---
 
 ### Access Container File System
+
 
  > 
  > **CONTAINER_PID=$(<font color=red>docker inspect -f '{{.State.Pid}}'</font> myContainer)**</br>
