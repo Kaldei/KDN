@@ -66,6 +66,10 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws configure set aws_session_token</font> MY_AWS_SESSION_TOKEN <font color=red>--profile</font> myProfileName**</br>
  > Set a `AWS_SESSION_TOKEN` (after `aws configure`).
 
+ > 
+ > **<font color=red>aws configure sso --profile</font> myProfileName**</br>
+ > Create or modify an SSO profile.
+
 ---
 
 ### Query
