@@ -165,11 +165,23 @@ tags:
 
 
  > 
- > **<font color=red>git remote add</font> origin <font color=red>git@github.com:</font>myUser<font color=red>/</font>myRepo<font color=red>.git</font>**</br>
- > Add remote branch via ssh (origin is a name, it can be anything).
+ > **<font color=red>git remote -v</font>**</br>
+ > Display Remote Branches and their URL.
+
+ > 
+ > **<font color=red>git remote add</font> origin git@github.com:myUser/myRepo.git**</br>
+ > Add Remote Branch (`origin` is the name of the branch, it can be anything).
+ > 
+ > <font color=red>
+**git remote set-url</font> origin git@github.com:myUser/myOtherRepo.git**</br>
+ > Update URL for the Remote Branch. 
+ > 
+ > **<font color=red>git remote remove</font> origin**</br>
+ > Remove Remote Branch.
+
  > 
  > **<font color=red>git branch</font> myBranch <font color=red>--set-upstream-to=</font>origin<font color=red>/</font>myBranch**</br>
- > Set upstream for a branch.
+ > Set Upstream for a Branch.
 
 # Git Tools
 
