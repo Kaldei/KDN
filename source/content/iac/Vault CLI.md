@@ -98,7 +98,7 @@ tags:
 
 
  > 
- > **<font color=red>vault lease revoke </font> aws/creds/myRole/myLeaseId**</br>
+ > **<font color=red>vault lease revoke </font> aws/creds/myRole/my_lease_id**</br>
  > Revoke specified lease.
  > 
  > **<font color=red>vault lease revoke -prefix</font> aws/**</br>
@@ -162,6 +162,10 @@ tags:
  > 
  > **<font color=red>vault token create -policy=</font>my_policy <font color=red>-ttl=</font>30m**</br>
  > Create a token with a specified Policy and TTL.
+
+ > 
+ > **<font color=red>vault token renew</font> myToken**</br>
+ > Renew a token.
 
 ---
 
