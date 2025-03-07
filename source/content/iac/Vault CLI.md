@@ -141,7 +141,7 @@ tags:
 
  > 
  > **<font color=red>vault secrets list -namespace=</font>my_namespace**</br>
- > Use a namespace.
+ > Use a namespace in a command.
 
 # Authentication Methods
 
