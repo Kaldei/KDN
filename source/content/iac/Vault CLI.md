@@ -437,22 +437,29 @@ tags:
 
 ---
 
-### Snapshot (Enterprise)
+### Snapshot
 
 
  > 
- > **<font color=red>vault list /sys/storage/raft/snapshot-auto/config</font>**</br>
- > List Auto Snapshot configs.
-
- > 
- > **<font color=red>vault read /sys/storage/raft/snapshot-auto/config/</font>my-auto-snapshot-config**</br>
- > Check specified Auto Snapshot config.
-
+ > **<font color=red>vault operator raft snapshot save</font> backup.snap**</br>
+ > Create a Snapshot.
  > 
  > **<font color=red>vault operator raft snapshot restore -force</font> backup.snap**</br>
  > Restore Snapshot from local file (copy the Snapshot file on the machine to restore). 
  > `-force` option is required here since the Auto-Unseal or Shamir keys will not be consistent with the snapshot data (snapshot from a different cluster).
  > https://developer.hashicorp.com/vault/tutorials/standard-procedures/sop-restore
+
+---
+
+### Snapshot Auto (Enterprise)
+
+
+ > 
+ > **<font color=red>vault list /sys/storage/raft/snapshot-auto/config</font>**</br>
+ > List Auto Snapshot configs.
+ > 
+ > **<font color=red>vault read /sys/storage/raft/snapshot-auto/config/</font>my-auto-snapshot-config**</br>
+ > Check specified Auto Snapshot config.
 
 # Replication and Agent
 
