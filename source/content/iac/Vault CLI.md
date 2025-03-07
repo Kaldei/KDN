@@ -202,14 +202,14 @@ tags:
 
  > 
  > **<font color=red>vault write auth/approle/role/</font>my-role \ <font color=red>token_policies="</font>my-policy<font color=red>"</font>**</br>
- > Create an AppRole with a Policy.
+ > Create an AppRole Role with a Policy.
 
  > 
  > **<font color=red>vault read auth/approle/role/</font>my-role<font color=red>/role-id</font>**</br>
  > Retrieve RoleId.
  > 
  > **<font color=red>vault write -f auth/approle/role/</font>my-role<font color=red>/secret-id</font>**</br>
- > Retrieve SecretId.
+ > Retrieve SecretId (`-f` because `write` operation without any data).
 
  > 
  > **<font color=red>vault write auth/approle/login role_id="</font>$ROLE_ID<font color=red>"</font> <font color=red>secret_id="</font>$SECRET_ID<font color=red>"</font>**</br>
