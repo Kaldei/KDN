@@ -435,6 +435,13 @@ tags:
  > **<font color=red>vault operator raft list-peers</font>**</br>
  > List Raft members.
 
+ > 
+ > **<font color=red>vault operator raft autopilot state</font>**</br>
+ > Show current cluster autopilot state.
+ > 
+ > **<font color=red>vault operator raft autopilot get-config</font>**</br>
+ > Show autopilot config.
+
 ---
 
 ### Snapshot
