@@ -410,10 +410,13 @@ tags:
  > 
  > **<font color=red>vault operator rekey -init -key-shares=</font>3 <font color=red>-key-threshold=</font>2**</br>
  > Initialize request for ReKey.
-
  > 
  > **<font color=red>vault operator rekey -target=recovery -init -key-shares=</font>3 <font color=red>-key-threshold=</font>2**</br>
  > Initialize request for ReKey when Auto Unseal is enabled.
+
+ > 
+ > **<font color=red>vault operator rekey -nonce=</font>\<request_nonce>**</br>
+ > Validate the request with Useal (or Recovery) Keys until quorum is reached. This will output new Unseal (or Recovery).
 
 ---
 
