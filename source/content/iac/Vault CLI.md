@@ -54,6 +54,41 @@ tags:
  > **<font color=red>vault login</font>**</br>
  > Login to the server.
 
+# Tokens
+
+---
+
+### Explore
+
+
+ > 
+ > **<font color=red>vault list auth/</font>my_auth_method<font color=red>/accessors</font>**</br>
+ > List tokens created with specified Auth Method.
+
+ > 
+ > **<font color=red>vault token lookup -accessor</font> \<token_accessor>**</br>
+ > Return info about the token (type, TTL, max TTL ...).
+
+---
+
+### Revoke
+
+
+ > 
+ > **<font color=red>vault token revoke</font> \<token_id>**</br>
+ > Revoke token.
+ > 
+ > **<font color=red>vault token revoke -accessor</font> \<token_accessor>**</br>
+ > Revoke token using its accessor.
+
+ > 
+ > **<font color=red>vault token revoke -self</font>**</br>
+ > Revoke current token.
+
+ > 
+ > **<font color=red>vault token revoke -mode-path auth/</font>my_auth_method**</br>
+ > Revoke all tokens (and their children) created with specified auth method.
+
 # Traceability
 
 ---
@@ -371,18 +406,6 @@ tags:
 
 ---
 
-### Delete Root Token
-
-
- > 
- > **<font color=red>vault token revoke -self</font>**</br>
- > Revoke Root Token (if connected as Root).
- > 
- > **<font color=red>vault token revoke</font> \<root_token>**</br>
- > Revoke Root Token.
-
----
-
 ### Regenerate Root Token
 
 
@@ -474,7 +497,7 @@ tags:
  > **<font color=red>vault read /sys/storage/raft/snapshot-auto/config/</font>my-auto-snapshot-config**</br>
  > Check specified Auto Snapshot config.
 
-# Replication and Agent
+# Replication
 
 ---
 
@@ -525,9 +548,11 @@ https://developer.hashicorp.com/vault/tutorials/enterprise/performance-replicati
  > **<font color=red>vault write sys/replication/performance/secondary/enable token=</font>PERF_SECONDARY_TOKEN**</br>
  > Enable Performance replication as Secondary.
 
+# Agent
+
 ---
 
-### Agent
+### Basis
 
 
  > 
