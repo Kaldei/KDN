@@ -172,8 +172,7 @@ tags:
  > **<font color=red>git remote add</font> origin git@github.com:myUser/myRepo.git**</br>
  > Add Remote Branch (`origin` is the name of the branch, it can be anything).
  > 
- > <font color=red>
-**git remote set-url</font> origin git@github.com:myUser/myOtherRepo.git**</br>
+ > **<font color=red>git remote set-url</font> origin git@github.com:myUser/myOtherRepo.git**</br>
  > Update URL for the Remote Branch. 
  > 
  > **<font color=red>git remote remove</font> origin**</br>
