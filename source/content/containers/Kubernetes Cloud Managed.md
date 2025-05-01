@@ -93,7 +93,7 @@ This Load Balancer can be configured with specific [annotations](https://kuberne
 
 ````yml
 # New configuration (eks >= v1.22)
-king: Service
+kind: Service
 spec:
 	type: LoadBalancer
 	loadBalancerClass: nlb
@@ -101,7 +101,7 @@ spec:
 
 ````yml
 # Old configuration
-king: Service
+kin: Service
 spec:
 	type: LoadBalancer
 annotations: 
