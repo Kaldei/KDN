@@ -101,7 +101,7 @@ spec:
 
 ````yml
 # Old configuration
-kin: Service
+kind: Service
 spec:
 	type: LoadBalancer
 annotations: 
@@ -137,7 +137,7 @@ If the AWS Load Balancer Controller is not installed or the `aws-load-balancer-t
 #### Configuration
 
 ````yml
-king: Service
+kind: Service
 spec:
 	type: LoadBalancer
 ````
@@ -155,7 +155,7 @@ This Load Balancer understand TLS and will terminate it when passing traffic to 
 #### Configuration
 
 ````yml
-king: Ingress
+kind: Ingress
 spec:
 	ingressClassName: alb
 ````
