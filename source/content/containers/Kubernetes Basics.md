@@ -524,7 +524,7 @@ Service of type `ClusterIP` allows for communication between services in the sam
 
 ### NodePort
 
-Service for external traffic. All traffic send to the specified port on the Node will be sent to the Service (this requires to assign a public IP to the node). 
+Service for external traffic. All traffic send to the specified port on the Node will be sent to the Service (this requires that the client is able to directly reach nodes). 
 
 If the request is sent to a different node than the pod is running on, the request will be forwarded to the right node.
 
