@@ -60,7 +60,7 @@ tags:
 
 ---
 
-### Validate Chart
+### Validate
 
 
  > 
