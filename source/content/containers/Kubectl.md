@@ -264,13 +264,13 @@ tags:
 
 
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>ClusterIP <font color=red>--port=</font>8080 <font color=red>--name</font> my-service**</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>ClusterIP <font color=red>--port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
  > Create a service of type ClusterIP.
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>8080 <font color=red>--name</font> my-service**</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
  > Create a service of type NodePort.
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>8080 <font color=red>--name</font> my-service**</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>LoadBalancer <font color=red>--port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
  > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer).
 
 ---
