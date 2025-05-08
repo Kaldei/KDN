@@ -278,7 +278,7 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
  > Start a Pod (Appache in this case).
  > 
  > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>80**</br>
- > Start a Pod and set the `containerPort` spec.
+ > Start a Pod and set the `containerPort` spec.</br>
  > Like `EXPOSE` it is for information purpose only: it does not actually publish the port.
 
  > 
@@ -366,7 +366,7 @@ The only specifications that can be edited without `--force` are the following:
 
  > 
  > **<font color=red>kubectl port-forward</font> my-pod \<HOST_PORT>:\<POD_PORT>**</br>
- > Create a port forward to the specified pod. 
+ > Create a port forward to the specified pod.</br>
  > Access via `localhost:<POD_PORT>`
 
 ---
@@ -376,15 +376,15 @@ The only specifications that can be edited without `--force` are the following:
 
  > 
  > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type ClusterIP.
+ > Create a service of type ClusterIP.</br>
  > Access via `<CLUSTER_IP>:<POD_PORT>` (only accessible inside the cluster).
  > 
  > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type NodePort. 
+ > Create a service of type NodePort.</br>
  > Access via `<ANY_NODE_IP>:<NODE_PORT>`
  > 
  > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer). 
+ > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer).</br>
  > Access via `<EXTERNAL_IP>:<POD_PORT>` (`EXTERNAL_IP` is the IP of the Load Balancer).
 
 ---
