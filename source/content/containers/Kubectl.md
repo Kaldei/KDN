@@ -264,14 +264,14 @@ tags:
 
 
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>ClusterIP <font color=red>--port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type ClusterIP.
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > Create a service of type ClusterIP.  Access via `<CLUSTER_IP>:<POD_PORT>` (only accessible inside the cluster).
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>NodePort <font color=red>--port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type NodePort.
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > Create a service of type NodePort. Access via `<ANY_NODE_IP>:<NODE_PORT>`
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=</font>LoadBalancer <font color=red>--port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer).
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer). Access via `<EXTERNAL_IP>:<POD_PORT>` (`EXTERNAL_IP` is the IP of the Load Balancer).
 
 ---
 
@@ -279,8 +279,8 @@ tags:
 
 
  > 
- > **<font color=red>kubectl port-forward</font> my-pod \[HOST_PORT\]:\[POD_PORT\]**</br>
- > Create a port forward to the specified pod.
+ > **<font color=red>kubectl port-forward</font> my-pod \<HOST_PORT>:\<POD_PORT>**</br>
+ > Create a port forward to the specified pod. Access via `localhost:<POD_PORT>`
 
 # Ingress
 
