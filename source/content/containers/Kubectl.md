@@ -256,83 +256,6 @@ tags:
  > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect<font color=red>-</font>**</br>
  > Remove Taint from a Node.
 
-# Services
-
----
-
-### Expose (imperative)
-
-
- > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type ClusterIP.  Access via `<CLUSTER_IP>:<POD_PORT>` (only accessible inside the cluster).
- > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type NodePort. Access via `<ANY_NODE_IP>:<NODE_PORT>`
- > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
- > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer). Access via `<EXTERNAL_IP>:<POD_PORT>` (`EXTERNAL_IP` is the IP of the Load Balancer).
-
----
-
-### Port Forward (imperative)
-
-
- > 
- > **<font color=red>kubectl port-forward</font> my-pod \<HOST_PORT>:\<POD_PORT>**</br>
- > Create a port forward to the specified pod. Access via `localhost:<POD_PORT>`
-
-# Ingress
-
----
-
-### Create
-
-
- > 
- > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>/mypath<font color=red>=</font>my-app-service<font color=red>:</font>8282"**</br>
- > Create an Ingress that route `/mypath` to the `my-app-service`.
-
-
-Here are some annotations that could be usefull when using an Ingress of type Nginx.
-
-````yml
-metadata:
-  annotations:
-    # Allow to do /myapp -> /
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    # Redirect HTTP traffic to HTTPS
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-````
-
-# Deployments
-
----
-
-### Create
-
-
- > 
- > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
- > Create a deployment with 4 replicas.
-
----
-
-### Update (imperative)
-
-
- > 
- > **<font color=red>kubectl scale deployment</font> my-deployment <font color=red>--replicas</font> 4**</br>
- > Change the number of replicas for the Deployment.
-
- > 
- > **<font color=red>kubectl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
- > Change the image used in a Deployment.
-
- > 
- > **<font color=red>kubectl rollout status deployment/</font>my-deployment**</br>
- > Show rollout status.
-
 # Pods
 
 ---
@@ -351,8 +274,12 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
+ > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd**</br>
+ > Start a Pod (Appache in this case).
+ > 
  > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>80**</br>
- > Start Apache Pod.
+ > Start a Pod and set the `containerPort` spec.
+ > Like `EXPOSE` it is for information purpose only: it does not actually publish the port.
 
  > 
  > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--</font> /bin/bash**</br>
@@ -401,6 +328,85 @@ The only specifications that can be edited without `--force` are the following:
 * `spec.initContainers[*].image`
 * `spec.activeDeadlineSeconds`
 * `spec.tolerations`
+
+# Deployments
+
+---
+
+### Create
+
+
+ > 
+ > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
+ > Create a deployment with 4 replicas.
+
+---
+
+### Update (imperative)
+
+
+ > 
+ > **<font color=red>kubectl scale deployment</font> my-deployment <font color=red>--replicas</font> 4**</br>
+ > Change the number of replicas for the Deployment.
+
+ > 
+ > **<font color=red>kubectl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
+ > Change the image used in a Deployment.
+
+ > 
+ > **<font color=red>kubectl rollout status deployment/</font>my-deployment**</br>
+ > Show rollout status.
+
+# Network Access
+
+---
+
+### Port Forward (imperative)
+
+
+ > 
+ > **<font color=red>kubectl port-forward</font> my-pod \<HOST_PORT>:\<POD_PORT>**</br>
+ > Create a port forward to the specified pod. 
+ > Access via `localhost:<POD_PORT>`
+
+---
+
+### Expose (imperative)
+
+
+ > 
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > Create a service of type ClusterIP.
+ > Access via `<CLUSTER_IP>:<POD_PORT>` (only accessible inside the cluster).
+ > 
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > Create a service of type NodePort. 
+ > Access via `<ANY_NODE_IP>:<NODE_PORT>`
+ > 
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer). 
+ > Access via `<EXTERNAL_IP>:<POD_PORT>` (`EXTERNAL_IP` is the IP of the Load Balancer).
+
+---
+
+### Ingress
+
+
+ > 
+ > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>/mypath<font color=red>=</font>my-app-service<font color=red>:</font>8282"**</br>
+ > Create an Ingress that route `/mypath` to the `my-app-service`.
+
+
+Here are some annotations that could be usefull when using an Ingress of type Nginx.
+
+````yml
+metadata:
+  annotations:
+    # Allow to do /myapp -> /
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # Redirect HTTP traffic to HTTPS
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+````
 
 # Secrets
 
