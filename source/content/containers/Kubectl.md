@@ -357,7 +357,7 @@ The only specifications that can be edited without `--force` are the following:
  > **<font color=red>kubectl rollout status deployment/</font>my-deployment**</br>
  > Show rollout status.
 
-# Network Access
+# Service Exposure
 
 ---
 
@@ -371,19 +371,19 @@ The only specifications that can be edited without `--force` are the following:
 
 ---
 
-### Expose (imperative)
+### Expose Services (imperative)
 
 
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**</br>
  > Create a service of type ClusterIP.</br>
  > Access via `<CLUSTER_IP>:<POD_PORT>` (only accessible inside the cluster).
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**</br>
  > Create a service of type NodePort.</br>
  > Access via `<ANY_NODE_IP>:<NODE_PORT>`
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-service**</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**</br>
  > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer).</br>
  > Access via `<EXTERNAL_IP>:<POD_PORT>` (`EXTERNAL_IP` is the IP of the Load Balancer).
 
@@ -393,8 +393,12 @@ The only specifications that can be edited without `--force` are the following:
 
 
  > 
- > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>/mypath<font color=red>=</font>my-app-service<font color=red>:</font>8282"**</br>
- > Create an Ingress that route `/mypath` to the `my-app-service`.
+ > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>/mypath<font color=red>=</font>my-app-cluster-ip-service<font color=red>:</font>8080"**</br>
+ > Create an Ingress that route traffic address to `/mypath` path.
+
+ > 
+ > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>myapp.local/\*<font color=red>=</font>my-app-cluster-ip-service<font color=red>:</font>8080"**</br>
+ > Create an Ingress that route traffic addressed to `myapp.local` host.
 
 
 Here are some annotations that could be usefull when using an Ingress of type Nginx.

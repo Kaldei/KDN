@@ -12,29 +12,33 @@ tags:
 
 ---
 
-### Remote Repo
+### Explore
 
 
  > 
  > **<font color=red>helm repo list</font>**</br>
- > Show available chart repos.
-
- > 
- > **<font color=red>helm repo add</font> stable https://charts.helm.sh/stable**</br>
- > Add standard stable repo.
- > 
- > **<font color=red>helm repo add</font> my-repo-name https://my-repo-address/**</br>
- > Add source repo to local.
-
+ > Show registered Charts repos.
  > 
  > **<font color=red>helm repo update</font>**</br>
- > Grab latest charts in the repos.
+ > Grab latest Charts available in registered repos.
 
  > 
  > **<font color=red>helm search repo</font> my-keyword**</br>
- > Find charts in repositories based on a keyword.
+ > Look for Charts in registered repositories based on a keyword.
 
-# Chart
+---
+
+### Add
+
+
+ > 
+ > **<font color=red>helm repo add</font> stable https://charts.helm.sh/stable**</br>
+ > Add the standard stable repo to local Helm config.
+ > 
+ > **<font color=red>helm repo add</font> my-repo-name https://my-repo-address/**</br>
+ > Add a repo to the local Helm config .
+
+# Charts
 
 ---
 
@@ -43,7 +47,16 @@ tags:
 
  > 
  > **<font color=red>helm pull</font> my-chart**</br>
- > Pull a chart locally.
+ > Download the chart locally.
+
+---
+
+### Values
+
+
+ > 
+ > **<font color=red>helm show values</font> my-chart**</br>
+ > Display values for the chart.
 
 ---
 
@@ -60,7 +73,7 @@ tags:
  > **<font color=red>helm install --dry-run --debug</font> /path/to/folder <font color=red>--values</font> /path/to/valuesFiles.yml**</br>
  > Test chart template rendering locally and check potentials conflitcs on the cluster.
 
-# Release
+# Releases
 
 ---
 
