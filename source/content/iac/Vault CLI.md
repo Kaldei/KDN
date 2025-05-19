@@ -58,7 +58,7 @@ tags:
 
 ---
 
-### Explore
+### Lookup
 
 
  > 
@@ -68,6 +68,19 @@ tags:
  > 
  > **<font color=red>vault token lookup -accessor</font> \<token_accessor>**</br>
  > Return info about the token (type, TTL, max TTL ...).
+
+---
+
+### Create
+
+
+ > 
+ > **<font color=red>vault token create -policy=</font>my_policy <font color=red>-ttl=</font>30m**</br>
+ > Create a token with a specified Policy and TTL.
+
+ > 
+ > **<font color=red>vault token renew</font> myToken**</br>
+ > Renew a token.
 
 ---
 
@@ -182,75 +195,25 @@ tags:
 
 ---
 
-### Basis
+### List
 
 
  > 
  > **<font color=red>vault auth list</font>**</br>
  > List authentication backends enabled.
 
+---
+
+### Enable
+
+
  > 
  > **<font color=red>vault auth enable</font> aws**</br>
  > Enable an authentication backend.
 
----
-
-### Token
-
-
- > 
- > **<font color=red>vault token create -policy=</font>my_policy <font color=red>-ttl=</font>30m**</br>
- > Create a token with a specified Policy and TTL.
-
- > 
- > **<font color=red>vault token renew</font> myToken**</br>
- > Renew a token.
-
----
-
-### UserPass
-
-
- > 
- > **<font color=red>vault auth enable userpass</font>**</br>
- > Enable UserPass Auth Method.
-
- > 
- > **<font color=red>vault list auth/userpass/users/</font>**</br>
- > List created users
- > 
- > **<font color=red>vault write auth/userpass/users/</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
- > Create a password for user "my_user".
-
- > 
- > **<font color=red>vault login -method=userpass username=</font>my_user <font color=red>password="</font>my_pass<font color=red>"</font>**</br>
- > Login to Vault using UserPass Auth Method.
-
----
-
-### AppRole
-
-
- > 
- > **<font color=red>vault auth enable approle</font>**</br>
- > Enable AppRole.
-
- > 
- > **<font color=red>vault write auth/approle/role/</font>my-role \ <font color=red>token_policies="</font>my-policy<font color=red>"</font>**</br>
- > Create an AppRole Role with a Policy.
-
- > 
- > **<font color=red>vault read auth/approle/role/</font>my-role<font color=red>/role-id</font>**</br>
- > Retrieve RoleId.
- > 
- > **<font color=red>vault write -f auth/approle/role/</font>my-role<font color=red>/secret-id</font>**</br>
- > Retrieve SecretId (`-f` because `write` operation without any data).
-
- > 
- > **<font color=red>vault write auth/approle/login role_id="</font>$ROLE_ID<font color=red>"</font> <font color=red>secret_id="</font>$SECRET_ID<font color=red>"</font>**</br>
- > Login using AppRole.
-
 # Secret Engines
+
+For more details on specific Secret Engines see: [Vault CLI Secret Engines](Vault%20CLI%20Secret%20Engines.md)
 
 ---
 
@@ -285,122 +248,6 @@ tags:
  > 
  > **<font color=red>vault secrets tune</font> -default-lease-ttl=12h**</br>
  > Change the configuration of the Secret Engine.
-
-# Secret Engine KV
-
----
-
-### List
-
-
- > 
- > **<font color=red>vault kv list kv</font>**</br>
- > List secrets in a kv secret engine.
-
----
-
-### Get
-
-
- > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path my_secret**</br>
- > Read a secret.
- > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path <font color=red>-format=json</font> my_secret <font color=red>\| jq -r .data</font>**</br>
- > Read a secret and output in JSON.
-
- > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path <font color=red>-field=</font>foo my_secret**</br>
- > Read one field.
- > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path <font color=red>-format=json</font> my_secret <font color=red>\| jq -r .data.data.</font>foo**</br>
- > Read one field and output in JSON.
-
----
-
-### Put
-
-
- > 
- > **<font color=red>vault kv put -mount=</font>my_engine_path my_secret key<font color=red>=</font>value**</br>
- > Create a secret (or replace pre-existing).
-
- > 
- > **<font color=red>vault kv put -mount=</font>my_engine_path my_credentials username<font color=red>=</font>myUser password<font color=red>=</font>myPass**</br>
- > Create a new secret composed of credentials.
-
----
-
-### Delete
-
-
- > 
- > **<font color=red>vault kv delete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
- > In KV v1, permanently delete specified the secret.
- > In KV v2, mark the secret as deleted. The secret is still readable when specifying the version explicitly (it can be restored with `vault kv undelete`).
-
----
-
-### KV v2 Specific
-
-
- > 
- > **<font color=red>vault kv undelete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
- > Recover password. Only works if `destroyed` parameter is set to `false`.
-
- > 
- > **<font color=red>vault kv destroy -mount=</font>my_engine_path <font color=red>-versions=</font>1  my_secret**</br>
- > Permanently delete specified version(s) of a secret (cannot be recovered).
- > 
- > **<font color=red>vault kv metadata delete -mount=</font>my_engine_path my_secret**</br>
- > Permanently deletes the secret (thus all of it versions).
-
- > 
- > **<font color=red>vault kv enable-versioning</font> my_engine_path**</br>
- > Enable versioning for a KV v1 Secret Engine (convert to v2).
-
-# Secret Engine Transit
-
----
-
-### Enable
-
-
- > 
- > **<font color=red>vault secrets enable transit</font>**</br>
- > Enable Transit secret engine.
-
----
-
-### Keys
-
-
- > 
- > **<font color=red>vault list</font> transit<font color=red>/keys</font>**</br>
- > List Keys in Transit engine. 
-
- > 
- > **<font color=red>vault write -f</font> transit<font color=red>/keys/</font>my-key**</br>
- > Create a new Key.
- > 
- > **<font color=red>vault write -f</font> transit<font color=red>/keys/</font>my_key<font color=red>/rotate</font>**</br>
- > Rotate the Key (create a new version). Old versions of the key will still exist (they are managed by `min_decryption_version`).
-
----
-
-### Encryption
-
-
- > 
- > **<font color=red>vault write</font> transit<font color=red>/encrypt/</font>my_key <font color=red>plaintext=$(echo "</font>my secret data<font color=red>" | base64)</font>**</br>
- > Encrypt data.
- > 
- > **<font color=red>vault write -field=plaintext</font> transit<font color=red>/decrypt/</font>my_key <font color=red>ciphertext=</font>vault:v1:qRuV... <font color=red>\| base64 -d</font>**</br>
- > Decrypt data (`-field=plaintext` to only get the base64 decrypted data).
-
- > 
- > **<font color=red>vault write</font> transit<font color=red>/rewrap/</font>my-key <font color=red>ciphertext=</font>vault:v1:8SDd...**</br>
- > Decrypt then re-encrypt data with a newer version of the key.
 
 # Operator
 
