@@ -52,7 +52,31 @@ tags:
 
  > 
  > **<font color=red>vault login</font>**</br>
- > Login to the server.
+ > Login to Vault using a Token.
+
+
+ > 
+ > **<font color=red>vault login -method=userpass username="</font>my_user<font color=red>" password="</font>my_pass<font color=red>"</font>**</br>
+ > Login to Vault using UserPass.
+
+
+\>
+
+ > 
+ > **<font color=red>vault login -method=oidc role="</font>my_role<font color=red>"</font>**</br>
+ > Login to Vault with OIDC.
+
+
+ > 
+ > **<font color=red>vault write auth/approle/login role_id="</font>my_role_id<font color=red>"</font> <font color=red>secret_id="</font>my_secret_id<font color=red>"</font>**</br>
+ > Login to Vault using AppRole.
+
+
+\>
+
+ > 
+ > **<font color=red>vault write auth/jwt/login role=</font>my_role <font color=red>jwt=</font>my_jwt**</br>
+ > Login to Vault using a JWT.
 
 # Tokens
 
