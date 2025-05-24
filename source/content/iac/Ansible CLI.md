@@ -99,13 +99,13 @@ tags:
 
  > 
  > **<font color=red>-k</font>**</br>
- > Prompt user to enter SSH password.
+ > Prompt user to enter SSH password (`--ask-pass`).
  > 
  > **<font color=red>-K</font>**</br>
- > Prompt user to enter Become password.
+ > Prompt user to enter Become password (`--ask-become-pass`).
  > 
- > **<font color=red>---ask-vault-pass</font>**</br>
- > Prompt user to enter Secure Variables's Vault password.
+ > **<font color=red>-J</font>**</br>
+ > Prompt user to enter Secure Variables's Vault password (`--ask-vault-pass`).
 
 ---
 
@@ -113,9 +113,9 @@ tags:
 
 
  > 
- > **<font color=red>-c</font>**</br>
+ > **<font color=red>-C</font>**</br>
  > Dry run, show expected output of playbook (`--check`).
 
  > 
- > **<font color=red>-d</font>**</br>
+ > **<font color=red>-D</font>**</br>
  > Show details of the changes (`--diff`).
