@@ -6,19 +6,28 @@ tags:
   - ansible
 ---
 
-# CLI
+# Commands
 
 ---
 
-### Basis
+### Ansible
 
 
  > 
- > **<font color=red>ansible all -m ping</font>**</br>
- > Check if all hosts (specified in the inventory file) are reachable.
+ > **<font color=red>ansible</font> all <font color=red>-a "</font>whoami<font color=red>"</font>**</br>
+ > Execute command on all hosts specified in inventory file.
+
  > 
- > **<font color=red>ansible</font> myHosts <font color=red>-a "</font>whoami<font color=red>"</font>**</br>
- > Execute command on myHosts (specified in the inventory file).
+ > **<font color=red>ansible</font> all <font color=red>-m</font> ping**</br>
+ > Execute a module on all hosts.
+ > 
+ > **<font color=red>ansible</font> all <font color=red>-m ansible.builtin.setup -a "filter=ansible_os_family"</font>**</br>
+ > Return the `ansible_os_family` Ansible fact.
+
+---
+
+### Playbook
+
 
  > 
  > **<font color=red>ansible-playbook</font> myPlaybook.yml**</br>
@@ -48,36 +57,65 @@ tags:
  > **<font color=red>ansible-vault edit</font> secret.yml**</br>
  > Edit the secure file.
 
+# Flags
+
 ---
 
-### Flags
+### Variables
 
 
  > 
- > **<font color=red>-i</font>**</br>
+ > **<font color=red>-e</font> ansible_python_interpreter=/usr/bin/python3**</br>
+ > Set additional variable.
+
+---
+
+### Inventory
+
+
+ > 
+ > **<font color=red>-i</font> myHostsFile**</br>
  > Specify inventory file to use.
+ > 
+ > **<font color=red>-i "</font>192.168.1.250<font color=red>,"</font>**</br>
+ > Specify a host inline.
+
+---
+
+### User
+
 
  > 
  > **<font color=red>-u</font> myUser**</br>
- > Execute command as myUser.
- > 
- > **<font color=red>-k</font>**</br>
- > Prompt user to enter SSH password.
-
+ > Specify the user to use for remote connection.
  > 
  > **<font color=red>--become</font>**</br>
  > Use sudo when executing commands.
+
+---
+
+### Passwords
+
+
+ > 
+ > **<font color=red>-k</font>**</br>
+ > Prompt user to enter SSH password.
  > 
  > **<font color=red>-K</font>**</br>
  > Prompt user to enter Become password.
-
  > 
  > **<font color=red>---ask-vault-pass</font>**</br>
  > Prompt user to enter Secure Variables's Vault password.
 
+---
+
+### Misc
+
+
  > 
  > **<font color=red>-c</font>**</br>
- > Show expected output of playbook (`--check`).
+ > Dry run, show expected output of playbook (`--check`).
+
  > 
  > **<font color=red>-d</font>**</br>
  > Show details of the changes (`--diff`).

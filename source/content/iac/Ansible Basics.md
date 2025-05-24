@@ -59,26 +59,17 @@ ansible_port=1212
 
 ---
 
-### Playbook
+### Variables
 
-File that specify tasks to run on hosts: `myPlaybook.yml`
+A file to specify variables: `myVars.yml`
 
 ````yaml
 ---
-- hosts: all
-  become: yes
-
-  - import_playbook: playbooks/base_clock.yml
-
-  roles:
-    - myRole
-
-  tasks:
-    - import_tasks: myTask.yml
-    - name: Install Package
-	  package:
-	    name: neofetch
-	    state: latest
+	myVar: myValue
+	username: myUser
+	packages:
+	     - neofetch
+	     - htop
 ````
 
 ---
@@ -102,17 +93,26 @@ File used to define little units of tasks (`myTask.yml`), that can be imported i
 
 ---
 
-### Variables
+### Playbook
 
-A file to specify variables: `myVars.yml`
+File that specify tasks to run on hosts: `myPlaybook.yml`
 
 ````yaml
 ---
-	myVar: myValue
-	username: myUser
-	packages:
-	     - neofetch
-	     - htop
+- hosts: all
+  become: yes
+
+  - import_playbook: playbooks/base_clock.yml
+
+  roles:
+    - myRole
+
+  tasks:
+    - import_tasks: myTask.yml
+    - name: Install Package
+	  package:
+	    name: neofetch
+	    state: latest
 ````
 
 # Playbook Structures
@@ -170,6 +170,17 @@ A file to specify variables: `myVars.yml`
       - htop
 ````
 
+````yaml
+- name: Loop with Kev Value Variables
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    state: present
+    groups: "{{ item.groups }}"
+  loop:
+    - { name: 'user1', groups: 'wheel' }
+    - { name: 'user2', groups: 'root' }
+````
+
 ---
 
 ### Register
@@ -216,10 +227,11 @@ https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#c
 
  > 
  > **<font color=red>ansible_facts\['os_family'\]</font>**</br>
- > OS Family (ex: RedHat, Debian, ...)	
+ > OS Family (ex: RedHat, Debian, ...).
  > 
  > **<font color=red>ansible_facts\[‘distribution’\]</font>**</br>
- > OS Distribution (ex: RedHat can be RedHat, CentOS, Fedora, ..., and Debian can be Debian, Ubuntu, Kali, ...)
+ > OS Distribution (ex: RedHat can be RedHat, CentOS, Fedora, ..., and Debian can be Debian, Ubuntu, Kali, ...).
+
  > 
  > **<font color=red>ansible_facts\['distribution_major_version'\]</font>**</br>
  > OS major version.
