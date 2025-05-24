@@ -188,12 +188,13 @@ Save task output in a variable.
 
 
 ````yaml
--name: Task that notify ("call") the handler
-  lineinfile:
-    dest: /etc/ssh/sshd_config
-    regexp: "^#PasswordAuthentication yes"
-    line: "PasswordAuthentication no"
-  notify: Restart SSH daemon
+tasks:
+	-name: Task that notify ("call") the handler
+	  lineinfile:
+	    dest: /etc/ssh/sshd_config
+	    regexp: "^#PasswordAuthentication yes"
+	    line: "PasswordAuthentication no"
+	  notify: Restart SSH daemon
 
 
 handlers:
