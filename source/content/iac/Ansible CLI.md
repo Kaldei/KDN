@@ -76,9 +76,13 @@ tags:
  > 
  > **<font color=red>-i</font> myHostsFile**</br>
  > Specify inventory file to use.
+
  > 
- > **<font color=red>-i "</font>192.168.1.250<font color=red>,"</font>**</br>
+ > **<font color=red>-i "</font>192.168.1.1<font color=red>,"</font>**</br>
  > Specify a host inline.
+ > 
+ > **<font color=red>-i "</font>localhost<font color=red>," --connection=local</font>**</br>
+ > Run on localhost.
 
 ---
 
