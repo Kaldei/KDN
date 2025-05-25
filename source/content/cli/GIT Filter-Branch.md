@@ -47,7 +47,7 @@ git filter-branch ...
 git push --all origin --force
 ````
 
-# Snippets
+# Examples
 
 ---
 
