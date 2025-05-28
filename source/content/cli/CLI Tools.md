@@ -24,6 +24,9 @@ tags:
  > 
  > **<font color=red>grep -E</font>**</br>
  > Use a Regex.
+ > 
+ > **<font color=red>grep -F</font>**</br>
+ > Interpret patterns as fixed strings.
 
  > 
  > **<font color=red>grep -i</font>**</br>
@@ -59,6 +62,10 @@ tags:
  > 
  > **<font color=red>grep -h</font>**</br>
  > Do not return the folder prefix.
+
+ > 
+ > **<font color=red>grep -vxFf</font> myFileA myFileB**</br>
+ > Prints all lines in `fileA` that are not found in `fileB`.
 
 ---
 
