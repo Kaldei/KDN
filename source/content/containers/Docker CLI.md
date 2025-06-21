@@ -219,7 +219,6 @@ tags:
  > 
  > **CONTAINER_PID=$(<font color=red>docker inspect -f '{{.State.Pid}}'</font> myContainer)**</br>
  > Get container's PID.
-
  > 
  > **<font color=red>nsenter --target</font> $CONTAINER_PID <font color=red>--mount ls</font> /**</br>
  > Run ls in the container's file system.
