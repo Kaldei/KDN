@@ -281,6 +281,30 @@ print(myPlayer2.max_mana) # Will print 300
 
 ---
 
+### Name Mangling
+
+Name mangling is a mechanism that alters attribute’s name by prefixing it with `_ClassName`, it concerns attributes that starts with `__`.
+This has two purposes : 
+
+* preventing from overwriting attributes that are named the same.
+* indicates that the attribute is intended for internal use.
+
+````py
+class Player:
+    # Constructor
+    def __init__(self) -> None:
+        self.__private_attribute: str = "private_str"
+````
+
+````py
+myPlayer: Player = Player()
+
+print(myPlayer.__private_attribute) # Will not work
+print(myPlayer._Player__private_attribute) # Will work
+````
+
+---
+
 ### @staticmethod
 
 Adding the `@staticmethod` annotation allows creating a method that don't require anything from the object (`self`). This method could be defined outside the class but if its only relevant to this class, it can be nice to keep the code inside this class.
