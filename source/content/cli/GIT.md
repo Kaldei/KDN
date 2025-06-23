@@ -35,6 +35,19 @@ tags:
  > Change parameter value.
 
  > 
+ > **<font color=red>git config --global credential.helper cache</font>**</br>
+ > Save credentials in memory.
+ > 
+ > **<font color=red>git config --global credential.helper store</font>**</br>
+ > Save credentials in plaintext in `~/.git-credentials` (less secure).
+ > 
+ > **<font color=red>git config --global credential.helper osxkeychain</font>**</br>
+ > Save credentials in MacOS Keychain (more secure).
+ > 
+ > **<font color=red>git config --global credential.helper manager</font>**</br>
+ > Save credentials in Windows Keychain (more secure).
+
+ > 
  > **<font color=red>git config --global gpg.format ssh</font>**</br>
  > Set SSH key method to sign commits.
  > 
