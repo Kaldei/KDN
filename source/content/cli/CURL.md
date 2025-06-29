@@ -70,7 +70,16 @@ tags:
 
 ---
 
-### GET Request with JWT
+### GET current IPv4
+
+
+ > 
+ > **<font color=red>curl -4</font> https://ifconfig.me**</br>
+ > Return current public IPv4 (`-4` force using IPv4 for hostname resolution).
+
+---
+
+### GET request with JWT
 
 
  > 
@@ -80,7 +89,7 @@ tags:
 
 ---
 
-### POST Request with JSON Content
+### POST request with JSON content
 
 
  > 
