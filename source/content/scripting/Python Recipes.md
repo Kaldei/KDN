@@ -1,5 +1,5 @@
 ---
-title: Python Recipies
+title: Python Recipes
 summary: A note about Python useful bits of code.
 description: A note about Python useful bits of code.
 tags:

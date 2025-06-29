@@ -53,10 +53,35 @@ tags:
  > Find a file by permission.
 
  > 
- > \*\*<font color=red>find</font> /search/path/ <font color=red>-name</font> *.txt* ** <font color=red>-exec </font>rm <font color=red>{};</font></br>
+ > **<font color=red>find</font> /search/path/ <font color=red>-name</font> *.txt* <font color=red>-exec </font>rm <font color=red>{};</font>**</br>
  > Find files and execute a command for each of them (`{}` is replaced by what is found by `find`).
 
-# String Manipulation Commands
+---
+
+### Uniq
+
+
+ > 
+ > **<font color=red>uniq</font>**</br>
+ > Deletes duplicate lines in a file (the comparison is done with the previous line, so use `sort -d` before). 
+
+ > 
+ > **<font color=red>uniq -u</font>**</br>
+ > Return lines that appear only once.
+ > 
+ > **<font color=red>uniq -d</font>**</br>
+ > Return lines that appear more than once.
+
+---
+
+### Diff
+
+
+ > 
+ > **<font color=red>diff</font> myFile1 myFile2**</br>
+ > Return differences between the two files.
+
+# String Manipulation
 
 ---
 
@@ -184,34 +209,23 @@ tags:
  > **<font color=red>sort -k 2</font> myFile.txt**</br>
  > Sort on the second column in the file (separated by space).
 
-# File Manipulation Utilities
+# Monitoring
 
 ---
 
-### Uniq
+### Watch
 
 
  > 
- > **<font color=red>uniq</font>**</br>
- > Deletes duplicate lines in a file (the comparison is done with the previous line, so use `sort -d` before). 
+ > **<font color=red>watch</font> my-command**</br>
+ > Run a command every 2 seconds (default).
 
  > 
- > **<font color=red>uniq -u</font>**</br>
- > Return lines that appear only once.
+ > **<font color=red>-n</font> 0.5**</br>
+ > Specify the interval in seconds.
  > 
- > **<font color=red>uniq -d</font>**</br>
- > Return lines that appear more than once.
-
----
-
-### Diff
-
-
- > 
- > **<font color=red>diff</font> myFile1 myFile2**</br>
- > Return differences between the two files.
-
-# Logs
+ > **<font color=red>-d</font>**</br>
+ > Highlight changes.
 
 ---
 
@@ -220,7 +234,17 @@ tags:
 
  > 
  > **<font color=red>journalctl -u</font> my-service.service**</br>
- > Return logs for the specified service
+ > Returns logs for the specified service.
+ > 
+ > **<font color=red>journalctl -fu</font> my-service.service**</br>
+ > Follow logs for the specified service.
+
+ > 
+ > **<font color=red>journatl --since "</font>1 hour ago<font color=red>"</font>**</br>
+ > Returns logs since one hour ago.
+ > 
+ > **<font color=red>journalctl --since "</font>2025-01-01 12:00:00<font color=red>" --until "</font>2025-01-01 13:00:00<font color=red>"</font>**</br>
+ > Returns logs between given dates.
 
 # Networking
 
@@ -243,6 +267,15 @@ tags:
 
 ---
 
+### SSL/TLS
+
+
+ > 
+ > **<font color=red>openssl s_client -connect</font> \[MY_HOST\]<font color=red>:</font>\[MY_PORT\]**</br>
+ > Make an SSL/TLS client request.
+
+---
+
 ### Sockets
 
 
@@ -257,12 +290,3 @@ tags:
  > 
  > **<font color=red>ss -tuanp</font>**</br>
  > Returns established connection and listening sockets (TCP and UDP).
-
----
-
-### SSL/TLS
-
-
- > 
- > **<font color=red>openssl s_client -connect</font> \[MY_HOST\]<font color=red>:</font>\[MY_PORT\]**</br>
- > Make an SSL/TLS client request.

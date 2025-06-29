@@ -61,7 +61,11 @@ tags:
 
 # Useful Regex
 
+---
+
+### Extract IP from
+
 
  > 
- > **<font color=red>ip addr show eth0 | grep -oP '(?\<=inet\s)\d+(.\d+){3}'</font>**</br>
- > Get IP Linux `eth0` interface.
+ > **<font color=red>ip a show eth0 | grep -oP '(?\<=inet\s)\d+(.\d+){3}'</font>**</br>
+ > Extract IP for`eth0` interface from `ip a` command.
