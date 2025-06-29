@@ -262,8 +262,14 @@ tags:
  > Reverse DNS.
 
  > 
- > **<font color=red>dig -t</font> my.txt.record**</br>
+ > **<font color=red>dig -t TXT</font> my.txt.record**</br>
  > Return TXT Record.
+ > 
+ > **<font color=red>dig -t CNAME</font> my.txt.record**</br>
+ > Return CNAME Record.
+ > 
+ > **<font color=red>dig -t MX</font> my.txt.record**</br>
+ > Return MX Record.
 
 ---
 

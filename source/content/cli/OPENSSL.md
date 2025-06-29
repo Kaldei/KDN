@@ -31,7 +31,7 @@ tags:
  > 
  > **<font color=red>-aes256</font>**</br>
  > Gen a AES256 key.
- > To encrypt with passphrase (recommended only for root CA)?????????????
+ > Encrypt key with passphrase.
 
 # Read Certificates
 

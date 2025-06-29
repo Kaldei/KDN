@@ -1,5 +1,5 @@
 ---
-title: GIT Filter-Branch
+title: GIT FILTER-BRANCH
 summary: A Git command for advanced history rewriting.
 description: A Git command for advanced history rewriting.
 tags:
