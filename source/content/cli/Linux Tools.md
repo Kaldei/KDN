@@ -1,12 +1,62 @@
 ---
-title: CLI Tools
-summary: Useful CLI tools and utilities for scripting.
-description: Useful CLI tools and utilities for scripting.
+title: Linux Tools
+summary: CLI tools and tricks for Linux.
+description: CLI tools and tricks for Linux.
 tags:
-  - cli_utils
+  - linux
 ---
 
-# String Manipulation Utilities
+# Basis
+
+---
+
+### Shortcuts
+
+
+ > 
+ > **<font color=green>Ctrl + A</font>**</br>
+ > Go to the beginning of the line.
+ > 
+ > **<font color=green>Ctrl + E</font>**</br>
+ > Go to the end of the line.
+
+ > 
+ > **<font color=green>Ctrl + Alt + F2</font>**</br>
+ > Open TTY 2 (there are 6 TTYs on Linux that can be opened in parallel, from F1 to F6).
+
+# Files
+
+---
+
+### Search for Files
+
+
+ > 
+ > **<font color=red>find</font> /search/path/ <font color=red>-name</font> myFile**</br>
+ > Find a file by name.
+
+ > 
+ > **<font color=red>find</font> /search/path/ <font color=red>-type</font> f**</br>
+ > Find by type (f (file), d (directory), l (symbolic link)).
+ > 
+ > **<font color=red>find</font> /search/path/ <font color=red>-size</font> 50M**</br>
+ > Find a file by size (c (octets / bytes), k (kilo octets), M (mega octets), G (giga octets), b (blocs of 512 octets).
+
+ > 
+ > **<font color=red>find</font> /search/path/ <font color=red>-user</font> myUser**</br>
+ > Find a file by user.
+ > 
+ > **<font color=red>find</font> /search/path/ <font color=red>-group</font> myGroup**</br>
+ > Find a file by group.
+ > 
+ > **<font color=red>find</font> /search/path/ <font color=red>-perm</font> 000**</br>
+ > Find a file by permission.
+
+ > 
+ > \*\*<font color=red>find</font> /search/path/ <font color=red>-name</font> *.txt* ** <font color=red>-exec </font>rm <font color=red>{};</font></br>
+ > Find files and execute a command for each of them (`{}` is replaced by what is found by `find`).
+
+# String Manipulation Commands
 
 ---
 
@@ -161,70 +211,58 @@ tags:
  > **<font color=red>diff</font> myFile1 myFile2**</br>
  > Return differences between the two files.
 
-# Json Manipulation
+# Logs
 
 ---
 
-### JQ
+### Journalctl
 
-#### Resources
-
-* Try jq online: https://jqplay.org/#
-* Interactive JSON filter : https://github.com/ynqa/jnv
-
-#### Usage
 
  > 
- > **cat myFile.json <font color=red>\| jq</font>**</br>
- > 
- > **<font color=red>jq</font> myFile.json**</br>
- > 
- > **<font color=red>jq \<\<\< </font> {  "player": { "name": "apple", "color": "blue" } }**</br>
+ > **<font color=red>journalctl -u</font> my-service.service**</br>
+ > Return logs for the specified service
 
-#### Flags
+# Networking
 
- > 
- > **<font color=red>-r</font>**</br>
- > Output raw strings (without the quotes).
+---
 
-#### Filter Json Array
+### DNS
 
-````json
-["myPlayer1", "myPlayer2", "myPlayer3"]
-````
 
  > 
- > **<font color=red>jq '.\[\]'</font> myFile.json**</br>
- > Return elements line by line (without `[ ]`).
- > 
- > **<font color=red>jq '.\[2\]'</font> myFile.json**</br>
- > Return an element by its ID.
- > 
- > **<font color=red>jq '.\[2:12\]'</font> myFile.json**</br>
- > Return a subset of elements.
-
-#### Filter Json Object
-
-````json
-{
-  "player": {
-    "name": "myPlayer",
-    "color": "blue"
-  }
-}
-````
+ > **<font color=red>dig +short</font> my.domain**</br>
+ > Return only IP.
 
  > 
- > **<font color=red>jq '.</font>player<font color=red>.</font>name<font color=red>, .</font>player<font color=red>.</font>color<font color=red>'</font> myFile.json**</br>
- > Return the `name` property.
+ > **<font color=red>dig -x</font> 12.12.12.12**</br>
+ > Reverse DNS.
 
  > 
- > **<font color=red>jq '.</font>player <font color=red>\| select(.</font>player_class <font color=red>== "</font>knight<font color=red>")'</font> myFile.json**</br>
- > Return `player` that have the property `player_class` set to `knight`.
+ > **<font color=red>dig -t</font> my.txt.record**</br>
+ > Return TXT Record.
+
+---
+
+### Sockets
+
 
  > 
- > **<font color=red>jq '.</font>player <font color=red>\| keys' </font>myFile.json**</br>
- > Return the keys of `player` (`name` and ` color`).
+ > **<font color=red>ss -tunp</font>**</br>
+ > Returns established connections (TCP and UDP).
+
  > 
- > **<font color=red>jq '.</font>player <font color=red>\| length' </font>myFile.json**</br>
- > Return the length of `player` (here the number of properties is 2).
+ > **<font color=red>ss -tulnp</font>**</br>
+ > Returns listening sockets (TCP and UDP).
+
+ > 
+ > **<font color=red>ss -tuanp</font>**</br>
+ > Returns established connection and listening sockets (TCP and UDP).
+
+---
+
+### SSL/TLS
+
+
+ > 
+ > **<font color=red>openssl s_client -connect</font> \[MY_HOST\]<font color=red>:</font>\[MY_PORT\]**</br>
+ > Make an SSL/TLS client request.
