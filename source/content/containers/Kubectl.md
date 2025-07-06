@@ -40,6 +40,15 @@ tags:
 
 ---
 
+### AWS EKS Kubeconfig
+
+
+ > 
+ > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
+ > Update `~/.kube/config` file to be able to connect to the cluster.
+
+---
+
 ### Context
 
 
@@ -67,15 +76,6 @@ tags:
  > 
  > **<font color=red>kubectl config unset current-context</font>**</br>
  > Unset current context.
-
----
-
-### AWS EKS Kubeconfig
-
-
- > 
- > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
- > Update `~/.kube/config` file to be able to connect to the cluster.
 
 # Basis
 
@@ -529,6 +529,12 @@ spec:
  > 
  > **<font color=red>kubectl create clusterrolebinding</font> myUser-storage-admin <font color=red>--clusterrole=</font>storage-admin <font color=red>--user=</font>myUser**</br>
  > Create a Binding between a Role and a User.
+
+---
+
+### Authorization Checks
+
+
 
 # Troubleshooting
 
