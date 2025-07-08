@@ -84,6 +84,34 @@ tags:
  > **<font color=red>git commit --amend</font>**</br>
  > Modify last commit (only works if commit was not pushed).
 
+---
+
+### Commit History
+
+
+ > 
+ > **<font color=red>git show</font> myCommit**</br>
+ > Display commit information.
+
+ > 
+ > **<font color=red>git log</font>**</br>
+ > Show commit history.
+ > 
+ > **<font color=red>git log --pretty=fuller</font>**</br>
+ > Commit history with more info (Committer name, commit date,...).
+ > 
+ > **<font color=red>git log --show-signature</font>**</br>
+ > Show signature information on commit history.
+ > 
+ > **<font color=red>git log --oneline --graph --decorate</font>**</br>
+ > Show commit history with graph.
+ > 
+ > **<font color=red>git log -p</font>**</br>
+ > Shows difference between commits.
+ > 
+ > **<font color=red>git reflog</font>**</br>
+ > Show local history with IDs.
+
 # Branching
 
 ---
@@ -270,71 +298,59 @@ tags:
  > **<font color=red>git push</font>**</br>
  > Revert files from being on LFS. Do not remove `.gitattributes`, it is required to run `git add --renormalize`.
 
-# Commit History
+# Rewrite History
 
 ---
 
-### Log
-
-
- > 
- > **<font color=red>git show</font> myCommit**</br>
- > Display commit information.
-
- > 
- > **<font color=red>git log</font>**</br>
- > Show commit history.
- > 
- > **<font color=red>git log --pretty=fuller</font>**</br>
- > Commit history with more info (Committer name, commit date,...).
- > 
- > **<font color=red>git log --show-signature</font>**</br>
- > Show signature information on commit history.
- > 
- > **<font color=red>git log --oneline --graph --decorate</font>**</br>
- > Show commit history with graph.
- > 
- > **<font color=red>git log -p</font>**</br>
- > Shows difference between commits.
- > 
- > **<font color=red>git reflog</font>**</br>
- > Show local history with IDs.
-
----
-
-### History Rewrite
+### Reset / Rewrite
 
 
  > 
  > **<font color=red>git reset</font> HEAD^**</br>
- > Moves HEAD 1 commit back as if it had never happened (can break things if the commit as laeready been pushed to remote).
+ > Moves HEAD 1 commit back as if it had never happened (can break things if the commit as already been pushed to remote).
+
  > 
  > **<font color=red>git revert</font> HEAD^**</br>
  > Create new commit that undo last commit changes.
+
+---
+
+### Cherry Pick
+
 
  > 
  > **<font color=red>git cherry-pick</font> commit1 commit12 ccommit7**</br>
  > Add commits from other branches after HEAD.
 
+---
+
+### Rebase
+
+
  > 
  > **<font color=red>git rebase</font> myBranch**</br>
- > Takes commits on myBranch and replays them on current branch (from their last common parent).
+ > Replays current branch commits on myBranch (from their last common parent).
  > 
  > **<font color=red>git rebase --root</font>**</br>
- > Takes commits from the root of the repository and replays them.
+ > Replays all commits from the root of the repository.
  > 
- > **<font color=red>git rebase --committer-date-is-author-date --root</font>**</br>
- > Rebase commits from the root and keep original commit date. 
+ > **<font color=red>git rebase --root --committer-date-is-author-date</font>**</br>
+ > Replays all commits from the root and keep original commit date.
 
  > 
  > **<font color=red>git rebase -i</font> myBranch**</br>
- > Use rebase interactive mode. Select commits that you want to modify by changing `pick` by `e` (for edit) and reorder commits as you which.
- > 
- > **<font color=red>git commit --amend --no-edit</font>**</br>
- > Make your modification to the code and then issue this command to modify the commit (`--no-edit` to keep the name of the old commit).
+ > Use rebase in interactive mode. Select commits to keep (`pick`), to modify (`edit`), squash commits (`squash`), reorder commits, ...
  > 
  > **<font color=red>git rebase --continue</font>**</br>
  > Continue to the next commit marked for edition.
  > 
+ > **<font color=red>git commit --amend --no-edit</font>**</br>
+  
+ > Make your modification to the code and then issue this command to modify the commit (`--no-edit` to keep the name of the old commit).
+ > 
  > **<font color=red>git rebase --abort</font>**</br>
  > Abort the rebase (useful in case of issues).
+
+ > 
+ > **<font color=red>git rebase -i $(git merge-base</font> myBranch <font color=red>HEAD)</font>**</br>
+ > Rebase from the point it diverged from myBranch (first commit on current branch). Useful for squashing commit before a merge.

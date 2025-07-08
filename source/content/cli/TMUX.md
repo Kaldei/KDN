@@ -58,6 +58,14 @@ tags:
  > **<font color=red>Ctrl + b</font> then <font color=red>→</font>**</br>
  > Change focus to right panel.
 
+---
+
+### Navigate
+
+ > 
+ > **<font color=red>Ctrl + b </font>then <font color=red>\[</font>**</br>
+ > Move your cursor up and down.
+
 # Sessions
 
 ---
