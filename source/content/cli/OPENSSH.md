@@ -22,13 +22,13 @@ tags:
 
  > 
  > **<font color=red>ssh</font> myUser<font color=red>@</font>myTargetHost <font color=red>-N -L</font> localhost<font color=red>:</font>1212<font color=red>:</font>myUnreachableHost<font color=red>:</font>1212**</br>
- > Create a local port forward.
- > Allows local machine to access a port on a mahcine that is in another network.
+ > Create a local port forward.</br>
+ > Allows local machine to access a port on a mahcine that is in another network.</br>
  > Scenario where local machine has access to `myTargetHost` but not to `myUnreachableHost`, while `myTargetHost` has access to local machine and `myUnreachableHost` networks.
  > 
  > **<font color=red>ssh</font> myUser<font color=red>@</font>myTargetHost <font color=red>-N -R</font> 0.0.0.0<font color=red>:</font>8080<font color=red>:</font>localhost<font color=red>:</font>80**</br>
- > Create a remote port forward.
- > Allows target machine to access a local machine port.
+ > Create a remote port forward.</br>
+ > Allows target machine to access a local machine port.</br>
  > Scenario where remote machine is not allowed to open connections to local machine, but the contrary is allowed.
 
 ---
@@ -55,7 +55,7 @@ tags:
  > **<font color=red>-R</font> myTargetHostAddr<font color=red>:</font>myTargetHostPort<font color=red>:</font>localhost<font color=red>:</font>myLocalPort**</br>
  > Remote port forward.
  > 
- > **<font color=red>-D</font> myBindAddr<font color=red>:</font>1212**</br>
+ > **<font color=red>-D</font> myBindAddr<font color=red>:</font>myLocalPort**</br>
  > Dynamic port forward via specified port (ssh will act as a SOCKS proxy server).
 
  > 
@@ -78,7 +78,7 @@ tags:
  > **<font color=red>scp -r</font> /path/to/myFolder myUser<font color=red>@</font>myTargetHost<font color=red>:</font>/destination/path/**</br>
  > Copy a folder and its content to a remote host.
  > 
- > \**<font color=red>scp -r</font> /path/to/myFolder/* myUser<font color=red>@</font>myTargetHost<font color=red>:</font>/destination/path/myFolder/\*\*</br>
+ > \**<font color=red>scp -r</font> /path/to/myFolder/* myUser<font color=red>@</font>myTargetHost<font color=red>:</font>/destination/path/myFolder/ \*\*</br>
  > Copy the content of a folder to a remote host.
 
 ---
