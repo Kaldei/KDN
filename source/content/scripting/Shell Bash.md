@@ -4,6 +4,7 @@ summary: A note about Bash.
 description: A note about Bash.
 tags:
   - bash
+  - shell
 ---
 
 # Variables

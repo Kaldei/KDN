@@ -4,6 +4,7 @@ summary: A note about Bash useful bits of code.
 description: A note about Bash useful bits of code.
 tags:
   - bash
+  - shell
 ---
 
 # Output

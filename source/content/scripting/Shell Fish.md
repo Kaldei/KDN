@@ -4,6 +4,7 @@ summary: A note about the Fish shell.
 description: A note about the Fish shell.
 tags:
   - fish
+  - shell
 ---
 
 # Basis
