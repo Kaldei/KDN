@@ -66,12 +66,12 @@ tags:
 
 
  > 
- > **<font color=red>vault write auth/approle/login role_id="</font>my_role_id<font color=red>"</font> <font color=red>secret_id="</font>my_secret_id<font color=red>"</font>**</br>
+ > **<font color=red>vault write auth/</font>approle<font color=red>/login role_id="</font>my_role_id<font color=red>"</font> <font color=red>secret_id="</font>my_secret_id<font color=red>"</font>**</br>
  > Login to Vault using AppRole.
 
 
  > 
- > **<font color=red>vault write auth/jwt/login role=</font>my_role <font color=red>jwt=</font>my_jwt**</br>
+ > **<font color=red>vault write auth/</font>jwt<font color=red>/login role=</font>my_role <font color=red>jwt=</font>my_jwt**</br>
  > Login to Vault using a JWT.
 
 # Tokens
