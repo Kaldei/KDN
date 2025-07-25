@@ -52,10 +52,10 @@ tags:
  > **<font color=red>jq '.\[\]'</font> myFile.json**</br>
  > Return elements line by line (without `[ ]`).
  > 
- > **<font color=red>jq '.\[2\]'</font> myFile.json**</br>
+ > **<font color=red>jq '.\[</font>2<font color=red>\]'</font> myFile.json**</br>
  > Return an element by its ID.
  > 
- > **<font color=red>jq '.\[2:12\]'</font> myFile.json**</br>
+ > **<font color=red>jq '.\[</font>2<font color=red>:</font>12<font color=red>\]'</font> myFile.json**</br>
  > Return a subset of elements.
 
 ---
@@ -73,8 +73,11 @@ tags:
 ````
 
  > 
- > **<font color=red>jq '.</font>player<font color=red>.</font>name<font color=red>, .</font>player<font color=red>.</font>color<font color=red>'</font> myFile.json**</br>
- > Return the `name` property.
+ > **<font color=red>jq '.</font>player<font color=red>.</font>name<font color=red>'</font> myFile.json**</br>
+ > Return the a property.
+ > 
+ > **<font color=red>jq '.</font>player<font color=red> | {</font>name<font color=red>,</font>color<font color=red>}'</font> myFile.json**</br>
+ > Return the multiple properties.
 
  > 
  > **<font color=red>jq '.</font>player <font color=red>\| select(.</font>player_class <font color=red>== "</font>knight<font color=red>")'</font> myFile.json**</br>
