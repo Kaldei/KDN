@@ -21,7 +21,7 @@ tags:
  > Enable KV v1 secret engine.
 
  > 
- > **<font color=red>vault kv enable-versioning</font> my_engine_path**</br>
+ > **<font color=red>vault kv enable-versioning</font> my_kv_path**</br>
  > Enable versioning for a KV v1 Secret Engine (convert to KV v2).
 
 ---
@@ -58,10 +58,10 @@ tags:
  > Read a secret and output in JSON.
 
  > 
- > **<font color=red>vault kv get -field=</font>foo my_secret**</br>
+ > **<font color=red>vault kv get -field=</font>password my_credentials**</br>
  > Read one field.
  > 
- > **<font color=red>vault kv get -format=json</font> my_secret <font color=red>\| jq -r .data.data.</font>foo**</br>
+ > **<font color=red>vault kv get -format=json</font> my_credentials <font color=red>\| jq -r .data.data.</font>password**</br>
  > Read one field and output in JSON.
 
 ---
@@ -83,7 +83,7 @@ tags:
 
  > 
  > **<font color=red>vault kv patch</font> my_credentials password<font color=red>=</font>myNewPass**</br>
- > Create a new version by replacing only provided values (partial update) instead of replace all values like `kv put`.
+ > Create a new version by replacing only provided values (partial update) instead of replacing all values like `kv put`.
 
 ---
 
