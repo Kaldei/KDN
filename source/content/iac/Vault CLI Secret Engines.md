@@ -42,7 +42,7 @@ tags:
 
 
  > 
- > **<font color=red>vault kv list</font> my_engine_path**</br>
+ > **<font color=red>vault kv list</font> my_kv_path**</br>
  > List secrets in a kv secret engine.
 
 ---
@@ -51,17 +51,17 @@ tags:
 
 
  > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path my_secret**</br>
+ > **<font color=red>vault kv get</font> my_secret**</br>
  > Read a secret.
  > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path <font color=red>-format=json</font> my_secret <font color=red>\| jq -r .data</font>**</br>
+ > **<font color=red>vault kv get -format=json</font> my_secret <font color=red>\| jq -r .data</font>**</br>
  > Read a secret and output in JSON.
 
  > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path <font color=red>-field=</font>foo my_secret**</br>
+ > **<font color=red>vault kv get -field=</font>foo my_secret**</br>
  > Read one field.
  > 
- > **<font color=red>vault kv get -mount=</font>my_engine_path <font color=red>-format=json</font> my_secret <font color=red>\| jq -r .data.data.</font>foo**</br>
+ > **<font color=red>vault kv get -format=json</font> my_secret <font color=red>\| jq -r .data.data.</font>foo**</br>
  > Read one field and output in JSON.
 
 ---
@@ -70,19 +70,29 @@ tags:
 
 
  > 
- > **<font color=red>vault kv put -mount=</font>my_engine_path my_secret key<font color=red>=</font>value**</br>
+ > **<font color=red>vault kv put</font> my_secret key<font color=red>=</font>value**</br>
  > Create or replace a secret with one key value.
  > 
- > **<font color=red>vault kv put -mount=</font>my_engine_path my_credentials username<font color=red>=</font>myUser password<font color=red>=</font>myPass**</br>
+ > **<font color=red>vault kv put</font> my_credentials username<font color=red>=</font>myUser password<font color=red>=</font>myPass**</br>
  > Create or replace a new secret composed multiple key values.
 
 ---
 
 ### Patch (KV v2)
 
+
  > 
- > **<font color=red>vault kv patch -mount=</font>my_engine_path my_credentials password<font color=red>=</font>myNewPass**</br>
+ > **<font color=red>vault kv patch</font> my_credentials password<font color=red>=</font>myNewPass**</br>
  > Create a new version by replacing only provided values (partial update) instead of replace all values like `kv put`.
+
+---
+
+### Rollback (KV v2)
+
+
+ > 
+ > **<font color=red>vault kv rollback -versions=</font>12 my_secret**</br>
+ > Restore a non deleted version (create a new version with the values of the one to restore).
 
 ---
 
@@ -90,16 +100,18 @@ tags:
 
 
  > 
- > **<font color=red>vault kv delete -mount=</font>my_engine_path my_secret**</br>
- > In KV v1, permanently delete the secret.
+ > **<font color=red>vault kv delete</font> my_secret**</br>
+ > Permanently delete the secret.
 
 ---
 
 ### Delete (KV v2)
 
+
  > 
- > **<font color=red>vault kv delete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
- > Mark the secret as deleted. The secret is still readable when specifying the version explicitly (it can be restored with `vault kv undelete`).
+ > **<font color=red>vault kv delete -versions=</font>12 my_secret**</br>
+ > Mark the version as deleted (soft delete).</br>
+ > It can be restored with `vault kv undelete`.
 
 ---
 
@@ -107,23 +119,25 @@ tags:
 
 
  > 
- > **<font color=red>vault kv undelete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
+ > **<font color=red>vault kv undelete -versions=</font>12 my_secret**</br>
  > Restore a version of a secret. Only works if secret was not destroyed (`destroyed` property set to `false`).
 
 ---
 
 ### Destroy (KV v2)
 
+
  > 
- > **<font color=red>vault kv destroy -mount=</font>my_engine_path <font color=red>-versions=</font>1  my_secret**</br>
+ > **<font color=red>vault kv destroy -versions=</font>12  my_secret**</br>
  > Permanently delete specified version(s) of a secret (cannot be recovered).
 
 ---
 
 ### Metadata (KV v2)
 
+
  > 
- > **<font color=red>vault kv metadata delete -mount=</font>my_engine_path my_secret**</br>
+ > **<font color=red>vault kv metadata delete</font> my_secret**</br>
  > Permanently deletes the secret (thus all of it versions).
 
 # Transit
@@ -151,7 +165,8 @@ tags:
  > Create a new Key.
  > 
  > **<font color=red>vault write -f</font> transit<font color=red>/keys/</font>my_key<font color=red>/rotate</font>**</br>
- > Rotate the Key (create a new version). Old versions of the key will still exist (they are managed by `min_decryption_version`).
+ > Rotate the Key (create a new version).</br>
+ > Old versions of the key will still exist (they are managed by `min_decryption_version`).
 
 ---
 
