@@ -6,7 +6,35 @@ tags:
   - vault
 ---
 
-# Secret Engine KV
+# KV
+
+---
+
+### Enable (KV v1)
+
+
+ > 
+ > **<font color=red>vault secrets enable kv</font>**</br>
+ > Enable KV v1 secret engine (default is KV v1).
+ > 
+ > **<font color=red>vault secrets enable kv -version=1</font>**</br>
+ > Enable KV v1 secret engine.
+
+ > 
+ > **<font color=red>vault kv enable-versioning</font> my_engine_path**</br>
+ > Enable versioning for a KV v1 Secret Engine (convert to KV v2).
+
+---
+
+### Enable (KV v2)
+
+
+ > 
+ > **<font color=red>vault secrets enable kv-v2</font>**</br>
+ > Enable KV v2 secret engine.
+ > 
+ > **<font color=red>vault secrets enable kv -version=2</font>**</br>
+ > Enable KV v2 secret engine.
 
 ---
 
@@ -14,7 +42,7 @@ tags:
 
 
  > 
- > **<font color=red>vault kv list kv</font>**</br>
+ > **<font color=red>vault kv list</font> my_engine_path**</br>
  > List secrets in a kv secret engine.
 
 ---
@@ -43,11 +71,18 @@ tags:
 
  > 
  > **<font color=red>vault kv put -mount=</font>my_engine_path my_secret key<font color=red>=</font>value**</br>
- > Create a secret (or replace pre-existing).
-
+ > Create or replace a secret with one key value.
  > 
  > **<font color=red>vault kv put -mount=</font>my_engine_path my_credentials username<font color=red>=</font>myUser password<font color=red>=</font>myPass**</br>
- > Create a new secret composed of credentials.
+ > Create or replace a new secret composed multiple key values.
+
+---
+
+### Patch (KV v2)
+
+ > 
+ > **<font color=red>vault kv patch -mount=</font>my_engine_path my_credentials password<font color=red>=</font>myNewPass**</br>
+ > Create a new version by replacing only provided values (partial update) instead of replace all values like `kv put`.
 
 ---
 
@@ -55,31 +90,43 @@ tags:
 
 
  > 
- > **<font color=red>vault kv delete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
- > In KV v1, permanently delete specified the secret.
- > In KV v2, mark the secret as deleted. The secret is still readable when specifying the version explicitly (it can be restored with `vault kv undelete`).
+ > **<font color=red>vault kv delete -mount=</font>my_engine_path my_secret**</br>
+ > In KV v1, permanently delete the secret.
 
 ---
 
-### KV v2 Specific
+### Delete (KV v2)
+
+ > 
+ > **<font color=red>vault kv delete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
+ > Mark the secret as deleted. The secret is still readable when specifying the version explicitly (it can be restored with `vault kv undelete`).
+
+---
+
+### Undelete (KV v2)
 
 
  > 
  > **<font color=red>vault kv undelete -mount=</font>my_engine_path <font color=red>-versions=</font>2 my_secret**</br>
- > Recover password. Only works if `destroyed` parameter is set to `false`.
+ > Restore a version of a secret. Only works if secret was not destroyed (`destroyed` property set to `false`).
+
+---
+
+### Destroy (KV v2)
 
  > 
  > **<font color=red>vault kv destroy -mount=</font>my_engine_path <font color=red>-versions=</font>1  my_secret**</br>
  > Permanently delete specified version(s) of a secret (cannot be recovered).
+
+---
+
+### Metadata (KV v2)
+
  > 
  > **<font color=red>vault kv metadata delete -mount=</font>my_engine_path my_secret**</br>
  > Permanently deletes the secret (thus all of it versions).
 
- > 
- > **<font color=red>vault kv enable-versioning</font> my_engine_path**</br>
- > Enable versioning for a KV v1 Secret Engine (convert to v2).
-
-# Secret Engine Transit
+# Transit
 
 ---
 

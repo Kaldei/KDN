@@ -228,8 +228,8 @@ tags:
 
 
  > 
- > **<font color=red>vault auth enable</font> aws**</br>
- > Enable an authentication backend.
+ > **<font color=red>vault auth enable</font> oidc**</br>
+ > Enable an authentication backend (e.g. OIDC).
 
 # Secret Engines
 
@@ -253,8 +253,8 @@ For more details on specific Secret Engines see: [Vault CLI Secret Engines](Vaul
 
 
  > 
- > **<font color=red>vault secrets enable -path=</font>my_secret_engine_path <font color=red>kv</font>**</br>
- > Create a new Key Value (KV) secrets engine.
+ > **<font color=red>vault secrets enable</font> kv**</br>
+ > Enable a secret engine (e.g KV).
 
 ---
 
