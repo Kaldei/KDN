@@ -296,3 +296,19 @@ tags:
  > 
  > **<font color=red>ss -tuanp</font>**</br>
  > Returns established connection and listening sockets (TCP and UDP).
+
+---
+
+### NMCLI
+
+
+ > 
+ > **<font color=red>nmcli device</font>**</br>
+ > List network devices (ethernet, wifi, ...)
+
+ > 
+ > **<font color=red>nmcli device wifi connect</font> MY_SSID**</br>
+ > Connect to specified SSID.
+ > 
+ > **<font color=red>nmcli connection down</font> MY_SSID**</br>
+ > Disconnect from specified SSID.
