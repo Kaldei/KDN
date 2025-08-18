@@ -3,7 +3,7 @@ title: Python
 summary: A note about Python.
 description: A note about Python.
 tags:
-  - Python
+  - python
 ---
 
 # Virtual Env

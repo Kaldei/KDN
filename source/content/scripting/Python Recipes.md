@@ -3,7 +3,7 @@ title: Python Recipes
 summary: A note about Python useful bits of code.
 description: A note about Python useful bits of code.
 tags:
-  - Python
+  - python
 ---
 
 # Files

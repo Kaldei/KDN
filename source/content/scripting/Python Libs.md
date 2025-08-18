@@ -3,7 +3,7 @@ title: Python Libs
 summary: A note about Python Libraries.
 description: A note about Python Libraries.
 tags:
-  - Python
+  - python
 ---
 
 # Typing
