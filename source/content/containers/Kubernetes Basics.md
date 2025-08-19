@@ -365,71 +365,6 @@ Similar to Deployments with some additional the features:
 
 ---
 
-### Storage
-
-#### Persistent Volume
-
-Persistent volumes provide a file system that can be mounted to the cluster and accessible to any node.
-
-Reclaim Policies: 
-
-* Retain: Volume is not destroyed but is not available.
-
-````yml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: pv-log
-spec:
-  capacity:
-    storage: 100Mi
-  hostPath:
-    path: /pv/log
-  accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-````
-
-#### Persistent Volume Claim
-
-Volume attached to a Pod. It's a subsection of a Persistent Volume.
-
-````yml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: claim-log-1
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 50Mi
-````
-
-`VolumeBindingMode` set to `WaitForFirstConsumer`. This will delay the binding and provisioning of a PersistentVolume until a Pod using the PersistentVolumeClaim is created.
-
-#### Usage in a Pod
-
-````yml
-spec:
-  containers:
-	volumeMounts:
-    - mountPath: /log # Path in the container
-      name: log-volume
-  volumes:
-  # Inline declaration
-  - name: log-volume
-    hostPath:
-      path: /var/log/webapp # Path on the host
-  # Persitant VolumeCaim
-  - persistentVolumeClaim:
-      claimName: claim-log-1
-    name: log-volume
-````
-
----
-
 ### Environment Variables
 
 #### ConfigMap
@@ -701,6 +636,88 @@ metadata:
 
 	# Set a custom healthcheck path
 	alb.ingress.kubernetes.io/healthcheck-path: /health
+````
+
+# Volumes
+
+---
+
+### Persistent Volume
+
+Persistent volumes provide a file system that can be mounted to the cluster and accessible to any node.
+
+````yml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-log
+spec:
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: /pv/log
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+````
+
+Reclaim Policies (`persistentVolumeReclaimPolicy`): 
+
+* Retain: Volume is not destroyed but is not available.
+
+---
+
+### Persistent Volume Claim
+
+Volume attached to a Pod. It's a subsection of a Persistent Volume.
+
+````yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: claim-log-1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+````
+
+Volume Binding Modes (`VolumeBindingMode`) 
+
+* `WaitForFirstConsumer`: this will delay the binding and provisioning of a `PersistentVolume` until a Pod using the `PersistentVolumeClaim` is created.
+
+---
+
+### Pod Volume Mount
+
+#### Inline volume declaration
+
+````yml
+spec:
+  containers:
+	volumeMounts:
+    - name: log-volume
+      mountPath: /log # Path in the container
+  volumes:
+  - name: log-volume
+    hostPath:
+      path: /var/log/webapp # Path on the host
+````
+
+#### Persitant Volume Claim
+
+````yml
+spec:
+  containers:
+	volumeMounts:
+    - name: log-volume
+      mountPath: /log # Path in the container
+  volumes:
+  - name: log-volume
+    persistentVolumeClaim:
+      claimName: claim-log-1
 ````
 
 # Autoscaling
