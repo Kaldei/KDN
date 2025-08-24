@@ -293,7 +293,57 @@ merged_df = pd.merge(
 
 ---
 
-### 
+### Send packets
+
+````python
+IP_DEST = "10.0.0.12"
+
+# Create a packet
+pkt = IP(dst=IP_DEST)/ICMP()                   # ICMP packet 
+ptk = IP(dst=IP_DEST)/TCP(dport=53, flags=”S”) # TCP packet
+
+# Send packets
+send(pkt) # Send packet only
+sr1(pkt)  # Send and receive one packet
+sr(pkt)   # Send and receive packets (loop)
+
+# Display packets content 
+pkt.show()  # Show packet
+pkt.show2() # Show actual packet that will be transmitted
+````
+
+---
+
+### Sniff
+
+````python
+MY_LISTEN_IFACE = "wlp1s0"
+TARGET_HOST = "10.0.0.12"
+TARGET_PORT = "80"
+
+pkts = sniff(
+	iface=MY_LISTEN_IFACE, # Interface to sniff
+	filter=f"host {TARGET_HOST} and port {TARGET_PORT} and tcp[tcpflags] & (tcp-push) != 0", # Packet filter
+	prn=lambda x:x.show()  # Callback to display packet as they’re captured
+)
+````
+
+---
+
+### Pcap files
+
+````python
+# Sniff network for 50 packets
+pkts = sniff(count=50)
+
+# Write packets in a pcap file
+wrpcap("myPcap.pcap", pkts)
+````
+
+````python
+# Import pcap file content
+pcap = rdpcap("myPcap.pcap")
+````
 
 # PwnTools
 
