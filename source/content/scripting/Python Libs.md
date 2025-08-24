@@ -164,41 +164,6 @@ This will output this:
 
 Source: [5 Useful Iterator Functions in Python - Indently](https://www.youtube.com/watch?v=xYT9gsxy68w)
 
-# Time
-
----
-
-### Import
-
-
-````python
-import datetime
-import locale
-````
-
----
-
-### Basis
-
-
-````python
-print(locale.getlocale())
-#('en_US', 'UTF-8')
-
-# Set local to get right format for the date
-locale.setlocale(locale.LC_TIME, locale.getlocale())
-
-
-print(f'{datetime.datetime.now()}')
-#2024-08-02 22:30:04.850285
-
-print(f'{datetime.datetime.now():%c}')
-#Fri 02 Aug 2024 10:30:01 PM 
-
-print(f'{datetime.datetime.now():%x}')
-#08/02/2024
-````
-
 # Pandas
 
 ---
@@ -289,13 +254,80 @@ merged_df = pd.merge(
 )
 ````
 
+# Time
+
+---
+
+### Locale
+
+
+````python
+import locale
+
+print(locale.getlocale())
+#('en_US', 'UTF-8')
+
+# Set local to get right format for the date
+locale.setlocale(locale.LC_TIME, locale.getlocale())
+````
+
+---
+
+### Datetime
+
+
+````python
+import datetime
+
+print(f'{datetime.datetime.now()}')
+#2024-08-02 22:30:04.850285
+
+print(f'{datetime.datetime.now():%c}')
+#Fri 02 Aug 2024 10:30:01 PM 
+
+print(f'{datetime.datetime.now():%x}')
+#08/02/2024
+````
+
+# Regex
+
+---
+
+### Match
+
+
+````python
+import re
+
+MY_REGEX = ".*"
+
+# Cache the regex (usefull if expression is reused multilple times)
+re_compiled = re.compile(MY_REGEX)
+
+# Check if a string matches the expression
+if re_compiled.match(myString)
+	print(f"Expression matched for: {myString}")
+````
+
+---
+
+### Useful Regex
+
+
+````python
+IP_REGEX = r"^([0-9]{1,3}\.){3}[0-9]{1,3}$"
+````
+
 # Scapy
 
 ---
 
 ### Send packets
 
+
 ````python
+import scapy
+
 IP_DEST = "10.0.0.12"
 
 # Create a packet
@@ -308,22 +340,28 @@ sr1(pkt)  # Send and receive one packet
 sr(pkt)   # Send and receive packets (loop)
 
 # Display packets content 
-pkt.show()  # Show packet
-pkt.show2() # Show actual packet that will be transmitted
+pkt.show()    # Show packet
+pkt.show2()   # Show actual packet that will be transmitted
+pkt.hexdump() # Show packet hexdump
 ````
 
 ---
 
 ### Sniff
 
+
 ````python
+import scapy
+
 MY_LISTEN_IFACE = "wlp1s0"
-TARGET_HOST = "10.0.0.12"
-TARGET_PORT = "80"
+FILTER_HOST = "host 10.0.0.12"
+FILTER_PORT = "port 80"
+FILTER_TCP = "tcp[tcpflags] & (tcp-push) != 0" # Filter ACKs and SYNs
+BPF_FILTER = FILTER_HOST + "and" + FILTER_PORT + "and" + FILTER_TCP
 
 pkts = sniff(
 	iface=MY_LISTEN_IFACE, # Interface to sniff
-	filter=f"host {TARGET_HOST} and port {TARGET_PORT} and tcp[tcpflags] & (tcp-push) != 0", # Packet filter
+	filter=BPF_FILTER,     # Berkeley Packet Filter
 	prn=lambda x:x.show()  # Callback to display packet as they’re captured
 )
 ````
@@ -332,15 +370,20 @@ pkts = sniff(
 
 ### Pcap files
 
+
 ````python
-# Sniff network for 50 packets
-pkts = sniff(count=50)
+import scapy
+
+# Sniff network for 10 packets
+pkts = sniff(count=10)
 
 # Write packets in a pcap file
 wrpcap("myPcap.pcap", pkts)
 ````
 
 ````python
+import scapy
+
 # Import pcap file content
 pcap = rdpcap("myPcap.pcap")
 ````

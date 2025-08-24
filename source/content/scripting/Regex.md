@@ -8,6 +8,10 @@ tags:
 
 # Basis
 
+---
+
+### Syntax
+
 
  > 
  > **<font color=red>/</font>...<font color=red>/</font>**</br>
@@ -59,13 +63,36 @@ tags:
  > **<font color=red>+</font>**</br>
  > The preceding element is repeated between 1 and infinite number of times.
 
+---
+
+### Python
+
+
+````python
+import re
+
+MY_REGEX = ".*"
+
+# Cache the regex (usefull if expression is reused multilple times)
+re_compiled = re.compile(MY_REGEX)
+
+# Check if a string matches the expression
+if re_compiled.match(myString)
+	print(f"Expression matched for: {myString}")
+````
+
 # Useful Regex
 
 ---
 
-### Extract IP from
+### IP
+
+
+````python
+IP_REGEX = r"^([0-9]{1,3}\.){3}[0-9]{1,3}$"
+````
 
 
  > 
- > **<font color=red>ip a show eth0 | grep -oP '(?\<=inet\s)\d+(.\d+){3}'</font>**</br>
- > Extract IP for`eth0` interface from `ip a` command.
+ > **<font color=red>ip a show</font> eth0 <font color=red>\| grep -oP '(?\<=inet\s)\d+(.\d+){3}'  </font>**</br>
+ > Extract IP from `ip a`.
