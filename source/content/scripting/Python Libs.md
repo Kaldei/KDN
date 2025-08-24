@@ -130,6 +130,40 @@ while True:
 
 Source : [Indently - 5 Useful Generator Functions In Python](https://www.youtube.com/watch?v=1OSEzdOpmWQ)
 
+# Itertools
+
+---
+
+### Product
+
+
+````python
+from itertools import product
+
+my_list: list[str] = ['A', 'B', 'C']
+
+# Return all the combinations of the list with specified lenght (repeat)
+products: product = product(my_list, repeat=2)
+
+for product in products:
+	print(product)
+	
+"""
+This will output this:
+('A', 'A')
+('A', 'B')
+('A', 'C')
+('B', 'A')
+('B', 'B')
+('B', 'C')
+('C', 'A')
+('C', 'B')
+('C', 'C')
+"""
+````
+
+Source: [5 Useful Iterator Functions in Python - Indently](https://www.youtube.com/watch?v=xYT9gsxy68w)
+
 # Time
 
 ---
