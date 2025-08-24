@@ -288,3 +288,40 @@ merged_df = pd.merge(
 	right_on='right_column_name'
 )
 ````
+
+# Scapy
+
+---
+
+### 
+
+# PwnTools
+
+---
+
+### Interact with a binary
+
+
+````python
+from pwn import *
+
+p = process("./my-bin") # Execute the binary
+p.recvuntil("Enter your name:") # Read until reach specified string
+p.interactive() # Interact with the binary via terminal
+````
+
+---
+
+### Send a payload to a remote machine
+
+
+````python
+import pwn
+
+offset = 5*8
+payload = b'A'*offset+pwn.p64(0x1122334455667788)
+
+c = pwn.remote("TAGET_HOST",TARGET_PORT)
+c.sendline(payload)
+c.interactive()
+````
