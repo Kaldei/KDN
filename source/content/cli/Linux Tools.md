@@ -81,6 +81,10 @@ tags:
  > **<font color=red>diff</font> myFile1 myFile2**</br>
  > Return differences between the two files.
 
+ > 
+ > **<font color=red>diff</font> \<(ls my_directory_1) \<(ls my_directory_2)**</br>
+ > Return differences between two directory contents (using process substitution).
+
 # String Manipulation
 
 ---
