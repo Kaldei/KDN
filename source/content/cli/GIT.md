@@ -302,12 +302,21 @@ tags:
 
 ---
 
-### Reset / Rewrite
+### Reset / Revert
 
 
  > 
- > **<font color=red>git reset</font> HEAD^**</br>
- > Moves HEAD 1 commit back as if it had never happened (can break things if the commit as already been pushed to remote).
+ > **<font color=red>git reset --soft</font> HEAD^**</br>
+ > Moves HEAD 1 commit back and puts changes from the commit in staging
+ > Warning: will create a conflict if the commit was previously pushed to remote.
+ > 
+ > **<font color=red>git reset --mixed</font> HEAD^**</br>
+ > Moves HEAD 1 commit back and puts changes from the commit in working directory.
+ > Warning: will create a conflict if the commit was previously pushed to remote.
+ > 
+ > **<font color=red>git reset --hard</font> HEAD^**</br>
+ > Moves HEAD 1 commit back and discard all changes (this also removes any unstaged files that were not part of the commit).
+ > Warning: will create a conflict if the commit was previously pushed to remote.
 
  > 
  > **<font color=red>git revert</font> HEAD^**</br>
@@ -345,7 +354,6 @@ tags:
  > Continue to the next commit marked for edition.
  > 
  > **<font color=red>git commit --amend --no-edit</font>**</br>
-  
  > Make your modification to the code and then issue this command to modify the commit (`--no-edit` to keep the name of the old commit).
  > 
  > **<font color=red>git rebase --abort</font>**</br>
