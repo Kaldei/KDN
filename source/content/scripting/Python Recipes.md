@@ -31,5 +31,21 @@ dst_path: Path = Path(directory) / f'copy.{src_path.split(".")[-1]}'
 shutil.copyfile(src=src_path, dst=dst_path)
 # Copy a file with metadata
 shutil.copy2(src=src_path, dst=dst_path)
+````
 
+# Dict
+
+---
+
+### Sort Values in Reverse Order
+
+
+````py
+dict(sorted(myDict.items(), key=lambda x: x[1],reverse=True))
+````
+
+````py
+import operator
+
+dict(sorted(myDict.items(), key=operator.itemgetter(1),reverse=True))
 ````

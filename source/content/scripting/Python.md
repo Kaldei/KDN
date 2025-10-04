@@ -104,16 +104,6 @@ myDictionary.values()
 myDictionary.items()
 ````
 
-````py
-import operator
-dict(sorted(myDict.items(), key=operator.itemgetter(1),reverse=True))
-or
-dict(sorted(myDict.items(), key=lambda x: x[1],reverse=True))
-````
-
- > 
- > Sort the dictionary by its values in reverse order
-
 # String Manipulation
 
 ---
