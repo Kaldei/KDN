@@ -47,21 +47,72 @@ tags:
 
 ---
 
+### Set
+
+Sets are like lists but with no duplicates.
+
+````py
+# Create a set
+players = {"player1", "player2"}
+````
+
+Hence, they can be used to remove duplicates from a list:
+
+````py
+set('abracadabra') # Return {'b', 'd', 'r', 'a', 'c'}
+````
+
+---
+
 ### Tuples
 
 Tuples are like lists, but can’t be changed (immutable).
 
 ````py
-# Declare an empty typle
+# Create an empty typle
 empty_tuple = ()
-````
 
-````
-# Declare a tuple
+# Create a tuple
 players = "player1", "player2"
 ````
 
 Note: A tuple is not defined by parenthesis, it is defined by commas (except for declaring an empty tuple).
+
+---
+
+### Dict
+
+Dictionaries work like JSON. 
+
+````py
+# Create a dict
+myDictionary = {
+	"key1" : value1,
+	"key2" : value2
+}
+
+# Add a new key/value pair
+myDictionary[newKey] = newValue
+# Add a new key/value pair (alternative method)
+myDictionary.update({newKey: newValue})
+
+# Return the keys of the dictionary.
+myDictionary.keys()
+# Return the values of the dictionary.
+myDictionary.values()
+# Return all key/value pairs as tuples
+myDictionary.items()
+````
+
+````py
+import operator
+dict(sorted(myDict.items(), key=operator.itemgetter(1),reverse=True))
+or
+dict(sorted(myDict.items(), key=lambda x: x[1],reverse=True))
+````
+
+ > 
+ > Sort the dictionary by its values in reverse order
 
 # String Manipulation
 
