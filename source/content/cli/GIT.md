@@ -307,15 +307,15 @@ tags:
 
  > 
  > **<font color=red>git reset --soft</font> HEAD^**</br>
- > Moves HEAD 1 commit back and puts changes from the commit in staging
+ > Moves HEAD 1 commit back and puts changes from the commit in staging.</br>
  > Warning: will create a conflict if the commit was previously pushed to remote.
  > 
  > **<font color=red>git reset --mixed</font> HEAD^**</br>
- > Moves HEAD 1 commit back and puts changes from the commit in working directory.
+ > Moves HEAD 1 commit back and puts changes from the commit in working directory.</br>
  > Warning: will create a conflict if the commit was previously pushed to remote.
  > 
  > **<font color=red>git reset --hard</font> HEAD^**</br>
- > Moves HEAD 1 commit back and discard all changes (this also removes any unstaged files that were not part of the commit).
+ > Moves HEAD 1 commit back and discard all changes (this also removes any unstaged files that were not part of the commit).</br>
  > Warning: will create a conflict if the commit was previously pushed to remote.
 
  > 
