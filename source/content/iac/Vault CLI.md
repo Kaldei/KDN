@@ -39,7 +39,10 @@ tags:
 
  > 
  > **<font color=red>vault operator init</font>**</br>
- > Initialize vault.
+ > Initialize Vault (default values).
+ > 
+ > **<font color=red>vault operator init -recovery-shares=</font>5 <font color=red>-recovery-threshold=</font>3**</br>
+ > Initialize Vault with specified values.
 
  > 
  > **<font color=red>vault operator unseal</font>**</br>
