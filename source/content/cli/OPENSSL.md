@@ -7,6 +7,10 @@ tags:
   - linux
 ---
 
+# Resources
+
+* [ChristianLempa/cheat-sheets](https://github.com/ChristianLempa/cheat-sheets/blob/main/tools/openssl.md)
+
 # SSL Client
 
 ---
