@@ -313,6 +313,10 @@ tags:
  > 
  > **<font color=red>nmcli device wifi connect</font> MY_SSID**</br>
  > Connect to specified SSID.
+
  > 
  > **<font color=red>nmcli connection down</font> MY_SSID**</br>
  > Disconnect from specified SSID.
+ > 
+ > **<font color=red>nmcli connection up</font> MY_SSID**</br>
+ > Connect back to a known SSID.
