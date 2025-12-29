@@ -9,8 +9,9 @@ tags:
 # Resources
 
 * [Learn Git Branching](https://learngitbranching.js.org/)
-* [How Git Actually Works - LeanThatStack](https://www.youtube.com/watch?v=Ala6PHlYjmw)
 * [Oh Shit Git](https://ohshitgit.com/en)
+* [How Git Actually Works - LeanThatStack](https://www.youtube.com/watch?v=Ala6PHlYjmw)
+* [The difference between the working directory and the repository - Anna Skoulikari](https://medium.com/tech-journey-with-anna/git-question-what-is-the-difference-between-the-working-directory-aka-workspace-and-the-eeee15b7e4b3)
 
 # Concepts
 
@@ -18,52 +19,27 @@ tags:
 
 ### HEAD
 
-`HEAD` is the location in the commit tree. It's a "pointer" to a commit. It is possible to move it with `git checkout`.
+* `HEAD` is the location in the commit tree. It's a "pointer" to a commit. 
+* `HEAD` can be moved using `git checkout`.
+* If `HEAD` points to a raw commit (not a branch), the branch is in `detached`state. 
+* If new commits are created from a `detached` points, those commits will be orphaned (and they will be deleted by garbage collector).
 
 ---
 
 ### Areas
 
+* **Working Directory**: Actual files on the disk.
+* **Staging Area (also called Index)**: Area to prepare which file will be included in next commit.
+* **Local Repository**: The database of commits.
+* **Remote Repository**: Remote save of the Repository.
+* **Stash**: Space to temporary save changes without having to commit. 
+
+Simplified Workflows:
+
+* Working Directory > `git add` > Staging Area > `git commit` > Local Repository > `git push` > Remote Repository
+* Working Directory > `git stash` > Stash
+
 # Basis
-
----
-
-### Config
-
-
- > 
- > **<font color=red>git config --list</font>**</br>
- > Parameters list.
- > 
- > **<font color=red>git config</font> user.name**</br>
- > Display a parameter (`user.name` here).
- > 
- > **<font color=red>git config --global</font> user.name myName**</br>
- > Change parameter value.
-
- > 
- > **<font color=red>git config --global credential.helper cache</font>**</br>
- > Save credentials in memory.
- > 
- > **<font color=red>git config --global credential.helper store</font>**</br>
- > Save credentials in plaintext in `~/.git-credentials` (less secure).
- > 
- > **<font color=red>git config --global credential.helper osxkeychain</font>**</br>
- > Save credentials in MacOS Keychain (more secure).
- > 
- > **<font color=red>git config --global credential.helper manager</font>**</br>
- > Save credentials in Windows Keychain (more secure).
-
- > 
- > **<font color=red>git config --global gpg.format ssh</font>**</br>
- > Set SSH key method to sign commits.
- > 
- > **<font color=red>git config --global user.signingkey</font> /path/to/my/public/key**</br>
- > Specify the public key to used for signing commits (the private key has to be configured in GitHub settings.
-
- > 
- > **<font color=red>git config --global http.sslBackend schannel</font>**</br>
- > Switch SSL Backend from OpenSSL (default) to Schannel (Windows built-in). This is useful in an organization with enterprise-managed certificates.
 
 ---
 
@@ -89,7 +65,28 @@ tags:
  > Create a commit (`-S` to sign the commit and `-m` to set the commit's message).
  > 
  > **<font color=red>git commit --amend</font>**</br>
- > Modify last commit (only works if commit was not pushed).
+ > Modify last commit.</br>
+ > Warning: will create a conflict if the commit was previously pushed to remote.
+
+---
+
+### Stash
+
+
+ > 
+ > **<font color=red>git stash list</font>**</br>
+ > List stashes.
+
+ > 
+ > **<font color=red>git stash save</font> myStashName**</br>
+ > Put changes in a side working directory for later use.
+ > 
+ > **<font color=red>git stash apply</font> stashIndex**</br>
+ > Add stashed code back into the code.
+
+ > 
+ > **<font color=red>git stash drop</font> stashIndex**</br>
+ > Delete stash.
 
 ---
 
@@ -117,7 +114,8 @@ tags:
  > Shows difference between commits.
  > 
  > **<font color=red>git reflog</font>**</br>
- > Show local history with IDs.
+ > Show recent local history with commit IDs.</br>
+ > Note: reflog entries expires (90d for reachable commits, 30d for orphaned commits).
 
 # Branching
 
@@ -147,29 +145,28 @@ tags:
 
 
  > 
+ > **<font color=red>git checkout</font> HEAD<font color=red>^</font>**</br>
+ > Moves HEAD to 1 commit back from current HEAD.
+ > 
+ > **<font color=red>git checkout</font> HEAD<font color=red>^^^</font>**</br>
+ > Moves HEAD to 3 commits back from current HEAD.
+ > 
+ > **<font color=red>git checkout</font> HEAD<font color=red>~12</font>**</br>
+ > Moves HEAD to 12 commits back from current HEAD.
+
+ > 
+ > **<font color=red>git checkout</font> HEAD<font color=red>^</font>**</br>
+ > Moves HEAD to 1 commit back from current HEAD in the 1st parent of a merge.
+ > 
+ > **<font color=red>git checkout</font> HEAD<font color=red>^2</font>**</br>
+ > Moves HEAD to 1 commit back from current HEAD in the 2nd parent of a merge.
+
+ > 
  > **<font color=red>git checkout</font> myBranch**</br>
  > Move HEAD to last commit of myBranch.
-
  > 
  > **<font color=red>git checkout</font> myBranch<font color=red>^</font>**</br>
  > Move HEAD to penultimate commit of myBranch.
-
- > 
- > **<font color=red>git checkout</font> HEAD^**</br>
- > Moves HEAD 1 commit back from current HEAD.
- > 
- > **<font color=red>git checkout</font> HEAD^^^**</br>
- > Moves HEAD 3 commits back from current HEAD.
- > 
- > **<font color=red>git checkout</font> HEAD~12**</br>
- > Moves HEAD 12 commits back from current HEAD.
-
- > 
- > **<font color=red>git checkout</font> HEAD^**</br>
- > Moves HEAD 1 commit back from current HEAD in the 1st parent of a merge.
- > 
- > **<font color=red>git checkout</font> HEAD^2**</br>
- > Moves HEAD 1 commit back from current HEAD in the 2nd parent of a merge.
 
 ---
 
@@ -230,27 +227,69 @@ tags:
  > **<font color=red>git branch</font> myBranch <font color=red>--set-upstream-to=</font>origin<font color=red>/</font>myBranch**</br>
  > Set Upstream for a Branch.
 
-# Git Tools
+# Git Config
 
 ---
 
-### Stash
+### Basis
 
 
  > 
- > **<font color=red>git stash list</font>**</br>
- > List stashes.
+ > **<font color=red>git config --list</font>**</br>
+ > Parameters list.
 
  > 
- > **<font color=red>git stash save</font> myStashName**</br>
- > Put changes in a side working directory for later use.
+ > **<font color=red>git config</font> user.name**</br>
+ > Display a parameter (`user.name` here).
  > 
- > **<font color=red>git stash apply</font> stashIndex**</br>
- > Add stashed code back into the code.
+ > **<font color=red>git config --global</font> user.name myName**</br>
+ > Change parameter value.
+
+---
+
+### Credentials Helpers
+
 
  > 
- > **<font color=red>git stash drop</font> stashIndex**</br>
- > Delete stash.
+ > **<font color=red>git config --global credential.helper cache</font>**</br>
+ > Save credentials in memory.
+ > 
+ > **<font color=red>git config --global credential.helper store</font>**</br>
+ > Save credentials in plaintext in `~/.git-credentials` (less secure).
+ > 
+ > **<font color=red>git config --global credential.helper osxkeychain</font>**</br>
+ > Save credentials in MacOS Keychain (more secure).
+ > 
+ > **<font color=red>git config --global credential.helper manager</font>**</br>
+ > Save credentials in Windows Keychain (more secure).
+
+---
+
+### Commit Signing
+
+
+ > 
+ > **<font color=red>git config --global gpg.format ssh</font>**</br>
+ > Set SSH key format to sign commits.
+
+ > 
+ > **<font color=red>git config --global user.signingkey</font> /path/to/my/public/key**</br>
+ > Specify the public key to used for signing commits (the private key has to be configured in GitHub settings.
+
+ > 
+ > **<font color=red>git config --global http.sslBackend schannel</font>**</br>
+ > Switch SSL Backend from OpenSSL (default) to Schannel (Windows built-in). This is useful in an organization with enterprise-managed certificates.
+
+---
+
+### SSL
+
+
+ > 
+ > **<font color=red>git config --global http.sslBackend schannel</font>**</br>
+ > Switch SSL Backend from OpenSSL (default) to Schannel (Windows built-in). This is useful in an organization with enterprise-managed certificates.
+
+# Git Tools
 
 ---
 
@@ -314,15 +353,15 @@ tags:
 
  > 
  > **<font color=red>git reset --soft</font> HEAD^**</br>
- > Moves HEAD 1 commit back and puts changes from the commit in staging.</br>
+ > Moves current branch to one commit back and puts changes in Staging.</br>
  > Warning: will create a conflict if the commit was previously pushed to remote.
  > 
  > **<font color=red>git reset --mixed</font> HEAD^**</br>
- > Moves HEAD 1 commit back and puts changes from the commit in working directory.</br>
+ > Moves current branch to one commit back and puts changes from the commit in Working Directory.</br>
  > Warning: will create a conflict if the commit was previously pushed to remote.
  > 
  > **<font color=red>git reset --hard</font> HEAD^**</br>
- > Moves HEAD 1 commit back and discard all changes (this also removes any unstaged files that were not part of the commit).</br>
+ > Moves current branch to one commit back and discard all changes (this also removes any unstaged files that were not part of the commit).</br>
  > Warning: will create a conflict if the commit was previously pushed to remote.
 
  > 
