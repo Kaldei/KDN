@@ -14,7 +14,6 @@ tags:
 
 
 ````yml
-
 on: 
   # Triggered manually (run button)
   workflow_dispatch: 
