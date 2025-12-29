@@ -8,16 +8,23 @@ tags:
 
 # Resources
 
-* [https://ohshitgit.com/en](https://ohshitgit.com/en)
-* [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
+* [Learn Git Branching](https://learngitbranching.js.org/)
+* [How Git Actually Works - LeanThatStack](https://www.youtube.com/watch?v=Ala6PHlYjmw)
+* [Oh Shit Git](https://ohshitgit.com/en)
 
-# Basis
+# Concepts
 
 ---
 
 ### HEAD
 
 `HEAD` is the location in the commit tree. It's a "pointer" to a commit. It is possible to move it with `git checkout`.
+
+---
+
+### Areas
+
+# Basis
 
 ---
 
