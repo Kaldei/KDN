@@ -258,22 +258,38 @@ tags:
 
 
  > 
- > **<font color=red>dig +short</font> my.domain**</br>
- > Return only IP.
-
+ > **<font color=red>dig</font> my.domain**</br>
+ > Return records for the given domain.
+ > 
+ > **<font color=red>dig @</font>my.dns.provider my.domain**</br>
+ > Specify the server to use for the query.</br>
+ > (e.g query the authoritative server to check if record have been correctly updated).
  > 
  > **<font color=red>dig -x</font> 12.12.12.12**</br>
  > Reverse DNS.
 
  > 
- > **<font color=red>dig -t TXT</font> my.txt.record**</br>
- > Return TXT Record.
+ > **<font color=red>dig +trace</font> my.domain**</br>
+ > Shows steps in the lookup chain.
  > 
- > **<font color=red>dig -t CNAME</font> my.txt.record**</br>
+ > **<font color=red>dig +short</font> my.domain**</br>
+ > Short form answer (only record value).
+ > 
+ > **<font color=red>dig +nostats +nocomments +nocmd</font> my.domain**</br>
+ > Short form answer (ttl, type, record).
+
+ > 
+ > **<font color=red>dig -t NS</font> my.domain**</br>
+ > Return NS Records (authoritative servers for the domain).
+ > 
+ > **<font color=red>dig -t TXT</font> my.domain**</br>
+ > Return TXT Records.
+ > 
+ > **<font color=red>dig -t CNAME</font> my.domain**</br>
  > Return CNAME Record.
  > 
- > **<font color=red>dig -t MX</font> my.txt.record**</br>
- > Return MX Record.
+ > **<font color=red>dig -t MX</font> my.domain**</br>
+ > Return MX Records.
 
 ---
 
