@@ -276,10 +276,6 @@ Simplified Workflows:
  > **<font color=red>git config --global user.signingkey</font> /path/to/my/public/key**</br>
  > Specify the public key to used for signing commits (the private key has to be configured in GitHub settings.
 
- > 
- > **<font color=red>git config --global http.sslBackend schannel</font>**</br>
- > Switch SSL Backend from OpenSSL (default) to Schannel (Windows built-in). This is useful in an organization with enterprise-managed certificates.
-
 ---
 
 ### SSL
