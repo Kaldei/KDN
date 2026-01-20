@@ -97,7 +97,9 @@ Plan output signification:
 
  > 
  > **<font color=red>terraform apply -parallelism=</font>12**</br>
- > Set the number of concurrent operations (default is 10).
+ > Set the maximum number of concurrent API calls made to the providers.</br>
+ > Default value is 10.</br>
+ > Before increasing the value consider reworking resource dependencies.
 
 ---
 
