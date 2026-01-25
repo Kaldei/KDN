@@ -6,27 +6,7 @@ tags:
   - unix
 ---
 
-# Tabs
-
----
-
-### Create
-
-
- > 
- > **<font color=red>Ctrl + b</font> then <font color=red>c</font>**</br>
- > Create a new tab.
-
----
-
-### Switch
-
-
- > 
- > **<font color=red>Ctrl + b</font> then <font color=red>1</font>**</br>
- > Switch to tab 1.
-
-# Panels
+# Panes
 
 ---
 
@@ -66,6 +46,26 @@ tags:
  > **<font color=red>Ctrl + b </font>then <font color=red>\[</font>**</br>
  > Move your cursor up and down.
 
+# Windows
+
+---
+
+### Create
+
+
+ > 
+ > **<font color=red>Ctrl + b</font> then <font color=red>c</font>**</br>
+ > Create a new tab.
+
+---
+
+### Switch
+
+
+ > 
+ > **<font color=red>Ctrl + b</font> then <font color=red>1</font>**</br>
+ > Switch to tab 1.
+
 # Sessions
 
 ---
@@ -84,8 +84,39 @@ tags:
 
  > 
  > **<font color=red>Ctrl + b</font> then <font color=red>d</font>**</br>
+ > or</br>
+ > **<font color=red>tmux detach</font>**</br>
  > Detach form session.
 
  > 
  > **<font color=red>tmux attach -t</font> 1**</br>
  > Attach to session 1.
+
+---
+
+### Navigate
+
+ > 
+ > **<font color=red>Ctrl + b</font> then <font color=red>s</font>**</br>
+ > Open Tmux session manager
+
+ > 
+ > **<font color=red>Ctrl + b</font> then <font color=red>)</font>**</br>
+ > or </br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>(</font>**</br>
+ > Quickly switch between sessions
+
+# Configuration
+
+````
+# Set predix shortcut
+set -g prefix ^B
+
+
+# Start indexing windows at 1 instead of 0
+set -g base-index 1
+
+# Renumber windows when one is closed
+set -g renumber-windows on
+
+````
