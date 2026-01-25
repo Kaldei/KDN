@@ -139,6 +139,13 @@ myDictionary.items()
  > **<font color=red>print("</font>Message<font color=red>".join(</font>myString<font color=red>))</font>**</br>
  > String concatenation.
 
+ > 
+ > **<font color=red>print(</font>'bla', 'bla', 'bla', <font color=red>sep='</font>,<font color=red>')</font>**</br>
+ > Print all the elements separated by a comma.
+ > 
+ > **<font color=red>print(</font>'bla', 'bla', 'bla', <font color=red>end='</font>\\n<font color=red>')</font>**</br>
+ > Print all the elements and a new line at the end.
+
 ---
 
 ### Strip & Split
