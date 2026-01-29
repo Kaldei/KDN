@@ -58,7 +58,7 @@ tags:
 
 ---
 
-### Uniq
+### UNIQ
 
 
  > 
@@ -74,7 +74,7 @@ tags:
 
 ---
 
-### Diff
+### DIFF
 
 
  > 
@@ -89,7 +89,7 @@ tags:
 
 ---
 
-### Grep
+### GREP
 
 
  > 
@@ -148,7 +148,7 @@ tags:
 
 ---
 
-### Cut
+### CUT
 
 
  > 
@@ -170,7 +170,7 @@ tags:
 
 ---
 
-### Sed
+### SED
 
 
  > 
@@ -186,7 +186,7 @@ tags:
 
 ---
 
-### Tr
+### TR
 
 
  > 
@@ -198,7 +198,7 @@ tags:
 
 ---
 
-### Sort
+### SORT
 
 
  > 
@@ -217,7 +217,7 @@ tags:
 
 ---
 
-### Watch
+### WATCH
 
 
  > 
@@ -233,7 +233,7 @@ tags:
 
 ---
 
-### Journalctl
+### JOURNALCTL
 
 
  > 
@@ -302,7 +302,7 @@ tags:
 
 ---
 
-### Sockets
+### SS
 
 
  > 
@@ -336,3 +336,37 @@ tags:
  > 
  > **<font color=red>nmcli connection up</font> MY_SSID**</br>
  > Connect back to a known SSID.
+
+# Disk Management
+
+---
+
+### WIPEFS (Erease partitions)
+
+ > 
+ > **<font color=red>sudo wipefs -a</font> /dev/sda**</br>
+ > Erase filesystem and partition signatures (without deleting data).
+
+---
+
+### FDISK (Edit partitions)
+
+ > 
+ > **<font color=red>sudo fdisk</font> /dev/sda**</br>
+ > **<font color=red>g</font>** (create GPT table) or **<font color=red>o</font>** (create legacy DOS/MBR table).</br>
+ > **<font color=red>n</font>** (new partition, use all default to use whole disk).</br>
+ > **<font color=red>w</font>** (write changes and exit).</br>
+
+---
+
+### MKFS (Format partitions)
+
+ > 
+ > **<font color=red>mkfs -t ext4</font> /dev/sda**</br>
+ > Create an ext4 filesystem in a disk partition (old command).
+ > 
+ > **<font color=red>sudo mkfs.ext4</font> /dev/sda**</br>
+ > Create an ext4 filesystem in a disk partition (new command).
+ > 
+ > **<font color=red>sudo mkfs.ext4 -L</font> MY_LABEL /dev/sda**</br>
+ > Create an ext4 filesystem in a disk partition and set the volume label.
