@@ -28,7 +28,7 @@ tags:
 
 ---
 
-### Search for Files
+### FIND
 
 
  > 
@@ -78,12 +78,49 @@ tags:
 
 
  > 
- > **<font color=red>diff</font> myFile1 myFile2**</br>
- > Return differences between the two files.
+ > **<font color=red>ps2pdf -d PDFSETTINGS=/ebook</font> myFile.pdf myFile-Compressed.pdf**</br>
+ > Compress a PDF.
 
  > 
- > **<font color=red>diff</font> \<(ls my_directory_1) \<(ls my_directory_2)**</br>
- > Return differences between two directory contents (using process substitution).
+ > **<font color=red>/screen</font>**</br>
+ > 72 dpi, lowest quality, smallest file size.
+ > 
+ > **<font color=red>/ebook</font>**</br>
+ > 150 dpi, better quality, slightly larger size.
+ > 
+ > **<font color=red>/prepress</font>**</br>
+ > 300 dpi, high quality, larger size.
+ > 
+ > **<font color=red>/printer</font>**</br>
+ > 300 dpi, printer-quality output.
+ > 
+ > **<font color=red>/default</font>**</br>
+ > Useful for multiple purposes, may result in large files.
+
+---
+
+### PS2PDF
+
+
+ > 
+ > **<font color=red>ps2pdf -d PDFSETTINGS=/ebook</font> myFile.pdf myFile-Compressed.pdf**</br>
+ > Compress a PDF.
+
+ > 
+ > **<font color=red>/screen</font>**</br>
+ > 72 dpi, lowest quality, smallest file size.
+ > 
+ > **<font color=red>/ebook</font>**</br>
+ > 150 dpi, better quality, slightly larger size.
+ > 
+ > **<font color=red>/prepress</font>**</br>
+ > 300 dpi, high quality, larger size.
+ > 
+ > **<font color=red>/printer</font>**</br>
+ > 300 dpi, printer-quality output.
+ > 
+ > **<font color=red>/default</font>**</br>
+ > Useful for multiple purposes, may result in large files.
 
 # String Manipulation
 
@@ -341,7 +378,8 @@ tags:
 
 ---
 
-### WIPEFS (Erease partitions)
+### WIPEFS (Erase partitions)
+
 
  > 
  > **<font color=red>sudo wipefs -a</font> /dev/sda**</br>
@@ -350,6 +388,7 @@ tags:
 ---
 
 ### FDISK (Edit partitions)
+
 
  > 
  > **<font color=red>sudo fdisk</font> /dev/sda**</br>
@@ -360,6 +399,7 @@ tags:
 ---
 
 ### MKFS (Format partitions)
+
 
  > 
  > **<font color=red>mkfs -t ext4</font> /dev/sda**</br>
