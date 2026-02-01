@@ -49,7 +49,7 @@ tags:
 
  > 
  > **<font color=red>-u</font> admin<font color=red>:</font>admin**</br>
- > Provide Credentials.
+ > Basic Auth (`Authorization: Basic` header).
 
  > 
  > **<font color=red>-H '</font>myHeader: myValue<font color=red>'</font>**</br>
@@ -83,7 +83,7 @@ tags:
 
 
  > 
- > **<font color=red>curl '</font>http://\[TARGET_IP\]/api/book/1<font color=red>'  \\</font>**</br>
+ > **<font color=red>curl '</font>http://\[TARGET_HOST\]/api/book/1<font color=red>'  \\</font>**</br>
  > **<font color=red>-H 'Authorization: Bearer</font> \[JWT_TOKEN\]<font color=red>'</font>**</br>
  > Example GET request with JWT.
 
@@ -93,7 +93,7 @@ tags:
 
 
  > 
- > **<font color=red>curl '</font>http://\[TARGET_IP\]/api/auth/login<font color=red>' \\</font>**</br>
+ > **<font color=red>curl '</font>http://\[TARGET_HOST\]/api/auth/login<font color=red>' \\</font>**</br>
  > **<font color=red>-X POST \\</font>**</br>
  > **<font color=red>-H "Content-Type: application/json" \\</font>**</br>
  > **<font color=red>-d '{"</font>username<font color=red>":"</font>User<font color=red>","</font>password<font color=red>":"</font>P@ssw0rd<font color=red>"}'</font>**</br>
