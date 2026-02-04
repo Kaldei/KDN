@@ -104,6 +104,36 @@ myDictionary.values()
 myDictionary.items()
 ````
 
+---
+
+### Object Copy
+
+
+ > 
+ > Assignment statements in Python do not copy objects, they create bindings between a target and an object. For collections that are mutable or contain mutable items, a copy is sometimes needed so one can change one copy without changing the other.
+ > 
+ > Source: [Shallow and deep copy operations - Python](https://docs.python.org/3/library/copy.html)
+
+````py
+# List of dicts
+my_list = [
+	{ "player": 1, "class": "knight" },
+	{ "player": 2, "class": "pirate" }
+]
+
+# Normal Copy
+# Assign reference of the list that contains references to the dicts
+my_list_2 = my_list
+
+# Swallow Copy
+# Create a new list that contains the same references to the dicts
+my_list_3 = copy.copy(my_list)
+
+# Deep Copy
+# Create a new list and new dicts
+my_list_4 = copy.deepcopy(my_list)
+````
+
 # String Manipulation
 
 ---
