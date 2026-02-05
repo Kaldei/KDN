@@ -42,6 +42,7 @@ tags:
 
 ### Navigate
 
+
  > 
  > **<font color=red>Ctrl + b </font>then <font color=red>\[</font>**</br>
  > Move your cursor up and down.
@@ -79,6 +80,17 @@ tags:
 
 ---
 
+### Manage
+
+
+ > 
+ > **<font color=red>Ctrl+b</font> then <font color=red>$</font>**</br>
+ > or</br>
+ > **<font color=red>tmux rename-session -t</font> mySessionId myNewName**</br>
+ > Renamed a session.
+
+---
+
 ### Attach
 
 
@@ -89,12 +101,13 @@ tags:
  > Detach form session.
 
  > 
- > **<font color=red>tmux attach -t</font> 1**</br>
- > Attach to session 1.
+ > **<font color=red>tmux attach -t</font> mySessionId**</br>
+ > Attach to a session.
 
 ---
 
 ### Navigate
+
 
  > 
  > **<font color=red>Ctrl + b</font> then <font color=red>s</font>**</br>
@@ -118,5 +131,4 @@ set -g base-index 1
 
 # Renumber windows when one is closed
 set -g renumber-windows on
-
 ````
