@@ -1,5 +1,5 @@
 ---
-title: Linux Package Managers
+title: LINUX PACKAGE MANAGERS
 summary: A note about Linux packages managers.
 description: A note about Linux packages managers.
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Linux Tools
+title: LINUX TOOLS
 summary: CLI tools and tricks for Linux.
 description: CLI tools and tricks for Linux.
 tags:
