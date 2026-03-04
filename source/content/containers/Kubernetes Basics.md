@@ -390,11 +390,12 @@ Secrets are used to store sensitive information.
 
 ### DNS
 
-Here some examples of workind DNS names to access Pods in a Cluster:
+Here are some examples of working DNS names to access Pods in a Cluster:
 
 * my-pod.my-namespace
 * my-pod.my-namespace.svc
 * my-pod.my-namespace.cluster.local
+* my-service.my-namespace
 
 ---
 
@@ -447,6 +448,9 @@ spec:
 ### Basis
 
 A Service is an object that manage internal access to pods in a cluster (sort of Load Balancer with Port Forwarding). Create an abstraction layer to communicate between containers inside a cluster.
+
+Services use label selectors to pods IPs. 
+
 **There are 3 types of Services:** ClusterIP, NodePort and LoadBalancer.
 
 ---
@@ -459,11 +463,22 @@ Service of type `ClusterIP` allows for communication between services in the sam
 
 ### NodePort
 
-Service for external traffic. All traffic send to the specified port on the Node will be sent to the Service (this requires that the client is able to directly reach nodes). 
+Service to expose Pods outside the cluster. 
 
-If the request is sent to a different node than the pod is running on, the request will be forwarded to the right node.
+All traffic send to the specified port on the Node will be sent to the pods (this requires that the client is able to directly reach nodes). 
 
-Ports supported for this method are from 30000 to 32767.
+Notes
+
+* If the request is sent to a different Node than the Pod is running on, the request will be forwarded to the right Node.
+* Ports supported for this method are from `30000` to `32767`.
+* A `NodePort` Service sends the traffic to a `ClusterIP` which then sends it to the Pods. 
+
+Use case: 
+
+* When using a Load Balancer Service is too expensive or not possible (no Load Balancer Class).
+* Not recommended for production
+  * Requires exposing nodes to clients.
+  * If using a DNS record, it needs to be updated frequently to match Nodes IPs.
 
 ---
 
