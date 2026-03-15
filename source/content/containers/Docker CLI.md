@@ -43,6 +43,22 @@ tags:
  > **<font color=red>docker volume ls</font>**</br>
  > Show volumes.
 
+---
+
+### System
+
+
+ > 
+ > **<font color=red>docker system df</font>**</br>
+ > Show used host disk space (images, containers, volumes and build cache).
+
+ > 
+ > **<font color=red>docker system prune</font>**</br>
+ > Remove stopped containers and unused volumes.
+ > 
+ > **<font color=red>docker system prune -a</font>**</br>
+ > Remove stopped containers, unused volumes and images.
+
 # Images
 
 ---
@@ -67,18 +83,6 @@ tags:
 
 ---
 
-### Layers
-
-
- > 
- > **<font color=red>docker image history</font> myImage**</br>
- > Show image layers.
- > 
- > **<font color=red>docker image history</font> myImage <font color=red>--no-trunc --format json | tac | jq -r '.CreatedBy'</font>**</br>
- > Show image layers commands.
-
----
-
 ### Create
 
 
@@ -100,7 +104,72 @@ tags:
  > **<font color=red>docker load -i</font> /path/myImage.tar**</br>
  > Import an image (form archive).
 
+---
+
+### Inspect
+
+
+ > 
+ > **<font color=red>docker image history</font> myImage**</br>
+ > Show image layers.
+ > 
+ > **<font color=red>docker image history</font> myImage <font color=red>--no-trunc --format json | tac | jq -r '.CreatedBy'</font>**</br>
+ > Show image layers commands.
+
 # Containers
+
+---
+
+### Flags
+
+
+ > 
+ > **<font color=red>--name</font> myContainer**</br>
+ > Give a name to the container.
+
+ > 
+ > **<font color=red>-d</font>**</br>
+ > Detached Mode (run in background).
+ > 
+ > **<font color=red>-it</font>**</br>
+ > Keep stdin open (to use it like a shell).
+ > 
+ > **<font color=red>--rm</font>**</br>
+ > Remove the container when it is stopped.
+
+ > 
+ > **<font color=red>-p</font> 1212<font color=red>:</font>1212**</br>
+ > Map ports (host:container).
+ > 
+ > **<font color=red>-v</font> /myHostFolder<font color=red>:</font>/myContainerFolder**</br>
+ > Map a folder between the host and the container.
+
+ > 
+ > **<font color=red>--read-only</font>**</br>
+ > Makes the container's root file system read-only.
+ > 
+ > **<font color=red>--security-opt=no-new-privileges</font>**</br>
+ > Prevents processes inside the container from gaining new privileges during execution (security measure against privilege escalation).
+
+ > 
+ > **<font color=red>--cap-drop=ALL</font>**</br>
+ > Start the container without capabilities.
+ > 
+ > **<font color=red>--cap-add=SYS_NICE</font>**</br>
+ > Capability for scheduling (required for GPU scheduling?).
+
+ > 
+ > **<font color=red>--cpus=</font>2**</br>
+ > Set CPU limit.
+ > 
+ > **<font color=red>--gpu</font> all**</br>
+ > Set GPU limits (syntax allows for more detailed control than CPU).
+ > 
+ > **<font color=red>--memory=</font>4g**</br>
+ > Set RAM limit.
+ > 
+ > **<font color=red>--memory-swap=</font>4g**</br>
+ > Set Swap limit.
 
 ---
 
@@ -158,58 +227,35 @@ tags:
 
 ---
 
-### Flags
+### Inspect
 
 
  > 
- > **<font color=red>--name</font> myContainer**</br>
- > Give a name to the container.
-
+ > **<font color=red>docker inspect</font> myContainer <font color=red>\| jq .\[\].State</font>**</br>
+ > Get container state.
  > 
- > **<font color=red>-d</font>**</br>
- > Detached Mode (run in background).
+ > **<font color=red>docker inspect</font> myContainer <font color=red>\| jq .\[\].Config</font>**</br>
+ > Get container config (`Entreypoint`, `WorkingDir`, `Env`, ...).
  > 
- > **<font color=red>-it</font>**</br>
- > Keep stdin open (to use it like a shell).
+ > **<font color=red>docker inspect</font> myContainer <font color=red>\| jq .\[\].Mounts</font>**</br>
+ > Get container mounts.
  > 
- > **<font color=red>--rm</font>**</br>
- > Remove the container when it is stopped.
-
- > 
- > **<font color=red>-p</font> 1212<font color=red>:</font>1212**</br>
- > Map ports (host:container).
- > 
- > **<font color=red>-v</font> /myHostFolder<font color=red>:</font>/myContainerFolder**</br>
- > Map a folder between the host and the container.
-
- > 
- > **<font color=red>--read-only</font>**</br>
- > Makes the container's root file system read-only.
- > 
- > **<font color=red>--security-opt=no-new-privileges</font>**</br>
- > Prevents processes inside the container from gaining new privileges during execution (security measure against privilege escalation).
-
- > 
- > **<font color=red>--cap-drop=ALL</font>**</br>
- > Start the container without capabilities.
- > 
- > **<font color=red>--cap-add=SYS_NICE</font>**</br>
- > Capability for scheduling (required for GPU scheduling?).
-
- > 
- > **<font color=red>--cpus=</font>2**</br>
- > Set CPU limit.
- > 
- > **<font color=red>--gpu</font> all**</br>
- > Set GPU limits (syntax allows for more detailed control than CPU).
- > 
- > **<font color=red>--memory=</font>4g**</br>
- > Set RAM limit.
- > 
- > **<font color=red>--memory-swap=</font>4g**</br>
- > Set Swap limit.
+ > **<font color=red>docker inspect</font> myContainer <font color=red>\| jq .\[\].NetworkSettings</font>**</br>
+ > Get container networks (`Networks` and `Ports`).
 
 # Tips
+
+---
+
+### Exec in Containers Without Shell
+
+
+ > 
+ > **CONTAINER_PID=$(<font color=red>docker inspect -f '{{.State.Pid}}'</font> myContainer)**</br>
+ > Get container's PID.
+ > 
+ > **<font color=red>nsenter --target</font> $CONTAINER_PID <font color=red>--user --pid --network --ipc</font> /bin/sh**</br>
+ > Run a command entering user, pid, network and ipc namespaces.
 
 ---
 
@@ -221,4 +267,11 @@ tags:
  > Get container's PID.
  > 
  > **<font color=red>nsenter --target</font> $CONTAINER_PID <font color=red>--mount ls</font> /**</br>
+ > Run ls in the container's file system.
+
+ > 
+ > **MERGED_LAYER_PATH=$(<font color=red>docker inspect -f '{{.GraphDriver.Data.MergedDir}}'</font> myContainer)**</br>
+ > Get Merge Layer path (unified filesystem of the containers).
+ > 
+ > **<font color=red>ls</font> $MERGED_LAYER_PATH**</br>
  > Run ls in the container's file system.
