@@ -10,8 +10,9 @@ tags:
 
 * [Learn Git Branching](https://learngitbranching.js.org/)
 * [Oh Shit Git](https://ohshitgit.com/en)
-* [How Git Actually Works - LeanThatStack](https://www.youtube.com/watch?v=Ala6PHlYjmw)
+* [Workflows Git - Stéphane Robert](https://blog.stephane-robert.info/docs/developper/version/git/workflows-git/)
 * [The difference between the working directory and the repository - Anna Skoulikari](https://medium.com/tech-journey-with-anna/git-question-what-is-the-difference-between-the-working-directory-aka-workspace-and-the-eeee15b7e4b3)
+* [How Git Actually Works - LeanThatStack](https://www.youtube.com/watch?v=Ala6PHlYjmw)
 
 # Concepts
 
