@@ -535,6 +535,16 @@ spec:
 ### Authorization Checks
 
 
+ > 
+ > **<font color=red>kubectl auth whoami</font>**</br>
+ > Returns username and groups.
+
+ > 
+ > **<font color=red>kubectl auth can-i</font> create pods**</br>
+ > Checks an action is allowed (returns `yes` or `no`).
+ > 
+ > **<font color=red>kubectl auth can-i --list</font>**</br>
+ > Returns all allowed actions.
 
 # Troubleshooting
 
