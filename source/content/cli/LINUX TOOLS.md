@@ -378,6 +378,15 @@ tags:
 
 ---
 
+### Disk usage
+
+
+ > 
+ > **<font color=red>alias dutop='sh -c '''du -h --all --max-depth=1 "$1" | sort -hr | head -n 20 ''' \_'</font>**</br>
+ > Alias for searching large files (vanilla alternative to ncdu).
+
+---
+
 ### WIPEFS (Erase partitions)
 
 
