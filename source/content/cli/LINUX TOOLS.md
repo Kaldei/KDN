@@ -24,6 +24,18 @@ tags:
  > **<font color=green>Ctrl + Alt + F2</font>**</br>
  > Open TTY 2 (there are 6 TTYs on Linux that can be opened in parallel, from F1 to F6).
 
+---
+
+### LS
+
+
+ > 
+ > **<font color=red>ls -lS</font>**</br>
+ > Sort by size.
+ > 
+ > **<font color=red>ls -lX</font>**</br>
+ > Sort by extension.
+
 # Files
 
 ---
@@ -306,14 +318,18 @@ tags:
  > Reverse DNS.
 
  > 
- > **<font color=red>dig +trace</font> my.domain**</br>
- > Shows steps in the lookup chain.
- > 
  > **<font color=red>dig +short</font> my.domain**</br>
  > Short form answer (only record value).
  > 
+ > **<font color=red>dig +noall +answer</font> my.domain**</br>
+ > Short form answer (ttl, type, record).
+ > 
  > **<font color=red>dig +nostats +nocomments +nocmd</font> my.domain**</br>
  > Short form answer (ttl, type, record).
+
+ > 
+ > **<font color=red>dig +trace</font> my.domain**</br>
+ > Shows steps in the lookup chain.
 
  > 
  > **<font color=red>dig -t NS</font> my.domain**</br>
@@ -327,6 +343,13 @@ tags:
  > 
  > **<font color=red>dig -t MX</font> my.domain**</br>
  > Return MX Records.
+
+ > 
+ > **<font color=red>dig +udp</font> my.domain**</br>
+ > Query using UDP.
+ > 
+ > **<font color=red>dig +tcp</font> my.domain**</br>
+ > Query using TCP.
 
 ---
 
