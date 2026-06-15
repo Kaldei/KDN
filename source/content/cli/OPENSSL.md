@@ -46,16 +46,18 @@ tags:
 
 
  > 
+ > **<font color=red>openssl req -in</font> cert<font color=red>.csr -text</font>**</br>
+ > Output CSR content as text.
+
+ > 
  > **<font color=red>openssl x509 -in</font> cert<font color=red>.pem -text</font>**</br>
  > Output certificate content as text.
-
  > 
- > **<font color=red>openssl req -in</font> cert<font color=red>.csr -text</font>**</br>
- > Output certificate content as text.
-
+ > **<font color=red>openssl x509 -in</font> cert<font color=red>.pem -text -noout</font>**</br>
+ > Do not output raw certificate at the end.
  > 
- > **<font color=red>-noout</font>**</br>
- > Do not outpout raw certificate at the end.
+ > **<font color=red>openssl x509 -in</font> cert<font color=red>.pem -text -noout | grep -i valid -A2</font>**</br>
+ > Return validity dates.
 
 ---
 
