@@ -553,11 +553,14 @@ spec:
 
 ### Basis
 
-An Ingress is an object that manage external access to services in a cluster (sort of Reverse Proxy). When using an Ingress Controller, all services will share a Load Balancer.
+An Ingress is an object that manage external access to services in a cluster (sort of Reverse Proxy / API Gateway). When using an Ingress Controller, all services will share one Load Balancer.
 
-**Ingress only allow the use of HTTP and HTTPS.**
+There are many types of Ingress Controllers: Nginx, Kong, Istio, AWS Load Balancer Controler, ...
 
-There are many types of Ingress Controllers: Nginx, Kong, Istio, ...
+Notes:
+
+* **Ingress only allows the use of HTTP and HTTPS.**
+* Ingress can be useful for monitoring: all metrics (latency, throughput, ...) in one place without needed to instrument each app.
 
 ---
 
