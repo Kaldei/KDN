@@ -90,24 +90,12 @@ tags:
 
 
  > 
- > **<font color=red>ps2pdf -d PDFSETTINGS=/ebook</font> myFile.pdf myFile-Compressed.pdf**</br>
- > Compress a PDF.
+ > **<font color=red>diff</font> myFile1 myFile2**</br>
+ > Return differences between the two files.
 
  > 
- > **<font color=red>/screen</font>**</br>
- > 72 dpi, lowest quality, smallest file size.
- > 
- > **<font color=red>/ebook</font>**</br>
- > 150 dpi, better quality, slightly larger size.
- > 
- > **<font color=red>/prepress</font>**</br>
- > 300 dpi, high quality, larger size.
- > 
- > **<font color=red>/printer</font>**</br>
- > 300 dpi, printer-quality output.
- > 
- > **<font color=red>/default</font>**</br>
- > Useful for multiple purposes, may result in large files.
+ > **<font color=red>diff</font> <font color=red>\<(</font>ls my_directory_1<font color=red>) \<(</font>ls my_directory_2<font color=red>)</font>**</br>
+ > Return differences between two directory contents (using process substitution).
 
 ---
 
@@ -144,10 +132,16 @@ tags:
  > 
  > **<font color=red>grep</font> myString myFile**</br>
  > Return lines containing myString.
-
  > 
  > **<font color=red>grep -e</font> myString1 <font color=red>-e</font> myString2**</br>
  > Match multiple patterns.
+
+ > 
+ > **<font color=red>grep -f</font> myFileA myFileB**</br>
+ > Read the search patterns from a file (`myFileA`).
+ > 
+ > **<font color=red>grep -vxF -f</font> myFileA myFileB**</br>
+ > Prints all lines in `fileA` that are not found in `fileB`.
 
  > 
  > **<font color=red>grep -E</font>**</br>
@@ -159,6 +153,12 @@ tags:
  > 
  > **<font color=red>grep -i</font>**</br>
  > Return lines that correspond to the string but is not case-sensitive.
+ > 
+ > **<font color=red>grep -x</font>**</br>
+ > Return lines that correspond exactly to the string.
+ > 
+ > **<font color=red>grep -v</font>**</br>
+ > Return lines that do not contain the string.
 
  > 
  > **<font color=red>grep -A</font> 12**</br>
@@ -169,13 +169,6 @@ tags:
  > 
  > **<font color=red>grep -C</font> 12**</br>
  > Return 12 lines before and after the match.
-
- > 
- > **<font color=red>grep -x</font>**</br>
- > Return lines that correspond exactly to the string.
- > 
- > **<font color=red>grep -v</font>**</br>
- > Return lines that do not contain the string.
 
  > 
  > **<font color=red>grep -c</font>**</br>
@@ -190,10 +183,6 @@ tags:
  > 
  > **<font color=red>grep -h</font>**</br>
  > Do not return the folder prefix.
-
- > 
- > **<font color=red>grep -vxFf</font> myFileA myFileB**</br>
- > Prints all lines in `fileA` that are not found in `fileB`.
 
 ---
 
