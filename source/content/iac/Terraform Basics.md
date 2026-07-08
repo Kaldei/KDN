@@ -292,13 +292,13 @@ terraform {
 ````
 
  > 
- > **<font color=red>terraform login</font>**</br>
+ > **<font color=red>terraform login</font>**<br>
  > Login to Terraform Cloud.
  > 
- > **<font color=red>terraform init</font>**</br>
+ > **<font color=red>terraform init</font>**<br>
  > Reinitialize configuration, create the `my-workspace` workspace in Terraform Cloud and migrate state to Terraform Cloud.
  > 
- > **<font color=red>rm terraform.tfstate</font>**</br>
+ > **<font color=red>rm terraform.tfstate</font>**<br>
  > Delete local Terraform State.
 
 ---
@@ -378,7 +378,7 @@ variable "my_child_value" {
 
 
  > 
- > **<font color=red>upper("</font>myString<font color=red>")</font>**</br>
+ > **<font color=red>upper("</font>myString<font color=red>")</font>**<br>
  > Return uppercased string.
 
 ---
@@ -387,11 +387,11 @@ variable "my_child_value" {
 
 
  > 
- > **<font color=red>element(</font>list<font color=red>,</font> index<font color=red>)</font>**</br>
+ > **<font color=red>element(</font>list<font color=red>,</font> index<font color=red>)</font>**<br>
  > Return an element in a list by its index.
 
  > 
- > **<font color=red>zipmap(</font>keyslist<font color=red>,</font> valueslist<font color=red>)</font>**</br>
+ > **<font color=red>zipmap(</font>keyslist<font color=red>,</font> valueslist<font color=red>)</font>**<br>
  > Create a map from a list of keys and a list of values
 
 # Meta-Arguments

@@ -22,11 +22,11 @@ tags:
 
 
  > 
- > **cat myFile.json <font color=red>\| jq</font>**</br>
+ > **cat myFile.json <font color=red>\| jq</font>**<br>
  > 
- > **<font color=red>jq</font> myFile.json**</br>
+ > **<font color=red>jq</font> myFile.json**<br>
  > 
- > **<font color=red>jq \<\<\< </font> {  "player": { "name": "apple", "color": "blue" } }**</br>
+ > **<font color=red>jq \<\<\< </font> {  "player": { "name": "apple", "color": "blue" } }**<br>
 
 ---
 
@@ -34,7 +34,7 @@ tags:
 
 
  > 
- > **<font color=red>-r</font>**</br>
+ > **<font color=red>-r</font>**<br>
  > Output raw strings (without the quotes).
 
 # Filter
@@ -49,13 +49,13 @@ tags:
 ````
 
  > 
- > **<font color=red>jq '.\[\]'</font> myFile.json**</br>
+ > **<font color=red>jq '.\[\]'</font> myFile.json**<br>
  > Return elements line by line (without `[ ]`).
  > 
- > **<font color=red>jq '.\[</font>2<font color=red>\]'</font> myFile.json**</br>
+ > **<font color=red>jq '.\[</font>2<font color=red>\]'</font> myFile.json**<br>
  > Return an element by its ID.
  > 
- > **<font color=red>jq '.\[</font>2<font color=red>:</font>12<font color=red>\]'</font> myFile.json**</br>
+ > **<font color=red>jq '.\[</font>2<font color=red>:</font>12<font color=red>\]'</font> myFile.json**<br>
  > Return a subset of elements.
 
 ---
@@ -73,19 +73,19 @@ tags:
 ````
 
  > 
- > **<font color=red>jq '.</font>player<font color=red>.</font>name<font color=red>'</font> myFile.json**</br>
+ > **<font color=red>jq '.</font>player<font color=red>.</font>name<font color=red>'</font> myFile.json**<br>
  > Return the a property.
  > 
- > **<font color=red>jq '.</font>player<font color=red> | {</font>name<font color=red>,</font>color<font color=red>}'</font> myFile.json**</br>
+ > **<font color=red>jq '.</font>player<font color=red> | {</font>name<font color=red>,</font>color<font color=red>}'</font> myFile.json**<br>
  > Return the multiple properties.
 
  > 
- > **<font color=red>jq '.</font>player <font color=red>\| select(.</font>player_class <font color=red>== "</font>knight<font color=red>")'</font> myFile.json**</br>
+ > **<font color=red>jq '.</font>player <font color=red>\| select(.</font>player_class <font color=red>== "</font>knight<font color=red>")'</font> myFile.json**<br>
  > Return `player` that have the property `player_class` set to `knight`.
 
  > 
- > **<font color=red>jq '.</font>player <font color=red>\| keys' </font>myFile.json**</br>
+ > **<font color=red>jq '.</font>player <font color=red>\| keys' </font>myFile.json**<br>
  > Return the keys of `player` (`name` and ` color`).
  > 
- > **<font color=red>jq '.</font>player <font color=red>\| length' </font>myFile.json**</br>
+ > **<font color=red>jq '.</font>player <font color=red>\| length' </font>myFile.json**<br>
  > Return the length of `player` (here the number of properties is 2).

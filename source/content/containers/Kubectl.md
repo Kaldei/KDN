@@ -15,11 +15,11 @@ tags:
 
 
  > 
- > **<font color=red>alias k=kubectl</font>**</br>
+ > **<font color=red>alias k=kubectl</font>**<br>
  > Create alias for kubectl.
 
  > 
- > **<font color=red>source \<(kubectl completion bash)</font>**</br>
+ > **<font color=red>source \<(kubectl completion bash)</font>**<br>
  > Enable kubectl completion.
 
 ---
@@ -28,14 +28,14 @@ tags:
 
 
  > 
- > **<font color=red>kubectl cluster-info --kubeconfig</font> /path/to/kubeconfig.yml**</br>
+ > **<font color=red>kubectl cluster-info --kubeconfig</font> /path/to/kubeconfig.yml**<br>
  > Show info about the specifed Kubeconfig file.
 
  > 
- > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**</br>
+ > **<font color=red>export KUBECONFIG=</font>/path/to/kubeconfig.yml**<br>
  > Set the Kubeconfig file to use.
  > 
- > **<font color=red>kubectl config view</font>**</br>
+ > **<font color=red>kubectl config view</font>**<br>
  > Show configured clusters in the current Kubeconfig file.
 
 ---
@@ -44,7 +44,7 @@ tags:
 
 
  > 
- > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**</br>
+ > **<font color=red>aws eks update-kubeconfig --name</font> my-cluster**<br>
  > Update `~/.kube/config` file to be able to connect to the cluster.
 
 ---
@@ -53,28 +53,28 @@ tags:
 
 
  > 
- > **<font color=red>kubectl -context</font> my-context-name get pods**</br>
+ > **<font color=red>kubectl -context</font> my-context-name get pods**<br>
  > Specify context in a command.
  > 
- > **<font color=red>kubectl -n</font> my-namespace get pods**</br>
+ > **<font color=red>kubectl -n</font> my-namespace get pods**<br>
  > Specify namespace in a command.
 
  > 
- > **<font color=red>kubectl config use-context </font> myContext**</br>
+ > **<font color=red>kubectl config use-context </font> myContext**<br>
  > Switch to the specify context.
 
  > 
- > **<font color=red>kubectl config current-context</font>**</br>
+ > **<font color=red>kubectl config current-context</font>**<br>
  > Show current context.
  > 
- > **<font color=red>kubectl config view --minify | grep namespace:</font>**</br>
+ > **<font color=red>kubectl config view --minify | grep namespace:</font>**<br>
  > Show current namespace (other method).
 
  > 
- > **<font color=red>kubectl config set-context --current --namespace</font> myNameSpace**</br>
+ > **<font color=red>kubectl config set-context --current --namespace</font> myNameSpace**<br>
  > Set namespace for current context.
  > 
- > **<font color=red>kubectl config unset current-context</font>**</br>
+ > **<font color=red>kubectl config unset current-context</font>**<br>
  > Unset current context.
 
 # Basis
@@ -85,10 +85,10 @@ tags:
 
 
  > 
- > **<font color=red>kubectl apply -f</font> myResoyrce.yml**</br>
+ > **<font color=red>kubectl apply -f</font> myResoyrce.yml**<br>
  > Create or update a resource from a YAML file.
  > 
- > **<font color=red>kubectl apply -f</font> /myResourcesFolder**</br>
+ > **<font color=red>kubectl apply -f</font> /myResourcesFolder**<br>
  > Create or update multiple resources from YAML files in a folder (requires `---` at the beginning of files).
 
 ---
@@ -97,19 +97,19 @@ tags:
 
 
  > 
- > **<font color=red>kubectl get nodes</font>**</br>
+ > **<font color=red>kubectl get nodes</font>**<br>
  > List nodes.
  > 
- > **<font color=red>kubectl get services</font>**</br>
+ > **<font color=red>kubectl get services</font>**<br>
  > Return active services.
  > 
- > **<font color=red>kubectl get ingress</font>**</br>
+ > **<font color=red>kubectl get ingress</font>**<br>
  > Show ingress.
  > 
- > **<font color=red>kubectl get deployments</font>**</br>
+ > **<font color=red>kubectl get deployments</font>**<br>
  > Show deployments.
  > 
- > **<font color=red>kubectl get pods</font>**</br>
+ > **<font color=red>kubectl get pods</font>**<br>
  > Show Pods.
 
 ---
@@ -118,7 +118,7 @@ tags:
 
 
  > 
- > **<font color=red>kubectl describes</font> nodes myNode**</br>
+ > **<font color=red>kubectl describes</font> nodes myNode**<br>
  > Return information about the resource.
 
 ---
@@ -127,21 +127,21 @@ tags:
 
 
  > 
- > **<font color=red>kubectl delete pod</font> my-pod <font color=red></font>**</br>
+ > **<font color=red>kubectl delete pod</font> my-pod <font color=red></font>**<br>
  > Delete Pod.
  > 
- > **<font color=red>kubectl delete pod</font> my-pod  <font color=red>--now</font>**</br>
+ > **<font color=red>kubectl delete pod</font> my-pod  <font color=red>--now</font>**<br>
  > Delete Pod now.
  > 
- > **<font color=red>kubectl delete pod</font> my-pod <font color=red>--force</font>**</br>
+ > **<font color=red>kubectl delete pod</font> my-pod <font color=red>--force</font>**<br>
  > Force delete the Pod.
  > 
- > **<font color=red>kubectl delete pods --all</font>**</br>
+ > **<font color=red>kubectl delete pods --all</font>**<br>
  > Delete all Pods.
 
 
  > 
- > **<font color=red>kubectl delete -f</font> myDeployment.yml**</br>
+ > **<font color=red>kubectl delete -f</font> myDeployment.yml**<br>
  > Delete deployment from file.
 
 ---
@@ -150,19 +150,19 @@ tags:
 
 
  > 
- > **<font color=red>kubectl</font> get pods <font color=red>-o wide</font>**</br>
+ > **<font color=red>kubectl</font> get pods <font color=red>-o wide</font>**<br>
  > Ouput more info (e.g. for Pods, outputs Node and IP).
 
  > 
- > **<font color=red>kubectl</font> get deployment <font color=red>-o custom-columns=</font>DEPLOYMENT<font color=red>:</font>.metadata.name<font color=red>,</font>CONTAINER_IMAGE<font color=red>:</font>.spec.template.spec.containers\[\].image<font color=red>,</font>READY_REPLICAS<font color=red>:</font>.status.readyReplicas <font color=red>--sort-by=</font>.metadata.name**</br>
+ > **<font color=red>kubectl</font> get deployment <font color=red>-o custom-columns=</font>DEPLOYMENT<font color=red>:</font>.metadata.name<font color=red>,</font>CONTAINER_IMAGE<font color=red>:</font>.spec.template.spec.containers\[\].image<font color=red>,</font>READY_REPLICAS<font color=red>:</font>.status.readyReplicas <font color=red>--sort-by=</font>.metadata.name**<br>
  > Custom column output.
 
  > 
- > **<font color=red>kubectl</font> get pods my-pod <font color=red>-o yaml</font>**</br>
+ > **<font color=red>kubectl</font> get pods my-pod <font color=red>-o yaml</font>**<br>
  > Ouput yaml configuration.
 
  > 
- > **<font color=red>kubectl</font> get nodes <font color=red>-o jsonpath='{</font>.items\[\*\].status.nodeInfo.osImage<font color=red>}'</font>**</br>
+ > **<font color=red>kubectl</font> get nodes <font color=red>-o jsonpath='{</font>.items\[\*\].status.nodeInfo.osImage<font color=red>}'</font>**<br>
  > Jsonpath output.
 
 ---
@@ -171,11 +171,11 @@ tags:
 
 
  > 
- > **<font color=red>--no-headers</font>**</br>
+ > **<font color=red>--no-headers</font>**<br>
  > Do not output headers.
 
  > 
- > **<font color=red>--as</font> myUser**</br>
+ > **<font color=red>--as</font> myUser**<br>
  > Execute command as another user.
 
 # Monitoring
@@ -187,10 +187,10 @@ tags:
 **Note:** For the Metrics API to be available, `metrics-server` has to be installed on the cluster.
 
  > 
- > **<font color=red>kubectl top nodes</font>**</br>
+ > **<font color=red>kubectl top nodes</font>**<br>
  > Show nodes metrics.
  > 
- > **<font color=red>kubectl top pods</font>**</br>
+ > **<font color=red>kubectl top pods</font>**<br>
  > Show pods metrics.
 
 # Metadata
@@ -201,21 +201,21 @@ tags:
 
 
  > 
- > **<font color=red>kubectl label node</font> myNode myLabel<font color=red>=</font>myValue**</br>
+ > **<font color=red>kubectl label node</font> myNode myLabel<font color=red>=</font>myValue**<br>
  > Add a Label to a Node.
  > 
- > **<font color=red>kubectl label node</font> myNode myLabel<font color=red>-</font>**</br>
+ > **<font color=red>kubectl label node</font> myNode myLabel<font color=red>-</font>**<br>
  > Remove a Label from a Node.
 
 ### Label Selector
 
 
  > 
- > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue**</br>
+ > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue**<br>
  > Get pods based on label value.
 
  > 
- > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue<font color=red>,</font>myLablel2<font color=red>=</font>myValue2**</br>
+ > **<font color=red>kubectl get</font> pod <font color=red>--selector</font> myLablel<font color=red>=</font>myValue<font color=red>,</font>myLablel2<font color=red>=</font>myValue2**<br>
  > Get pods based on multiple labels values.
 
 # Nodes
@@ -226,20 +226,20 @@ tags:
 
 
  > 
- > **<font color=red>kubectl cordon</font> myNode**</br>
+ > **<font color=red>kubectl cordon</font> myNode**<br>
  > Mark the node as unschedulable (node status will be `Ready,SchedulingDisabled`).
  > 
- > **<font color=red>kubectl uncordon</font> myNode**</br>
+ > **<font color=red>kubectl uncordon</font> myNode**<br>
  > Mark the node as schedulable (node status will be `Ready`).
 
  > 
- > **<font color=red>kubectl drain</font> myNode**</br>
+ > **<font color=red>kubectl drain</font> myNode**<br>
  > Mark the node as unschedulable and empty it from its pods.
  > 
- > **<font color=red>kubectl drain</font> myNode <font color=red>--ignore-daemonsets</font>**</br>
+ > **<font color=red>kubectl drain</font> myNode <font color=red>--ignore-daemonsets</font>**<br>
  > Allows to drain node even if there are DaemonSets (DaemonSets can create Pods that ignore unschedulable taints).
  > 
- > **<font color=red>kubectl drain</font> myNode <font color=red>--force</font>**</br>
+ > **<font color=red>kubectl drain</font> myNode <font color=red>--force</font>**<br>
  > Allows to drain node even if there are Pods that are not declared in the controller (Pods not in Job, DaemonSet, ReplicationSet, ...). 
  > Warning: pods that are not in the controller will be lost.
 
@@ -249,11 +249,11 @@ tags:
 
 
  > 
- > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect**</br>
+ > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect**<br>
  > Add a Taint to a Node (effect can be `NoExecute`, `NoSchedule`,  `PreferNoSchedule`...)
 
  > 
- > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect<font color=red>-</font>**</br>
+ > **<font color=red>kubectl taint node</font> myNode myKey<font color=red>=</font>myValue<font color=red>:</font>myEffect<font color=red>-</font>**<br>
  > Remove Taint from a Node.
 
 # Pods
@@ -265,7 +265,7 @@ tags:
 To create a static pod, look at the path configured for `staticPodPath` in `/var/lib/kubelet/config.yaml`. Then create a manifest and move it in the specified path.
 
  > 
- > **<font color=red>kubectl describe pods -A | grep "Controlled By"</font>**</br>
+ > **<font color=red>kubectl describe pods -A | grep "Controlled By"</font>**<br>
  > Find Static Pods (they are the ones controlled by `Node/controlplane`).
 
 ---
@@ -274,21 +274,21 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
- > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd**</br>
+ > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd**<br>
  > Start a Pod (Appache in this case).
  > 
- > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>80**</br>
- > Start a Pod and set the `containerPort` spec.</br>
+ > **<font color=red>kubectl run</font> webserver <font color=red>--image=</font>httpd <font color=red>--port=</font>80**<br>
+ > Start a Pod and set the `containerPort` spec.<br>
  > Like `EXPOSE` it is for information purpose only: it does not actually publish the port.
 
  > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--</font> /bin/bash**</br>
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--</font> /bin/bash**<br>
  > Run a Pod that overrides the `CMD` of the container. 
  > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--command --</font> /bin/bash --myArg**</br>
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>--command --</font> /bin/bash --myArg**<br>
  > Run a Pod that overrides the `ENTRYPOINT` and the `CMD` of the container. 
  > 
- > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>-rm -it --command --</font> /bin/bash --myArg**</br>
+ > **<font color=red>kubectl run</font> my-pod <font color=red>--image=</font>myImage <font color=red>-rm -it --command --</font> /bin/bash --myArg**<br>
  > Run a Pod that is interactive (`-it`) and gets deleted when exited (`--rm`)
 
 ---
@@ -297,7 +297,7 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
- > **<font color=red>kubectl exec</font> my-pod <font color=red>-c</font> my-container <font color=red>-it --</font> /bin/bash**</br>
+ > **<font color=red>kubectl exec</font> my-pod <font color=red>-c</font> my-container <font color=red>-it --</font> /bin/bash**<br>
  > Exec a command in a container (when there is only one container `-c` is not required).
 
 ---
@@ -306,11 +306,11 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
- > **<font color=red>kubectl logs</font> my-pod <font color=red>-c</font> my-container**</br>
+ > **<font color=red>kubectl logs</font> my-pod <font color=red>-c</font> my-container**<br>
  > Show logs of the specified container (when there is only one container `-c` is not required).
 
  > 
- > **<font color=red>kubectl logs  -f</font> my-pod**</br>
+ > **<font color=red>kubectl logs  -f</font> my-pod**<br>
  > Show and follows logs.
 
 ---
@@ -319,7 +319,7 @@ To create a static pod, look at the path configured for `staticPodPath` in `/var
 
 
  > 
- > **<font color=red>kubectl edit pod </font>myPod**</br>
+ > **<font color=red>kubectl edit pod </font>myPod**<br>
  > Edit pod configuration
 
 The only specifications that can be edited without `--force` are the following: 
@@ -337,7 +337,7 @@ The only specifications that can be edited without `--force` are the following:
 
 
  > 
- > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**</br>
+ > **<font color=red>kubectl create</font> my-deployment <font color=red>--image=</font>httpd:alpine <font color=red>--replicas=</font>4**<br>
  > Create a deployment with 4 replicas.
 
 ---
@@ -346,15 +346,15 @@ The only specifications that can be edited without `--force` are the following:
 
 
  > 
- > **<font color=red>kubectl scale deployment</font> my-deployment <font color=red>--replicas</font> 4**</br>
+ > **<font color=red>kubectl scale deployment</font> my-deployment <font color=red>--replicas</font> 4**<br>
  > Change the number of replicas for the Deployment.
 
  > 
- > **<font color=red>kubectl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**</br>
+ > **<font color=red>kubectl set image deployment/</font>my-deployment my-container<font color=red>=</font>my-new-image**<br>
  > Change the image used in a Deployment.
 
  > 
- > **<font color=red>kubectl rollout status deployment/</font>my-deployment**</br>
+ > **<font color=red>kubectl rollout status deployment/</font>my-deployment**<br>
  > Show rollout status.
 
 # Service Exposure
@@ -365,8 +365,8 @@ The only specifications that can be edited without `--force` are the following:
 
 
  > 
- > **<font color=red>kubectl port-forward</font> my-pod \<HOST_PORT>:\<POD_PORT>**</br>
- > Create a port forward to the specified pod.</br>
+ > **<font color=red>kubectl port-forward</font> my-pod \<HOST_PORT>:\<POD_PORT>**<br>
+ > Create a port forward to the specified pod.<br>
  > Access via `localhost:<POD_PORT>`
 
 ---
@@ -375,16 +375,16 @@ The only specifications that can be edited without `--force` are the following:
 
 
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**</br>
- > Create a service of type ClusterIP.</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=ClusterIP --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**<br>
+ > Create a service of type ClusterIP.<br>
  > Access via `<CLUSTER_IP>:<POD_PORT>` (only accessible inside the cluster).
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**</br>
- > Create a service of type NodePort.</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=NodePort --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**<br>
+ > Create a service of type NodePort.<br>
  > Access via `<ANY_NODE_IP>:<NODE_PORT>`
  > 
- > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**</br>
- > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer).</br>
+ > **<font color=red>kubectl expose pod</font> my-pod <font color=red>--type=LoadBalancer --port=</font>\<POD_PORT> <font color=red>--name</font> my-app-service**<br>
+ > Create a service of type LoadBalancer (requires that cluster is able to ask for a load balancer).<br>
  > Access via `<EXTERNAL_IP>:<POD_PORT>` (`EXTERNAL_IP` is the IP of the Load Balancer).
 
 ---
@@ -393,11 +393,11 @@ The only specifications that can be edited without `--force` are the following:
 
 
  > 
- > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>/mypath<font color=red>=</font>my-app-cluster-ip-service<font color=red>:</font>8080"**</br>
+ > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>/mypath<font color=red>=</font>my-app-cluster-ip-service<font color=red>:</font>8080"**<br>
  > Create an Ingress that route traffic address to `/mypath` path.
 
  > 
- > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>myapp.local/\*<font color=red>=</font>my-app-cluster-ip-service<font color=red>:</font>8080"**</br>
+ > **<font color=red>kubectl create ingress</font> my-ingress <font color=red>--rule="</font>myapp.local/\*<font color=red>=</font>my-app-cluster-ip-service<font color=red>:</font>8080"**<br>
  > Create an Ingress that route traffic addressed to `myapp.local` host.
 
 
@@ -420,11 +420,11 @@ metadata:
 
 
  > 
- > **<font color=red>kubectl create secret generic</font> mySecret <font color=red>--from-literal</font> my_key_1<font color=red>=</font>my_value_1 <font color=red>--from-literal</font> my_key_2<font color=red>=</font>my_value_2**</br>
+ > **<font color=red>kubectl create secret generic</font> mySecret <font color=red>--from-literal</font> my_key_1<font color=red>=</font>my_value_1 <font color=red>--from-literal</font> my_key_2<font color=red>=</font>my_value_2**<br>
  > Create a `generic` Secret.
 
  > 
- > **<font color=red>kubectl create secret docker-registry</font> my-private-reg-creds <font color=red>--docker-server=</font>myprivateregistry.com:5000 <font color=red>--docker-username=</font>dock_user<font color=red> --docker-password=</font>dock_password <font color=red>--docker-email=</font>dock_user@myprivateregistry.com**</br> 
+ > **<font color=red>kubectl create secret docker-registry</font> my-private-reg-creds <font color=red>--docker-server=</font>myprivateregistry.com:5000 <font color=red>--docker-username=</font>dock_user<font color=red> --docker-password=</font>dock_password <font color=red>--docker-email=</font>dock_user@myprivateregistry.com**<br> 
  > Create a `docker-registry` Secret.
 
 Example of the usage of a `docker-registry` Secret:
@@ -447,11 +447,11 @@ deployment
 
 
  > 
- > **<font color=red>kubect get certificatesigningrequests.certificates.k8s.io</font>**</br> 
+ > **<font color=red>kubect get certificatesigningrequests.certificates.k8s.io</font>**<br> 
  > Return Signing Requests.
 
  > 
- > **<font color=red>cat</font> my-signing-request.csr <font color=red>\| base64 -w 0</font>**</br>
+ > **<font color=red>cat</font> my-signing-request.csr <font color=red>\| base64 -w 0</font>**<br>
  > Ouput base64 as only one line 
 
 ````yml
@@ -470,7 +470,7 @@ spec:
  > Create a Singing Request.
 
  > 
- > **<font color=red>kubectl certificate approve</font> my-singing-request**</br>
+ > **<font color=red>kubectl certificate approve</font> my-singing-request**<br>
  > Approve Singning Request.
 
 ---
@@ -479,7 +479,7 @@ spec:
 
 
  > 
- > **<font color=red>openssl x509 -in</font> /etc/kubernetes/pki/apiserver.crt <font color=red>-text -noout</font>**</br>
+ > **<font color=red>openssl x509 -in</font> /etc/kubernetes/pki/apiserver.crt <font color=red>-text -noout</font>**<br>
  > Output certificate content.
 
 # RBAC
@@ -490,7 +490,7 @@ spec:
 
 
  > 
- > **<font color=red>kubectl create serviceaccount</font> my-service-account**</br>
+ > **<font color=red>kubectl create serviceaccount</font> my-service-account**<br>
  > Create a Serivce Account.
 
 ````yml
@@ -501,7 +501,7 @@ spec:
 ````
 
  > 
- > **<font color=red>kubectl create token</font> my-service-account**</br>
+ > **<font color=red>kubectl create token</font> my-service-account**<br>
  > Create a Service Account token (JWT).
 
 ---
@@ -510,11 +510,11 @@ spec:
 
 
  > 
- > **<font color=red>kubectl create role</font> developer <font color=red>--verb=</font>list<font color=red>,</font>create<font color=red>,</font>delete <font color=red>--resource=</font>pods**</br>
+ > **<font color=red>kubectl create role</font> developer <font color=red>--verb=</font>list<font color=red>,</font>create<font color=red>,</font>delete <font color=red>--resource=</font>pods**<br>
  > Create a Role (can `list`, `create`, `delete` Pods).
 
  > 
- > **<font color=red>kubectl create rolebinding</font> dev-user-binding <font color=red>--role=</font>developer <font color=red>--serviceaccount=</font>default:dev-user**</br>
+ > **<font color=red>kubectl create rolebinding</font> dev-user-binding <font color=red>--role=</font>developer <font color=red>--serviceaccount=</font>default:dev-user**<br>
  > Create a Binding between a Role and a Service Account.
 
 ---
@@ -523,11 +523,11 @@ spec:
 
 
  > 
- > **<font color=red>kubectl create clusterrole</font> storage-admin <font color=red>--verb=</font>\* <font color=red>--resource=</font>storageclasses <font color=red>--resource=</font>persistentvolumes**</br>
+ > **<font color=red>kubectl create clusterrole</font> storage-admin <font color=red>--verb=</font>\* <font color=red>--resource=</font>storageclasses <font color=red>--resource=</font>persistentvolumes**<br>
  > Create a Cluster Role  (can do anything on Persistant Volumes).
 
  > 
- > **<font color=red>kubectl create clusterrolebinding</font> myUser-storage-admin <font color=red>--clusterrole=</font>storage-admin <font color=red>--user=</font>myUser**</br>
+ > **<font color=red>kubectl create clusterrolebinding</font> myUser-storage-admin <font color=red>--clusterrole=</font>storage-admin <font color=red>--user=</font>myUser**<br>
  > Create a Binding between a Role and a User.
 
 ---
@@ -536,14 +536,14 @@ spec:
 
 
  > 
- > **<font color=red>kubectl auth whoami</font>**</br>
+ > **<font color=red>kubectl auth whoami</font>**<br>
  > Returns username and groups.
 
  > 
- > **<font color=red>kubectl auth can-i</font> create pods**</br>
+ > **<font color=red>kubectl auth can-i</font> create pods**<br>
  > Checks an action is allowed (returns `yes` or `no`).
  > 
- > **<font color=red>kubectl auth can-i --list</font>**</br>
+ > **<font color=red>kubectl auth can-i --list</font>**<br>
  > Returns all allowed actions.
 
 # Troubleshooting
@@ -574,11 +574,11 @@ If a Worker Node isn't working, try `systemctl status kubelet.service`
 
 
  > 
- > **<font color=red>crictl ps -a</font>**</br>
+ > **<font color=red>crictl ps -a</font>**<br>
  > See Containers that are CRI-compatible.
 
  > 
- > **<font color=red>crictl logs </font>containerID**</br>
+ > **<font color=red>crictl logs </font>containerID**<br>
  > See Logs for a container.
 
 # Misc
@@ -589,7 +589,7 @@ If a Worker Node isn't working, try `systemctl status kubelet.service`
 
 
  > 
- > **<font color=red>kubectl get all</font>**</br>
+ > **<font color=red>kubectl get all</font>**<br>
  > Get info about all objects.
 
 ---
@@ -601,7 +601,7 @@ If a Worker Node isn't working, try `systemctl status kubelet.service`
  > **<font color=red>kubectl get pods --all-namespaces -o jsonpath="{.items\[*\].spec.containers\[*\].image}" | \ </font>**
  > **<font color=red>tr -s '\[\[:space:\]\]' '\n' | \ </font>**  
  > **<font color=red>sort | \ </font>**
- > **<font color=red>uniq -c </font>**</br>
+ > **<font color=red>uniq -c </font>**<br>
  > Retrieve all images used by pods in the cluster.
 
 ---
@@ -610,17 +610,17 @@ If a Worker Node isn't working, try `systemctl status kubelet.service`
 
 
  > 
- > **<font color=red>kubectl api-resources | grep</font> storage**</br>
+ > **<font color=red>kubectl api-resources | grep</font> storage**<br>
  > Find the API name of a resource using keyword.
 
 ### Get Cluster IP Ranges Config
 
 
  > 
- > **<font color=red>kubectl logs -n kube-system</font> weave-net<font color=red> | grep ipalloc-range</font>**</br> 
+ > **<font color=red>kubectl logs -n kube-system</font> weave-net<font color=red> | grep ipalloc-range</font>**<br> 
  > Find Pods IP range configuration.
  > 
- > **<font color=red>cat /etc/kubernetes/manifests/kube-apiserver.yaml  | grep "--service-cluster-ip-range="</font>**</br>
+ > **<font color=red>cat /etc/kubernetes/manifests/kube-apiserver.yaml  | grep "--service-cluster-ip-range="</font>**<br>
  > Find Services IP range configuration.
 
 ---
@@ -629,5 +629,5 @@ If a Worker Node isn't working, try `systemctl status kubelet.service`
 
 
  > 
- > **<font color=red>kubectl proxy</font>**</br>
+ > **<font color=red>kubectl proxy</font>**<br>
  > Expose Kube-apiserver to localhost.

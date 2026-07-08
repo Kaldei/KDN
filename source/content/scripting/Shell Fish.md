@@ -21,11 +21,11 @@ A few important differences can be found at [https://fishshell.com/docs/current
 ### Config
 
  > 
- > **<font color=red>fish_config</font>**</br>
+ > **<font color=red>fish_config</font>**<br>
  > Open web interface to config fish.
 
  > 
- > **<font color=red>fish_add_path</font> /my/path/to/add**</br>
+ > **<font color=red>fish_add_path</font> /my/path/to/add**<br>
  > Add new path to PATH.
 
 ---
@@ -33,7 +33,7 @@ A few important differences can be found at [https://fishshell.com/docs/current
 ### Alias
 
  > 
- > **<font color=red>alias --save</font> k<font color=red>=</font>"kubectl"**</br>
+ > **<font color=red>alias --save</font> k<font color=red>=</font>"kubectl"**<br>
  > Create an alias (`--save` make permanent).
 
 # Variables
@@ -43,17 +43,17 @@ A few important differences can be found at [https://fishshell.com/docs/current
 ### Set Variable
 
  > 
- > **<font color=red>set</font> MY_VAR myValue**</br>
+ > **<font color=red>set</font> MY_VAR myValue**<br>
  > Set variable.
 
  > 
- > **<font color=red>-x</font>**</br>
+ > **<font color=red>-x</font>**<br>
  > Export the variable (make it an environment variable, available to child processes).
  > 
- > **<font color=red>-g</font>**</br>
+ > **<font color=red>-g</font>**<br>
  > Global variable (available to all function in the same shell).
  > 
- > **<font color=red>-U</font>**</br>
+ > **<font color=red>-U</font>**<br>
  > Set "Universal" variable (available all fish instances and persist across restarts).
 
 # Structures
@@ -63,5 +63,5 @@ A few important differences can be found at [https://fishshell.com/docs/current
 ### While
 
  > 
- > **<font color=red>while read</font> line<font color=red>;</font> echo $line<font color=red>; end \<</font> myFile.txt**</br>
+ > **<font color=red>while read</font> line<font color=red>;</font> echo $line<font color=red>; end \<</font> myFile.txt**<br>
  > One liner version of while loop to read file.

@@ -14,10 +14,10 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>%</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>%</font>**<br>
  > Split screen vertically.
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>"</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>"</font>**<br>
  > Split screen horizontally.
 
 ---
@@ -26,7 +26,7 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b + →</font>**</br>
+ > **<font color=red>Ctrl + b + →</font>**<br>
  > Resize current panel.
 
 ---
@@ -35,7 +35,7 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>→</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>→</font>**<br>
  > Change focus to right panel.
 
 ---
@@ -44,7 +44,7 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b </font>then <font color=red>\[</font>**</br>
+ > **<font color=red>Ctrl + b </font>then <font color=red>\[</font>**<br>
  > Move your cursor up and down.
 
 # Windows
@@ -55,7 +55,7 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>c</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>c</font>**<br>
  > Create a new tab.
 
 ---
@@ -64,7 +64,7 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>1</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>1</font>**<br>
  > Switch to tab 1.
 
 # Sessions
@@ -75,7 +75,7 @@ tags:
 
 
  > 
- > **<font color=red>tmux ls</font>**</br>
+ > **<font color=red>tmux ls</font>**<br>
  > List current existing sessions (alias for `list-sessions`).
 
 ---
@@ -84,9 +84,9 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl+b</font> then <font color=red>$</font>**</br>
- > or</br>
- > **<font color=red>tmux rename-session -t</font> mySessionId myNewName**</br>
+ > **<font color=red>Ctrl+b</font> then <font color=red>$</font>**<br>
+ > or<br>
+ > **<font color=red>tmux rename-session -t</font> mySessionId myNewName**<br>
  > Renamed a session.
 
 ---
@@ -95,13 +95,13 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>d</font>**</br>
- > or</br>
- > **<font color=red>tmux detach</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>d</font>**<br>
+ > or<br>
+ > **<font color=red>tmux detach</font>**<br>
  > Detach form session.
 
  > 
- > **<font color=red>tmux attach -t</font> mySessionId**</br>
+ > **<font color=red>tmux attach -t</font> mySessionId**<br>
  > Attach to a session.
 
 ---
@@ -110,13 +110,13 @@ tags:
 
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>s</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>s</font>**<br>
  > Open Tmux session manager
 
  > 
- > **<font color=red>Ctrl + b</font> then <font color=red>)</font>**</br>
- > or </br>
- > **<font color=red>Ctrl + b</font> then <font color=red>(</font>**</br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>)</font>**<br>
+ > or <br>
+ > **<font color=red>Ctrl + b</font> then <font color=red>(</font>**<br>
  > Quickly switch between sessions
 
 # Configuration

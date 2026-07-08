@@ -70,8 +70,8 @@ on:
 
 
  > 
- > **<font color=red>gh workflow run</font> my-test-workflow.yml <font color=red>\\</font>**</br>
- > **<font color=red>--ref</font> my-test-branch <font color=red>\\</font>**</br>
- > **<font color=red>--field </font>my_input_1<font color=red>=</font>12 <font color=red>\\</font>**</br>
- > **<font color=red>--field</font> my_input_2<font color=red>=</font>bla**</br>
+ > **<font color=red>gh workflow run</font> my-test-workflow.yml <font color=red>\\</font>**<br>
+ > **<font color=red>--ref</font> my-test-branch <font color=red>\\</font>**<br>
+ > **<font color=red>--field </font>my_input_1<font color=red>=</font>12 <font color=red>\\</font>**<br>
+ > **<font color=red>--field</font> my_input_2<font color=red>=</font>bla**<br>
  > Run a workflow that doesn't exist on the default branch yes (needs to have `on: push: branchs` set).

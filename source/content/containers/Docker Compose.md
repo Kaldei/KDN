@@ -19,13 +19,13 @@ tags:
 
 
  > 
- > **<font color=red>docker-compose up -f</font> /pathToComposeFiles**</br>
+ > **<font color=red>docker-compose up -f</font> /pathToComposeFiles**<br>
  > Create a network and run containers in it.
  > 
- > **<font color=red>docker-compose stop -f</font> /pathToComposeFiles**</br>
+ > **<font color=red>docker-compose stop -f</font> /pathToComposeFiles**<br>
  > Stop containers.
  > 
- > **<font color=red>docker-compose down -f </font>/pathToComposeFiles**</br>
+ > **<font color=red>docker-compose down -f </font>/pathToComposeFiles**<br>
  > Remove network and containers.
 
 # Compose File Examples

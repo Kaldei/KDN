@@ -14,21 +14,21 @@ tags:
 
 
  > 
- > **<font color=red>--commit-filter</font>**</br>
+ > **<font color=red>--commit-filter</font>**<br>
  >  Specify a custom filter that processes each commit individually.
  > 
- > **<font color=red>--env-filter</font>**</br>
+ > **<font color=red>--env-filter</font>**<br>
  > Specify a custom filter that to modify environment variables for each commit (e.g. `GIT_AUTHOR_NAME` or `GIT_AUTHOR_EMAIL`.).
  > 
- > **<font color=red>--tag-name-filter cat</font>**</br>
+ > **<font color=red>--tag-name-filter cat</font>**<br>
  > Preserve existing tag name.
 
  > 
- > **<font color=red>-- --all</font>**</br>
+ > **<font color=red>-- --all</font>**<br>
  > Apply the filter to all branches and tags in the repository.
 
  > 
- > **<font color=red>--force</font>**</br>
+ > **<font color=red>--force</font>**<br>
  > Require when the repo has already been pushed to a remote server.
 
 ---
