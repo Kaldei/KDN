@@ -207,6 +207,20 @@ aws_secret_access_key=[SECRET_ACCESS_KEY]
  > **<font color=red>aws eks describe-addon-versions --addon-name</font> aws-ebs-csi-driver  <font color=red>--region</font> myRegion**</br>
  > Show latest version of the addon (region is mandatory).
 
+# ECR
+
+---
+
+### Retag Image
+
+
+ > 
+ > **<font color=red>MANIFEST=$(aws ecr batch-get-image --repository-name </font>myRepo<font color=red> --image-ids imageTag=</font>oldTag<font color=red> --query 'images\[\].imageManifest' --output text)</font>**</br>
+ > Fetch the manifest of an existing image.
+ > 
+ > **<font color=red>aws ecr put-image --repository-name </font>myRepo<font color=red> --image-tag </font>newTag<font color=red> --image-manifest "$MANIFEST"</font>**</br>
+ > Retag an existing image without pulling/pushing it.
+
 # Lambda
 
 ---
