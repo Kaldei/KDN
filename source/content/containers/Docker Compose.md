@@ -60,5 +60,5 @@ networks:
 		ipam:				    # IP Address Managment
 			driver: default 	# Bridge
 			config:
-				- subnet: “192.168.168.0.0/24”
+				- subnet: "192.168.168.0.0/24"
 ````

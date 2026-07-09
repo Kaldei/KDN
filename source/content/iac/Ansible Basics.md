@@ -229,7 +229,7 @@ https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#c
  > **<font color=red>ansible_facts\['os_family'\]</font>**<br>
  > OS Family (ex: RedHat, Debian, ...).
  > 
- > **<font color=red>ansible_facts\[‘distribution’\]</font>**<br>
+ > **<font color=red>ansible_facts\['distribution'\]</font>**<br>
  > OS Distribution (ex: RedHat can be RedHat, CentOS, Fedora, ..., and Debian can be Debian, Ubuntu, Kali, ...).
 
  > 

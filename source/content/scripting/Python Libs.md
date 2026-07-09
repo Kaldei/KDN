@@ -332,7 +332,7 @@ IP_DEST = "10.0.0.12"
 
 # Create a packet
 pkt = IP(dst=IP_DEST)/ICMP()                   # ICMP packet 
-ptk = IP(dst=IP_DEST)/TCP(dport=53, flags=”S”) # TCP packet
+ptk = IP(dst=IP_DEST)/TCP(dport=53, flags="S") # TCP packet
 
 # Send packets
 send(pkt) # Send packet only

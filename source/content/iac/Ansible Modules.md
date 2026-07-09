@@ -16,8 +16,8 @@ tags:
 ````yaml
 - name: Update packages (Fedora)
   dnf:
-    name: “*”
-    state: lastest
+    name: "*"
+    state: latest
 ````
 
 ````yaml
@@ -144,7 +144,7 @@ handlers:
     container_default_behavior: no_defaults
     state: started
     ports:
-      - “80:80”
+      - "80:80"
     tty: true
     detach: true
 ````
