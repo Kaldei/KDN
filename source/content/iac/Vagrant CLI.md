@@ -6,6 +6,8 @@ tags:
   - vagrant
 ---
 
+test
+
 # Basis
 
 ---
