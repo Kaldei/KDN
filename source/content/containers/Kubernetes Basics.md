@@ -604,7 +604,7 @@ spec:
 
 #### Architecture Example
 
-![k8s-ingress-ngnix-architecture.png](../../attachments/k8s-ingress-ngnix-architecture.png)
+![k8s-ingress-ngnix-architecture.png](../../_attachments/k8s-ingress-ngnix-architecture.png)
 Source: [Anton Putra](https://www.youtube.com/watch?v=xwiRjimKW9c)
 
 
