@@ -32,11 +32,11 @@ tags:
 
 
  > 
- > **<font color=red>helm repo add</font> stable https://charts.helm.sh/stable**<br>
+ > **<font color=red>helm repo add stable https://charts.helm.sh/stable</font>**<br>
  > Add the standard stable repo to local Helm config.
  > 
  > **<font color=red>helm repo add</font> my-repo-name https://my-repo-address/**<br>
- > Add a repo to the local Helm config .
+ > Add a repo to the local Helm config.
 
 # Charts
 
@@ -56,7 +56,11 @@ tags:
 
  > 
  > **<font color=red>helm show values</font> my-chart**<br>
- > Display values for the chart.
+ > Display values for a chart added locally.
+
+ > 
+ > **<font color=red>helm show values</font> oci://my-registry/my-chart**<br>
+ > Display values for a remote chart.
 
 ---
 
