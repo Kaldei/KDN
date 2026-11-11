@@ -278,6 +278,24 @@ For more details on specific Secret Engines see: [Vault CLI Secret Engines](Vaul
 
 ### Regenerate Root Token
 
+**WARNING: Before revoking the current root token, remember that generate-root endpoints are now authenticated and need the following ACL.**
+
+````hcl
+# Status (-init, -cancel)
+path "sys/generate-root/attempt" {
+  capabilities = ["read", "update", "delete"] 
+}
+
+# Submit a key share
+path "sys/generate-root/update" {
+  capabilities = ["update"]                     
+}
+
+# Only needed if the CLI decodes the token server side
+path "sys/decode-token" {
+  capabilities = ["update"]
+}
+````
 
  > 
  > **<font color=red>vault operator generate-root -generate-otp</font>**<br>
