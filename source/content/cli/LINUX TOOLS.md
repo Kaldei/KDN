@@ -4,6 +4,7 @@ summary: CLI tools and tricks for Linux.
 description: CLI tools and tricks for Linux.
 tags:
   - linux
+  - unix
 ---
 
 # Basis

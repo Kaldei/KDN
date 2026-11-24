@@ -3,7 +3,7 @@ title: JQ
 summary: A lightweight and flexible JSON processor.
 description: A lightweight and flexible JSON processor.
 tags:
-  - linux
+  - unix
   - json
 ---
 

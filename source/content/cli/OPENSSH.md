@@ -3,7 +3,7 @@ title: OPENSSH
 summary: Suite of secure tunneling capabilities.
 description: Suite of secure tunneling capabilities.
 tags:
-  - linux
+  - unix
 ---
 
 # Remote Operations
