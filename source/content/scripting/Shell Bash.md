@@ -109,7 +109,7 @@ fi
 
 ````
 
-![Bash-Operators.png](../../_attachments/Bash-Operators.png)
+![Bash-Operators.png](../../../../../1-collect/compendium/_attachments/Bash-Operators.png)
 
 ---
 
